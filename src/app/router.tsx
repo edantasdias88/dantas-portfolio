@@ -9,17 +9,20 @@ const AboutPage = lazy(() => import('@/pages/About'))
 const ContactPage = lazy(() => import('@/pages/Contact'))
 const CaseStudyPage = lazy(() => import('@/pages/CaseStudy'))
 
-export const router = createBrowserRouter([
-  {
-    element: <Layout />,
-    children: [
-      { index: true, element: <HomePage /> },
-      { path: 'projetos', element: <ProjectsPage /> },
-      { path: 'sobre-mim', element: <AboutPage /> },
-      { path: 'contato', element: <ContactPage /> },
-      { path: 'case/iruas', element: <Navigate to="/case/irus" replace /> },
-      { path: 'case/:slug', element: <CaseStudyPage /> },
-      { path: '*', element: <NotFoundPage /> },
-    ],
-  },
-])
+export const router = createBrowserRouter(
+  [
+    {
+      element: <Layout />,
+      children: [
+        { index: true, element: <HomePage /> },
+        { path: 'projetos', element: <ProjectsPage /> },
+        { path: 'sobre-mim', element: <AboutPage /> },
+        { path: 'contato', element: <ContactPage /> },
+        { path: 'case/iruas', element: <Navigate to="/case/irus" replace /> },
+        { path: 'case/:slug', element: <CaseStudyPage /> },
+        { path: '*', element: <NotFoundPage /> },
+      ],
+    },
+  ],
+  { basename: import.meta.env.BASE_URL },
+)
