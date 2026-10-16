@@ -1,0 +1,237 @@
+// Tokens globais e semânticos. Valores extraídos das variáveis do Figma (arquivo Ryxhb4ajakSKVEleXmk2lT).
+// Os semânticos mudam por tema; componentes usam apenas os semânticos.
+:root {
+  // Escala de espaçamento (8 pt, Figma: spacing/*)
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 80px;
+  --space-11: 96px;
+  --space-12: 128px;
+  --space-120: 120px;
+  --space-160: 160px;
+  --space-240: 240px;
+  --section-y: clamp(96px, 11vw, 160px);
+  --section-y-lg: clamp(120px, 16vw, 240px);
+
+  // Layout (container/content-max = 1320, padding 16)
+  --container: 1320px;
+  --gutter: 16px;
+  --header-h: 78px;
+
+  // Raios
+  --radius-xs: 6px;
+  --radius-sm: 14px;
+  --radius-md: 24px;
+  --radius-photo: 28px;
+  --radius-lg: 32px;
+  --radius-pill: 100px;
+
+  // Tipografia (Satoshi)
+  --font-sans: 'Satoshi', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fs-eyebrow: 1rem; // 16, tracking 3px
+  --ls-eyebrow: 3px;
+  --fs-sm: 0.875rem;
+  --fs-body: 1rem;
+  --fs-lead: clamp(1.125rem, 1rem + 0.4vw, 1.25rem); // 20/28
+  --fs-h2: clamp(2rem, 1.4rem + 1.8vw, 2.75rem); // 44/46
+  --lh-h2: 1.045;
+  --fs-h1: clamp(2.75rem, 1.3rem + 4.4vw, 5.25rem); // 84/86
+  --lh-tight: 1.024;
+  --lh-body: 1.5;
+
+  // Escala complementar (páginas internas, menu, modal)
+  --fs-h3: clamp(1.5rem, 1.2rem + 1vw, 2.25rem);
+  --fs-h4: clamp(1.25rem, 1.1rem + 0.5vw, 1.625rem);
+  --fs-display: clamp(6rem, 22vw, 26rem);
+  --ls-tight: -0.02em;
+  --ls-snug: -0.01em;
+  --ls-wide: 0.12em;
+  --neutral-950: #0b0c0b;
+  --blue-500: var(--brand-500);
+
+  // Movimento
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 160ms;
+  --dur-base: 280ms;
+  --dur-slow: 520ms;
+
+  // Paleta base (Figma)
+  --brand-500: #0f7fff;
+  --brand-600: #0069ef;
+  --brand-700: #0656c9;
+  --contact-500: #063fff;
+  --ink-950: #0b0c0b;
+  --navy-950: #0b1520;
+  --about-950: #0a0b0b;
+  --danger-500: #d93636;
+  --danger-300: #ff8a8a;
+}
+
+// ----- Tema claro (Figma) -----
+:root,
+[data-theme='light'] {
+  color-scheme: light;
+  --content-primary: #0b0c0b;
+  --content-secondary: #70706e;
+  --content-secondary-heading: #6d6d6b;
+  --content-secondary-cool: #4a5565;
+  --content-tertiary: #738097;
+  --content-tertiary-heading: #8792a3;
+  --content-service: #0d1725;
+  --content-label: #344156;
+  --content-project: #0e1522;
+  --content-tertiary-project: #6b7889;
+  --content-partnership: #030515;
+  --content-secondary-partnership: #626479;
+  --content-scroll-hint: #363735;
+  --content-inverse: #f5f6fa;
+  --content-disabled: #b6b3ac;
+  --content-danger: var(--danger-500);
+  --content-on-brand: #ffffff;
+
+  --background-base: #f8f9fb;
+  --background-subtle: #edf2f9;
+  --background-elevated: #ffffff;
+  --background-elevated-service: #fcfdff;
+  --background-hero: #f5f2ec;
+  --background-inverse: #0b1520;
+  --background-brand: var(--brand-500);
+
+  --border-subtle: #d7deea;
+  --border-default: #e4eaf3;
+  --border-strong: #979994;
+  --border-strong-cool: #253449;
+  --border-warm: #b6b3ac;
+  --border-project-nav: #98a4b3;
+  --border-focus: var(--brand-500);
+
+  --accent-primary: var(--brand-500);
+  --accent-hover: var(--brand-600);
+  --accent-pressed: var(--brand-700);
+  --accent-subtle: rgba(15, 127, 255, 0.1);
+  --accent-content: var(--brand-500);
+
+  // Glass (header / controles)
+  --glass-header-highlight: rgba(255, 255, 255, 0.65);
+  --glass-header-surface: rgba(241, 234, 225, 0.48);
+  --glass-header-reflection: rgba(255, 255, 255, 0.61);
+  --glass-border: rgba(255, 255, 255, 0.8);
+  --glass-divider: #cfc8bf;
+  --glass-header-shadow: 0 7px 24px rgba(114, 102, 88, 0.07);
+  --glass-control-surface: rgba(220, 214, 206, 0.6);
+  --glass-control-elevated: rgba(248, 250, 253, 0.56);
+  --glass-control-border: #ffffff;
+  --glass-control-shadow: 0 3px 8px rgba(171, 185, 207, 0.13);
+  --glass-bg: rgba(248, 249, 251, 0.7);
+  --glass-highlight: rgba(255, 255, 255, 0.55);
+  --overlay: rgba(11, 21, 32, 0.4);
+
+  // Hero
+  --hero-from: #f7f5f0;
+  --hero-via: #f1ede6;
+  --hero-to: #f7f4ee;
+  --hero-reading: 246, 243, 239;
+  --hero-fade: 245, 242, 236;
+  --hero-art-opacity: 1;
+
+  // Projetos
+  --project-overlay: 248, 249, 251;
+
+  --silk-opacity: 0.36;
+  --logo-filter: none;
+  --icon-filter: none;
+  --display-ink: rgba(11, 12, 11, 0.045);
+}
+
+// ----- Tema escuro (variação intencional, mesma linguagem) -----
+[data-theme='dark'] {
+  color-scheme: dark;
+  --content-primary: #f2f3f5;
+  --content-secondary: #a2a7ae;
+  --content-secondary-heading: #8d929a;
+  --content-secondary-cool: #a7b0bf;
+  --content-tertiary: #8b97ab;
+  --content-tertiary-heading: #7f8b9e;
+  --content-service: #eef2f8;
+  --content-label: #c3ccda;
+  --content-project: #f2f4f8;
+  --content-tertiary-project: #8f9bad;
+  --content-partnership: #f2f3f7;
+  --content-secondary-partnership: #a2a5b8;
+  --content-scroll-hint: #b9bab6;
+  --content-inverse: #f5f6fa;
+  --content-disabled: #4a4d52;
+  --content-danger: var(--danger-300);
+  --content-on-brand: #ffffff;
+
+  --background-base: #0a0d12;
+  --background-subtle: #18202b;
+  --background-elevated: #111720;
+  --background-elevated-service: #111720;
+  --background-hero: #11100e;
+  --background-inverse: #070d14;
+  --background-brand: var(--brand-500);
+
+  --border-subtle: #222c39;
+  --border-default: #1d2632;
+  --border-strong: #5c6068;
+  --border-strong-cool: #8996a8;
+  --border-warm: #4c4a46;
+  --border-project-nav: #4d5868;
+  --border-focus: #4da3ff;
+
+  --accent-primary: var(--brand-500);
+  --accent-hover: #3d97ff;
+  --accent-pressed: var(--brand-600);
+  --accent-subtle: rgba(15, 127, 255, 0.16);
+  --accent-content: #4da3ff;
+
+  --glass-header-highlight: rgba(40, 38, 35, 0.6);
+  --glass-header-surface: rgba(28, 26, 24, 0.5);
+  --glass-header-reflection: rgba(44, 42, 39, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-divider: #3a3833;
+  --glass-header-shadow: 0 7px 24px rgba(0, 0, 0, 0.35);
+  --glass-control-surface: rgba(60, 57, 52, 0.6);
+  --glass-control-elevated: rgba(24, 32, 43, 0.6);
+  --glass-control-border: rgba(255, 255, 255, 0.14);
+  --glass-control-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  --glass-bg: rgba(10, 13, 18, 0.66);
+  --glass-highlight: rgba(255, 255, 255, 0.05);
+  --overlay: rgba(0, 0, 0, 0.6);
+
+  --hero-from: #14120f;
+  --hero-via: #100f0d;
+  --hero-to: #13110e;
+  --hero-reading: 17, 16, 14;
+  --hero-fade: 17, 16, 14;
+  --hero-art-opacity: 0.16;
+
+  --project-overlay: 10, 13, 18;
+
+  --silk-opacity: 0.06;
+  --logo-filter: invert(1) hue-rotate(180deg);
+  --icon-filter: invert(1) hue-rotate(180deg);
+  --display-ink: rgba(255, 255, 255, 0.04);
+}
+
+// Superfícies escuras por direção de arte (Processo, Sobre, rodapé): mesmas nos dois temas.
+.surface-dark {
+  --content-primary: #f5f6fa;
+  --content-secondary: #b6c0d1;
+  --content-tertiary: #9ca9bd;
+  --border-subtle: #303b41;
+  --border-default: #303b41;
+  --border-strong: #637489;
+  --border-focus: #4da3ff;
+  --accent-content: #aad6ff;
+  color: var(--content-primary);
+}

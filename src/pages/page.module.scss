@@ -1,0 +1,98 @@
+@use 'styles/tokens' as *;
+
+// Estilos compartilhados pelas páginas internas.
+.hero {
+  padding-top: calc(var(--header-h) + var(--space-10));
+  padding-bottom: var(--space-10);
+}
+
+.heroInner {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 980px;
+}
+
+.heroTitle {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+
+.heroSplit {
+  display: grid;
+  gap: var(--space-8);
+
+  @include up(lg) {
+    grid-template-columns: 7fr 5fr;
+    gap: var(--space-11);
+    align-items: end;
+  }
+}
+
+.block {
+  padding-block: var(--space-10);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.blockGrid {
+  display: grid;
+  gap: var(--space-7);
+
+  @include up(lg) {
+    grid-template-columns: 4fr 8fr;
+    gap: var(--space-11);
+  }
+}
+
+.blockTitle {
+  font-size: var(--fs-h3);
+  letter-spacing: var(--ls-snug);
+}
+
+.cols3 {
+  display: grid;
+  gap: var(--space-7);
+
+  @include up(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.cols2 {
+  display: grid;
+  gap: var(--space-7);
+
+  @include up(md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.itemTitle {
+  font-size: var(--fs-h4);
+  margin-bottom: var(--space-2);
+}
+
+.muted {
+  color: var(--content-secondary);
+}
+
+.index {
+  display: block;
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--accent-content);
+  margin-bottom: var(--space-3);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.chip {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-default);
+  font-size: var(--fs-sm);
+}

@@ -1,0 +1,464 @@
+{
+  "meta": {
+    "siteName": "Edilson Dantas",
+    "home": {
+      "title": "Edilson Dantas — Design, estratégia e tecnologia",
+      "description": "Designer de produtos digitais. Conecto estratégia, design e tecnologia para transformar problemas complexos em produtos simples, úteis e humanos."
+    },
+    "projects": {
+      "title": "Projetos — Edilson Dantas",
+      "description": "Cases de produtos digitais, experiências mobile e design systems desenvolvidos por Edilson Dantas."
+    },
+    "about": {
+      "title": "Sobre mim — Edilson Dantas",
+      "description": "Conheça a trajetória, a forma de pensar e a abordagem de trabalho de Edilson Dantas."
+    },
+    "contact": {
+      "title": "Contato — Edilson Dantas",
+      "description": "Conte um pouco sobre seu projeto e vamos entender como posso ajudar."
+    },
+    "notFound": {
+      "title": "Página não encontrada — Edilson Dantas",
+      "description": "A página que você procura não existe ou foi movida."
+    }
+  },
+  "a11y": {
+    "skipToContent": "Pular para o conteúdo",
+    "home": "Edilson Dantas — página inicial",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "mainNav": "Navegação principal",
+    "footerNav": "Navegação do rodapé",
+    "themeToLight": "Ativar tema claro",
+    "themeToDark": "Ativar tema escuro",
+    "languageSwitch": "Idioma",
+    "closeContact": "Fechar contato",
+    "backToTop": "Voltar ao topo",
+    "opensInNewTab": "(abre em nova aba)",
+    "slide": "Projeto {{current}} de {{total}}",
+    "goToSlide": "Ir para o projeto {{index}}: {{name}}",
+    "carouselDots": "Posição nos cards",
+    "goToCard": "Ir para o card {{index}}",
+    "decorative": "Imagem ilustrativa"
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "aboutMe": "Sobre mim",
+    "projects": "Projetos",
+    "services": "Serviços",
+    "process": "Processo",
+    "designSystem": "Design System",
+    "contact": "Contato",
+    "menu": "Menu",
+    "close": "Fechar",
+    "theme": "Tema",
+    "light": "Claro",
+    "dark": "Escuro",
+    "language": "Idioma"
+  },
+  "common": {
+    "cta": "Vamos conversar",
+    "viewCase": "Ver case completo",
+    "viewAllProjects": "Ver todos os projetos",
+    "backHome": "Voltar para o início",
+    "nextProject": "Próximo projeto"
+  },
+  "hero": {
+    "eyebrow": "Design · Estratégia · Tecnologia",
+    "title": "Design para produtos reais.",
+    "subtitle": "Transformo problemas complexos em experiências digitais simples, úteis e humanas.",
+    "scroll": "Scroll\npara explorar",
+    "titleLead": "Design para",
+    "titleMuted": "produtos reais."
+  },
+  "help": {
+    "eyebrow": "Como posso ajudar",
+    "title": "Crio experiências digitais para\nquem quer transformar boas ideias em resultados.",
+    "drag": "arraste",
+    "items": [
+      {
+        "title": "Tirar uma ideia\ndo papel",
+        "description": "Transforme uma oportunidade em um produto digital com direção e propósito."
+      },
+      {
+        "title": "Criar algo que\nse destaque",
+        "description": "Construa uma presença digital com personalidade e uma experiência consistente."
+      },
+      {
+        "title": "Melhorar um\nproduto existente",
+        "description": "Identifique problemas e torne a experiência mais simples, clara e eficiente."
+      },
+      {
+        "title": "Construir uma\nmarca forte",
+        "description": "Conecte estratégia, identidade visual e experiência em uma marca coerente."
+      },
+      {
+        "title": "Encontrar novas\noportunidades",
+        "description": "Reduza atritos e crie experiências que ajudem as pessoas a avançar."
+      },
+      {
+        "title": "Escalar com\nDesign System",
+        "description": "Crie padrões reutilizáveis para ganhar consistência e acelerar a evolução do produto."
+      },
+      {
+        "title": "Ter design como diferencial",
+        "description": "Transforme decisões de design em valor percebido por clientes e pelo negócio."
+      },
+      {
+        "title": "Entregar\ncom eficiência",
+        "description": "Aproxime design e desenvolvimento para reduzir ruídos e facilitar a implementação."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Serviços",
+    "title": "O que posso fazer pelo seu",
+    "description": "Do primeiro direcionamento à experiência final, conecto estratégia, design e tecnologia para criar soluções que façam sentido para as pessoas e para o negócio.",
+    "related": "Ver projetos relacionados",
+    "items": {
+      "products": {
+        "title": "Produtos Digitais",
+        "description": "Projeto experiências digitais transformadoras para todos os setores, com foco nas metas do seu negócio, excelência na usabilidade, visual incrível e orientado a boas práticas do digital.",
+        "tags": [
+          "Pesquisa",
+          "UX",
+          "UI",
+          "Prototipação",
+          "SaaS",
+          "Sistemas",
+          "Plataformas",
+          "Dashboards",
+          "Apps Mobile",
+          "Wireframes"
+        ],
+        "summary": "Apps, sistemas e plataformas com foco em usabilidade e negócio.",
+        "category": "Apps, sistemas e plataformas",
+        "headline": "Interfaces de",
+        "headlineMuted": "alto nível."
+      },
+      "websites": {
+        "title": "Websites",
+        "description": "Crio websites que combinam clareza, identidade visual e experiência de navegação. Cada decisão busca comunicar o valor da marca e facilitar o caminho do visitante até a ação desejada.",
+        "tags": [
+          "UX/UI",
+          "Web Design",
+          "Responsividade",
+          "Conversão"
+        ],
+        "summary": "Sites institucionais e produtos digitais com foco em experiência e resultados.",
+        "category": "Sites institucionais e landing pages",
+        "headline": "Presença digital",
+        "headlineMuted": "que gera ação."
+      },
+      "brands": {
+        "title": "Marcas",
+        "description": "Construo identidades visuais que traduzem o posicionamento de uma marca em uma linguagem visual consistente, preparada para funcionar em diferentes pontos de contato.",
+        "tags": [
+          "Estratégia de marca",
+          "Identidade visual",
+          "Sistemas visuais"
+        ],
+        "summary": "Identidades visuais e sistemas de marca para produtos e empresas digitais.",
+        "category": "Identidade e sistemas visuais",
+        "headline": "Marcas com",
+        "headlineMuted": "personalidade."
+      },
+      "audit": {
+        "title": "Auditoria UX/UI",
+        "description": "Analiso interfaces e jornadas para identificar problemas de usabilidade, inconsistências e oportunidades de melhoria. A auditoria transforma observações em recomendações priorizadas para orientar a evolução do produto.",
+        "tags": [
+          "Usabilidade",
+          "Heurísticas",
+          "Acessibilidade",
+          "Plano de melhorias"
+        ],
+        "summary": "Análise estratégica da experiência para encontrar oportunidades e gerar impacto.",
+        "category": "Diagnóstico de experiência",
+        "headline": "Clareza para",
+        "headlineMuted": "evoluir."
+      },
+      "designSystems": {
+        "title": "Design Systems",
+        "description": "Estruturo sistemas de design com tokens, componentes e padrões reutilizáveis que ajudam equipes a manter consistência, reduzir retrabalho e evoluir produtos com mais eficiência.",
+        "tags": [
+          "Design Tokens",
+          "Componentes",
+          "Documentação",
+          "Governança"
+        ]
+      },
+      "frontend": {
+        "title": "Desenvolvimento front-end",
+        "description": "Transformo layouts e protótipos em interfaces funcionais, responsivas e fiéis ao design. A proximidade entre design e desenvolvimento ajuda a preservar a intenção visual durante a implementação.",
+        "tags": [
+          "Front-end",
+          "Interfaces responsivas",
+          "Implementação de UI"
+        ]
+      }
+    },
+    "titleMuted": "produto.",
+    "open": "Abrir",
+    "close": "Fechar"
+  },
+  "process": {
+    "eyebrow": "Processo",
+    "title": "Um processo claro para ir mais longe.",
+    "description": "Mais do que etapas, é uma forma de pensar. Um processo flexível, colaborativo e focado em resultados.",
+    "steps": [
+      {
+        "title": "Entender",
+        "description": "Começo com um alinhamento estratégico para entender seu negócio, contexto e objetivos. Nessa etapa, defino o escopo e conduzo pesquisas que fundamentam decisões ao longo de todo o projeto."
+      },
+      {
+        "title": "Estruturar",
+        "description": "Organizo informações, prioridades e possibilidades para estabelecer uma direção clara antes de avançar."
+      },
+      {
+        "title": "Projetar",
+        "description": "Transformo a estratégia em fluxos, interfaces e sistemas visuais, validando as decisões ao longo do caminho."
+      },
+      {
+        "title": "Entregar",
+        "description": "Preparo a solução para implementação, colaboro nos ajustes necessários e cuido dos detalhes que fazem a diferença no resultado final."
+      }
+    ],
+    "titleLead": "Um processo claro",
+    "titleMuted": "para ir mais longe.",
+    "supportLead": "Mais do que etapas, é uma forma de pensar.",
+    "supportMuted": "Um processo flexível, colaborativo e focado em resultados."
+  },
+  "projects": {
+    "eyebrow": "Projetos",
+    "title": "Projetos",
+    "items": {
+      "caa": {
+        "name": "CAA",
+        "category": "Plataforma imobiliária · Produto digital",
+        "title": "Imóveis\nque conectam pessoas.",
+        "description": "Uma plataforma que aproxima quem busca, de quem oferece. Mais oportunidades para corretores, mais conquistas para pessoas.",
+        "tags": [
+          "Product Design",
+          "UX/UI",
+          "Plataforma web"
+        ],
+        "navName": "CAA"
+      },
+      "iruas": {
+        "name": "iRuas",
+        "category": "Mercado imobiliário · Experiência mobile",
+        "title": "Uma nova forma de descobrir imóveis.",
+        "description": "Uma experiência de busca imobiliária que explora diferentes maneiras de encontrar o próximo lugar para morar, aproximando as pessoas dos imóveis e das regiões que fazem sentido para elas.",
+        "tags": [
+          "Mobile",
+          "UX/UI",
+          "Busca e descoberta"
+        ],
+        "navName": "iRuas"
+      },
+      "dantasDs": {
+        "name": "Dantas DS",
+        "category": "Design System · Escalabilidade",
+        "title": "Design consistente, pronto para evoluir.",
+        "description": "Um sistema de design pensado para conectar fundamentos, tokens e componentes, promovendo consistência visual e uma base reutilizável para diferentes produtos e marcas.",
+        "tags": [
+          "Design Tokens",
+          "Componentes",
+          "Multimarca"
+        ],
+        "navName": "Dantas"
+      }
+    }
+  },
+  "working": {
+    "eyebrow": "A parceria",
+    "title": "Como é trabalhar comigo",
+    "description": "Um bom resultado depende tanto das decisões de design quanto da forma como trabalhamos juntos.",
+    "items": [
+      {
+        "title": "Ritmo rápido, sem enrolação",
+        "description": "Trabalho com foco e agilidade, mantendo a qualidade e respeitando os prazos combinados."
+      },
+      {
+        "title": "Comunicação transparente",
+        "description": "Mantenho você por dentro de cada etapa, aberto a dúvidas, sugestões e alinhamentos."
+      },
+      {
+        "title": "Colaboração sob medida",
+        "description": "Trabalho de forma independente e, quando o projeto pede, colaboro com profissionais de confiança."
+      },
+      {
+        "title": "Qualidade em cada detalhe",
+        "description": "Cuido da experiência do início ao fim, refinando as soluções até atender aos objetivos definidos."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "Sobre mim",
+    "title": "Movido pela criatividade e pela vontade de transformar ideias em experiências que fazem a diferença.",
+    "description": "Acredito no design como uma forma de conectar pessoas, tecnologia e objetivos reais. Meu trabalho vai além da interface: envolve entender problemas, estruturar possibilidades e transformar ideias em experiências digitais coerentes.",
+    "cta": "Conheça minha trajetória",
+    "imageAlt": "Retrato de Edilson Dantas",
+    "titleLead": "Movido pela criatividade\ne pela vontade de transformar ideias em experiências que",
+    "titleMuted": "fazem a diferença.",
+    "support": "Através do design, da tecnologia e de uma visão centrada nas pessoas."
+  },
+  "faq": {
+    "eyebrow": "Perguntas frequentes",
+    "title": "Vamos esclarecer",
+    "description": "Reuni aqui perguntas mais comuns sobre o meu trabalho. Se não encontrar o que procura é só me chamar.",
+    "items": [
+      {
+        "q": "Quais são os benefícios do design para o meu negócio?",
+        "a": "Um bom design ajuda a atrair mais usuários, melhorar a experiência, aumentar a conversão e fortalecer sua marca. Mais do que estética, o design é uma ferramenta estratégica para resolver problemas reais e gerar resultados para o seu negócio.",
+        "tags": [
+          "Mais usuários",
+          "Melhor experiência",
+          "Aumento de conversão",
+          "Marca mais forte",
+          "Resultados reais"
+        ]
+      },
+      {
+        "q": "Qual é o custo para te contratar para um projeto?",
+        "a": "O investimento depende do escopo, da complexidade e das entregas necessárias. Depois de entender seu contexto e seus objetivos, consigo propor um escopo adequado e apresentar uma estimativa de investimento."
+      },
+      {
+        "q": "Como funciona o processo de trabalho?",
+        "a": "Começamos entendendo o problema e os objetivos do projeto. Em seguida, estruturamos a solução, desenvolvemos as propostas de design e preparamos a entrega. O processo é adaptado ao contexto, ao escopo e às pessoas envolvidas."
+      },
+      {
+        "q": "Quanto tempo leva para finalizar um projeto?",
+        "a": "O prazo varia conforme a complexidade, as entregas e as etapas de validação. Após definir o escopo, estabelecemos um cronograma realista com as principais etapas e expectativas."
+      },
+      {
+        "q": "Você também trabalha com desenvolvimento?",
+        "a": "Sim. Além do design, também trabalho com desenvolvimento front-end, aproximando a concepção visual da implementação. A participação no desenvolvimento depende das necessidades e do escopo de cada projeto."
+      },
+      {
+        "q": "Quando você pode começar?",
+        "a": "A disponibilidade depende dos projetos em andamento e do escopo solicitado. Entre em contato para conversarmos sobre suas necessidades, prazos e próximos passos."
+      }
+    ],
+    "titleMuted": "alguma dúvida?"
+  },
+  "finalCta": {
+    "title": "Vamos tirar sua próxima ideia do papel.",
+    "support": "Conte um pouco sobre seu projeto e vamos entender como posso ajudar.",
+    "titleLead": "Vamos tirar sua\npróxima ideia",
+    "titleMuted": "do papel."
+  },
+  "footer": {
+    "navigation": "Navegação",
+    "services": "Serviços",
+    "contact": "Contato direto",
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "signature": "Design de produtos digitais e tecnologia.",
+    "rights": "© {{year}} Edilson Dantas. Todos os direitos reservados.",
+    "backToTop": "Voltar ao topo",
+    "sendMessage": "Enviar mensagem",
+    "serviceLinks": [
+      "Design de Produto",
+      "UI/UX Design",
+      "Design System",
+      "Desenvolvimento"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contato",
+    "title": "Vamos conversar.",
+    "description": "Conte um pouco sobre seu projeto e vamos entender como posso ajudar.",
+    "direct": "Contato direto",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Como posso te chamar?",
+      "email": "E-mail",
+      "emailPlaceholder": "voce@empresa.com",
+      "company": "Empresa (opcional)",
+      "companyPlaceholder": "Nome da empresa",
+      "type": "Tipo de projeto",
+      "types": {
+        "product": "Produto digital",
+        "website": "Website",
+        "brand": "Marca",
+        "audit": "Auditoria UX/UI",
+        "designSystem": "Design System",
+        "other": "Outro"
+      },
+      "message": "Mensagem",
+      "messagePlaceholder": "Conte sobre o contexto, objetivos e prazos.",
+      "submit": "Enviar mensagem",
+      "sending": "Enviando…",
+      "required": "obrigatório"
+    },
+    "errors": {
+      "nameRequired": "Informe seu nome.",
+      "emailRequired": "Informe seu e-mail.",
+      "emailInvalid": "Informe um e-mail válido, como nome@empresa.com.",
+      "messageRequired": "Escreva uma mensagem.",
+      "messageShort": "A mensagem precisa ter pelo menos 20 caracteres.",
+      "summary": "Revise os campos destacados antes de enviar.",
+      "network": "Não foi possível enviar agora. Verifique sua conexão e tente novamente.",
+      "server": "O serviço de envio retornou um erro. Tente novamente em alguns minutos."
+    },
+    "success": {
+      "title": "Mensagem enviada.",
+      "description": "Obrigado pelo contato. Vou ler sua mensagem e responder em breve.",
+      "again": "Enviar outra mensagem"
+    },
+    "notConfigured": "O envio de mensagens ainda não foi configurado neste site. O formulário será ativado assim que o serviço de envio estiver conectado."
+  },
+  "projectsPage": {
+    "eyebrow": "Projetos",
+    "title": "Trabalhos que conectam estratégia, design e tecnologia.",
+    "description": "Uma seleção de projetos de produto digital, experiência mobile e design system."
+  },
+  "case": {
+    "overview": "Visão geral",
+    "category": "Categoria",
+    "focus": "Foco",
+    "inPreparation": "Case completo em preparação",
+    "inPreparationText": "Este case está sendo documentado com o papel desempenhado, as decisões tomadas e os resultados do projeto. Enquanto isso, fale comigo para conhecer o trabalho em detalhes.",
+    "sections": {
+      "context": "Contexto",
+      "role": "Meu papel",
+      "decisions": "Decisões",
+      "results": "Resultados"
+    },
+    "allProjects": "Todos os projetos"
+  },
+  "aboutPage": {
+    "eyebrow": "Sobre mim",
+    "title": "Design com estratégia. Tecnologia com propósito.",
+    "intro": "Conecto estratégia, design e tecnologia para transformar problemas complexos em produtos e experiências digitais simples, úteis e relevantes.",
+    "valueTitle": "O que levo para cada projeto",
+    "values": [
+      {
+        "title": "Para empresas",
+        "description": "Entender problemas complexos, trabalhar com visão de produto e contribuir para decisões que vão além da interface."
+      },
+      {
+        "title": "Para clientes freelance",
+        "description": "Transformar necessidades e ideias em experiências digitais concretas."
+      },
+      {
+        "title": "Para ambos",
+        "description": "Combinar pensamento estratégico, cuidado visual, colaboração e entendimento técnico."
+      }
+    ],
+    "skillsTitle": "Áreas de atuação",
+    "processTitle": "Como penso um projeto",
+    "imageAlt": "Retrato de Edilson Dantas"
+  },
+  "contactPage": {
+    "eyebrow": "Contato",
+    "title": "Vamos tirar sua próxima ideia do papel."
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Esta página não existe.",
+    "description": "O endereço pode ter mudado ou estar incorreto. Volte para o início ou conheça os projetos."
+  }
+}

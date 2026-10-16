@@ -1,0 +1,31 @@
+@use 'styles/tokens' as *;
+
+.grid {
+  display: grid;
+  gap: var(--space-9);
+
+  @include up(lg) {
+    grid-template-columns: 6fr 6fr;
+    gap: var(--space-11);
+    align-items: start;
+  }
+}
+
+.direct {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.directLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 44px;
+  font-size: var(--fs-lead);
+  overflow-wrap: anywhere;
+
+  &:hover {
+    color: var(--accent-content);
+  }
+}

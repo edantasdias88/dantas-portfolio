@@ -1,0 +1,60 @@
+@use 'styles/tokens' as *;
+
+// Figma 44:1190 — py 160, gap 80
+.section {
+  padding-block: var(--section-y);
+  background: var(--background-base);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-8);
+
+  @include up(md) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-10);
+  }
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+.geo {
+  flex-shrink: 0;
+  width: 64px;
+  height: 60px;
+
+  @include down(md) {
+    width: 48px;
+    height: 45px;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.title {
+  font-size: clamp(1.5rem, 1.1rem + 1.2vw, 2.15625rem); // 34.5/44
+  font-weight: 500;
+  line-height: 1.275;
+  color: var(--content-partnership);
+}
+
+.text {
+  font-size: clamp(1.125rem, 0.95rem + 0.6vw, 1.5625rem); // 25/35
+  line-height: 1.4;
+  color: var(--content-secondary-partnership);
+}

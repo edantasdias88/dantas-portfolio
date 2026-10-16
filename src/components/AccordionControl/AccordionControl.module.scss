@@ -1,0 +1,23 @@
+.control {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid var(--glass-control-border);
+  background: var(--glass-control-elevated);
+  box-shadow: var(--glass-control-shadow);
+  backdrop-filter: blur(8px);
+  color: var(--content-service);
+  transition: transform var(--dur-slow) var(--ease-out), background-color var(--dur-base) var(--ease-out);
+
+  svg {
+    stroke: currentColor;
+    stroke-width: 1.5;
+  }
+
+  &[data-open='true'] {
+    transform: rotate(45deg);
+  }
+}

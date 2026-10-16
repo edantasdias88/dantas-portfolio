@@ -1,0 +1,127 @@
+@use 'styles/tokens' as *;
+
+// Figma 44:1293 — sem padding vertical próprio; bloco 1320 de largura (container sem gutter extra)
+.section {
+  background: var(--background-base);
+}
+
+.outer {
+  @include up(xl) {
+    padding-inline: 0;
+  }
+}
+
+// Figma 44:1294 — fundo #0a0b0b, raio 32, p40, gap 80
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--about-950);
+  color: #f5f5f5;
+
+  @include up(md) {
+    padding: var(--space-7);
+  }
+
+  @include up(lg) {
+    flex-direction: row;
+    gap: var(--space-10);
+  }
+}
+
+.text {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-10);
+}
+
+// Figma 44:1343 — 130×44, #202120, Bold 17
+.badge {
+  display: inline-grid;
+  place-items: center;
+  height: 44px;
+  padding-inline: 22px;
+  border-radius: var(--radius-pill);
+  background: #202120;
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: #f5f5f5;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.title {
+  font-size: clamp(1.5rem, 1.1rem + 1.1vw, 2rem); // 32/40
+  font-weight: 500;
+  line-height: 1.25;
+  color: #f5f5f5;
+
+  span {
+    display: block;
+  }
+}
+
+.titleLead {
+  white-space: pre-line;
+}
+
+.titleMuted {
+  color: #a4a4a4;
+}
+
+.support {
+  max-width: 24em;
+  font-size: 1rem;
+  line-height: 24px;
+  color: #b3b3b3;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-5);
+  font-size: clamp(1.125rem, 1rem + 0.4vw, 1.375rem);
+  font-weight: 500;
+  color: #f5f5f5;
+
+  img {
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  @include hover {
+    img {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.media {
+  flex-shrink: 0;
+
+  @include up(lg) {
+    width: calc(628 / 1240 * 100%);
+    max-width: 628px;
+  }
+}
+
+// Figma 44:1346 — 628×740, raio 28
+.media .portrait {
+  aspect-ratio: 628 / 740;
+  border-radius: var(--radius-photo);
+}

@@ -1,0 +1,21 @@
+.section {
+  min-height: 80svh;
+  display: flex;
+  align-items: center;
+}
+
+.code {
+  font-size: clamp(5rem, 18vw, 14rem);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: var(--display-ink);
+  -webkit-text-stroke: 1px var(--border-default);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}

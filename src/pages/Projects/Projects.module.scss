@@ -1,0 +1,85 @@
+@use 'styles/tokens' as *;
+
+.listSection {
+  padding-bottom: var(--section-y);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-11);
+}
+
+.link {
+  display: grid;
+  gap: var(--space-6);
+  border-radius: var(--radius-lg);
+
+  @include up(lg) {
+    grid-template-columns: 7fr 5fr;
+    gap: var(--space-10);
+    align-items: center;
+
+    .item:nth-child(even) & {
+      grid-template-columns: 5fr 7fr;
+
+      .media {
+        order: 2;
+      }
+    }
+  }
+
+  @include hover {
+    .media > * {
+      transform: scale(1.03);
+    }
+    .cta {
+      color: var(--accent-content);
+      gap: var(--space-3);
+    }
+  }
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+
+  > * {
+    transition: transform 900ms var(--ease-out);
+  }
+}
+
+.body {
+  display: grid;
+  gap: var(--space-4);
+  justify-items: start;
+}
+
+.title {
+  font-size: var(--fs-h3);
+  line-height: 1.1;
+  letter-spacing: var(--ls-snug);
+}
+
+.name {
+  display: block;
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--content-secondary);
+  letter-spacing: 0;
+  margin-bottom: var(--space-2);
+}
+
+.description {
+  color: var(--content-secondary);
+  max-width: 48ch;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 500;
+  transition: color var(--dur-base) var(--ease-out), gap var(--dur-base) var(--ease-out);
+}

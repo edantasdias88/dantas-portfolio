@@ -1,0 +1,27 @@
+.group {
+  display: inline-flex;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-default);
+}
+
+.option {
+  min-width: 48px;
+  min-height: 38px;
+  padding: 0 var(--space-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--content-secondary);
+  transition: background-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+
+  &:hover {
+    color: var(--content-primary);
+  }
+
+  &[aria-pressed='true'] {
+    background: var(--background-inverse);
+    color: var(--content-inverse);
+  }
+}

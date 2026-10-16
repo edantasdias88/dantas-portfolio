@@ -1,0 +1,164 @@
+@use 'styles/tokens' as *;
+
+// Figma 44:1391 — mesma estrutura de lista de Serviços, py 160, seda a 36%
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: var(--section-y);
+  background: var(--background-base);
+}
+
+.silk {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url('@/assets/images/silk.webp') left top / cover no-repeat;
+  opacity: var(--silk-opacity);
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-8);
+
+  @include up(lg) {
+    grid-template-columns: 327px minmax(0, 1fr);
+    gap: var(--space-7);
+    align-items: start;
+  }
+}
+
+.intro {
+  @include up(lg) {
+    position: sticky;
+    top: var(--space-10);
+  }
+}
+
+.eyebrow {
+  max-width: 224px;
+}
+
+.list {
+  min-width: 0;
+}
+
+.item[data-open='false'] {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.item[data-open='true'] + .item {
+  margin-top: var(--space-5);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.item[data-open='true']:not(:first-child) {
+  padding-top: var(--space-5);
+}
+
+.heading {
+  font: inherit;
+}
+
+.question {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 90px;
+  padding-block: var(--space-3);
+  text-align: left;
+  color: var(--content-service);
+
+  [data-open='true'] & {
+    min-height: 60px;
+    padding-block: 0 14px;
+  }
+
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+}
+
+.index {
+  flex-shrink: 0;
+  width: 57px;
+  font-size: 1.0625rem;
+
+  [data-open='true'] & {
+    width: 53px;
+  }
+
+  @include down(md) {
+    width: 32px;
+  }
+}
+
+.dash {
+  flex-shrink: 0;
+  width: 79px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 43px;
+    height: 1px;
+    background: var(--border-strong-cool);
+  }
+
+  [data-open='true'] & {
+    width: 68px;
+  }
+
+  @include down(md) {
+    display: none;
+  }
+}
+
+.qText {
+  flex: 1;
+  min-width: 0;
+  font-size: clamp(1.25rem, 0.95rem + 1vw, 1.8125rem);
+  line-height: 1.3;
+
+  [data-open='true'] & {
+    font-size: clamp(1.3125rem, 0.95rem + 1.1vw, 1.875rem);
+  }
+}
+
+.control {
+  margin-left: var(--space-4);
+}
+
+// Figma 44:1475 — pl 120, pb 32, linha vertical #b6b3ac
+.answer {
+  margin-left: 120px;
+  padding: 0 0 var(--space-6) var(--space-4);
+  border-left: 1px solid var(--border-warm);
+
+  p {
+    font-size: 1rem;
+    line-height: 23px;
+    color: var(--content-scroll-hint);
+  }
+
+  @include down(md) {
+    margin-left: 32px;
+  }
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-top: var(--space-6);
+}
+
+.tag {
+  padding: var(--space-2) 15px;
+  border-radius: var(--radius-pill);
+  background: var(--background-subtle);
+  font-size: 0.75rem;
+  line-height: 1.33;
+  color: var(--content-label);
+}

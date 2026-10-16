@@ -1,0 +1,108 @@
+@use 'styles/tokens' as *;
+
+.button {
+  --btn-bg: var(--background-inverse);
+  --btn-fg: var(--content-inverse);
+  --btn-border: transparent;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  min-height: 48px;
+  padding: 0 var(--space-5);
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  font-weight: 500;
+  font-size: var(--fs-body);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    background-color var(--dur-base) var(--ease-out),
+    color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    transform var(--dur-fast) var(--ease-out);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--accent-primary);
+    border-radius: inherit;
+    transform: translateY(101%);
+    transition: transform var(--dur-slow) var(--ease-out);
+  }
+
+  @include hover {
+    color: #fff;
+    &::before {
+      transform: none;
+    }
+    .icon {
+      transform: translate(2px, -2px);
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 3px;
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    cursor: not-allowed;
+    opacity: 0.45;
+    &::before {
+      display: none;
+    }
+  }
+}
+
+.lg {
+  min-height: 56px;
+  padding: 0 var(--space-6);
+  font-size: 1.0625rem;
+}
+
+.secondary {
+  --btn-bg: transparent;
+  --btn-fg: var(--content-primary);
+  --btn-border: var(--border-strong);
+}
+
+.ghost {
+  --btn-bg: transparent;
+  --btn-fg: var(--content-primary);
+  padding-inline: 0;
+  min-height: 40px;
+  border-radius: 0;
+  &::before {
+    display: none;
+  }
+  @include hover {
+    color: var(--accent-content);
+  }
+}
+
+.inverse {
+  --btn-bg: #fff;
+  --btn-fg: var(--neutral-950);
+}
+
+.label {
+  position: relative;
+}
+
+.icon {
+  display: inline-flex;
+  transition: transform var(--dur-base) var(--ease-out);
+}

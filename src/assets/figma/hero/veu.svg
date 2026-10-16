@@ -1,0 +1,17 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1997" height="1151" viewBox="0 0 1997 1151" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Voile transversal" filter="url(#filter0_f_0_20)">
+<path d="M32 32C297.585 96.62 690.19 193.55 893.421 225.86C1086.26 275.479 1258.31 295.096 1407.27 373.563C1620.89 485.494 1761.77 664.352 1965 805.132V1119H32V32Z" fill="url(#paint0_linear_0_20)"/>
+</g>
+<defs>
+<filter id="filter0_f_0_20" x="0" y="0" width="1997" height="1151" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="16" result="effect1_foregroundBlur_0_20"/>
+</filter>
+<linearGradient id="paint0_linear_0_20" x1="1191.8" y1="303.75" x2="1157.87" y2="786.439" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D2C9BE" stop-opacity="0.239216"/>
+<stop offset="0.45" stop-color="#FFF7EB" stop-opacity="0.121569"/>
+<stop offset="1" stop-color="#E8DFD6" stop-opacity="0.101961"/>
+</linearGradient>
+</defs>
+</svg>

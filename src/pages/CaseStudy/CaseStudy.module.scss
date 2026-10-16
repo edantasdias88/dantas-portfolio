@@ -1,0 +1,63 @@
+@use 'styles/tokens' as *;
+
+.name {
+  font-size: var(--fs-h4);
+  font-weight: 500;
+  color: var(--content-secondary);
+}
+
+.mediaWrap {
+  padding-bottom: var(--space-10);
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+
+  @include down(md) {
+    aspect-ratio: 4 / 5;
+  }
+}
+
+.facts {
+  display: grid;
+  gap: var(--space-6);
+
+  @include up(md) {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  dt {
+    font-size: var(--fs-eyebrow);
+    font-weight: 500;
+    letter-spacing: var(--ls-wide);
+    text-transform: uppercase;
+    color: var(--content-tertiary);
+    margin-bottom: var(--space-3);
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+.status {
+  display: grid;
+  gap: var(--space-5);
+  justify-items: start;
+  max-width: 60ch;
+}
+
+.next {
+  padding-bottom: var(--section-y);
+}
+
+.nextInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}

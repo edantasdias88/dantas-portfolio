@@ -1,0 +1,261 @@
+@use 'styles/tokens' as *;
+
+// Figma 18:613 — py 160, fundo de seda (image 3) com 36% de opacidade
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding-block: var(--section-y);
+  background: var(--background-base);
+}
+
+.silk {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url('@/assets/images/silk.webp') left top / cover no-repeat;
+  opacity: var(--silk-opacity);
+  pointer-events: none;
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-8);
+
+  @include up(lg) {
+    grid-template-columns: 327px minmax(0, 1fr);
+    gap: var(--space-7);
+    align-items: start;
+  }
+}
+
+.intro {
+  @include up(lg) {
+    position: sticky;
+    top: var(--space-10);
+  }
+}
+
+.list {
+  min-width: 0;
+}
+
+.item[data-open='false'] {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+// Primeiro item recolhido após o expandido ganha o divisor superior do Figma ("Outros serviços": pt 24 + divisor)
+.item[data-open='true'] + .item {
+  margin-top: var(--space-5);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.heading {
+  font: inherit;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 90px;
+  text-align: left;
+  color: var(--content-service);
+
+  [data-open='true'] & {
+    min-height: 60px;
+    align-items: flex-start;
+    padding-bottom: 14px;
+  }
+
+  @include hover {
+    .control {
+      background: var(--background-elevated);
+    }
+  }
+
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+}
+
+.index {
+  flex-shrink: 0;
+  width: 57px;
+  font-size: 1.0625rem;
+
+  [data-open='true'] & {
+    width: 53px;
+    line-height: 46px;
+  }
+
+  @include down(md) {
+    width: 36px;
+  }
+}
+
+.dash {
+  flex-shrink: 0;
+  width: 79px;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 43px;
+    height: 1px;
+    background: var(--border-strong-cool);
+  }
+
+  [data-open='true'] & {
+    width: 68px;
+    align-self: center;
+    margin-top: -14px;
+  }
+
+  @include down(md) {
+    width: 40px;
+
+    &::before {
+      width: 24px;
+    }
+  }
+}
+
+.name {
+  flex: 1;
+  min-width: 0;
+  font-size: clamp(1.375rem, 1rem + 1.2vw, 1.8125rem);
+  line-height: 1.3;
+
+  [data-open='true'] & {
+    font-size: clamp(1.4375rem, 1rem + 1.3vw, 1.875rem);
+    line-height: 46px;
+  }
+}
+
+.summary {
+  flex-shrink: 0;
+  width: 335px;
+  font-size: 0.875rem;
+  line-height: 19px;
+  color: var(--content-tertiary);
+
+  @include down(xl) {
+    display: none;
+  }
+}
+
+.control {
+  margin-left: max(var(--space-4), calc(95px - 46px));
+}
+
+// Figma 18:710 — card expandido
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-default);
+  background: var(--background-elevated-service);
+  padding: var(--space-8);
+
+  @include down(md) {
+    padding: var(--space-5);
+  }
+}
+
+.content {
+  position: relative;
+  max-width: 374px;
+}
+
+.category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--content-tertiary);
+}
+
+.headline {
+  padding-top: var(--space-3);
+  font-size: clamp(1.75rem, 1.3rem + 1.4vw, 2.25rem);
+  line-height: 1.14;
+  color: var(--content-service);
+
+  span {
+    display: block;
+  }
+}
+
+.muted {
+  color: var(--content-tertiary-heading);
+}
+
+.description {
+  padding-top: var(--space-4);
+  font-size: 1rem;
+  line-height: 23px;
+  color: var(--content-tertiary);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding-top: var(--space-6);
+  max-width: 300px;
+
+  @include down(md) {
+    max-width: none;
+  }
+}
+
+.tag {
+  padding: var(--space-2) 15px;
+  border-radius: var(--radius-pill);
+  background: var(--background-subtle);
+  font-size: 0.75rem;
+  line-height: 1.33;
+  color: var(--content-label);
+}
+
+// Imagem do iRuas (Figma 18:713: x 393, 561×459) + transição (18:715: x 301, 322 de largura)
+.media {
+  @include up(lg) {
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: calc(393 / 921 * 100%);
+    width: 561px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: left top;
+    }
+  }
+
+  @include down(lg) {
+    margin: calc(var(--space-5) * -1) calc(var(--space-5) * -1) var(--space-5);
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.fade {
+  @include up(lg) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc((301 - 393) * 1px);
+    width: 322px;
+    background: linear-gradient(
+      90deg,
+      var(--background-elevated-service) 28.638%,
+      color-mix(in srgb, var(--background-elevated-service) 85%, transparent) 57.511%,
+      transparent 100%
+    );
+  }
+}

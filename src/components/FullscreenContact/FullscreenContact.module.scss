@@ -1,0 +1,114 @@
+@use 'styles/tokens' as *;
+
+.dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: var(--background-base);
+  color: var(--content-primary);
+}
+
+.scroller {
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding-bottom: max(var(--space-8), env(safe-area-inset-bottom));
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+}
+
+.brand {
+  width: auto;
+  height: 24px;
+  filter: var(--logo-filter);
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 48px;
+  padding-left: var(--space-4);
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+
+  &:hover .closeIcon {
+    background: var(--accent-primary);
+    transform: rotate(90deg);
+  }
+}
+
+.closeIcon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--background-inverse);
+  color: var(--content-inverse);
+  transition: background-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+.closeLabel {
+  @include down(sm) {
+    display: none;
+  }
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-8);
+  padding-top: clamp(var(--space-6), 6vh, var(--space-11));
+
+  @include up(lg) {
+    grid-template-columns: 5fr 7fr;
+    gap: var(--space-11);
+  }
+}
+
+.intro {
+  display: grid;
+  align-content: start;
+  gap: var(--space-4);
+}
+
+.title {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--ls-tight);
+}
+
+.description {
+  font-size: var(--fs-lead);
+  color: var(--content-secondary);
+  max-width: 36ch;
+}
+
+.direct {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.directLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 44px;
+  font-size: var(--fs-lead);
+  border-bottom: 1px solid transparent;
+  transition: color var(--dur-base) var(--ease-out);
+
+  &:hover {
+    color: var(--accent-content);
+  }
+}
+
+.formWrap {
+  min-width: 0;
+}

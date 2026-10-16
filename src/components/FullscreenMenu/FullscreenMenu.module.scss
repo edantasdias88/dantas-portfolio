@@ -1,0 +1,162 @@
+@use 'styles/tokens' as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 150;
+  color: var(--content-primary);
+}
+
+// Liquid Glass: desfoque forte do conteúdo de fundo, saturação e um brilho de borda sutil.
+.glass {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 80% at 100% 0%, var(--accent-subtle), transparent 60%),
+    linear-gradient(180deg, var(--glass-highlight), transparent 40%),
+    var(--glass-bg);
+  backdrop-filter: blur(28px) saturate(170%);
+  box-shadow: inset 0 1px 0 var(--glass-border);
+}
+
+.scroller {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+  flex-shrink: 0;
+}
+
+.brand {
+  width: auto;
+  height: 24px;
+  filter: var(--logo-filter);
+}
+
+.topActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 44px;
+  padding-left: var(--space-3);
+  border-radius: var(--radius-pill);
+  font-weight: 500;
+  font-size: var(--fs-sm);
+
+  &:hover .closeIcon {
+    background: var(--accent-primary);
+    color: #fff;
+    transform: rotate(90deg);
+  }
+}
+
+.closeLabel {
+  @include down(sm) {
+    display: none;
+  }
+}
+
+.closeIcon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--background-inverse);
+  color: var(--content-inverse);
+  transition: background-color var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+.nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-block: var(--space-6);
+}
+
+.list {
+  width: 100%;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding-block: clamp(10px, 1.6vh, 20px);
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: clamp(2rem, 1.2rem + 3.6vw, 4.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: var(--ls-tight);
+  transition: color var(--dur-base) var(--ease-out), padding var(--dur-base) var(--ease-out);
+
+  @include hover {
+    color: var(--accent-content);
+    padding-left: var(--space-3);
+    .linkArrow {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+}
+
+.index {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--content-tertiary);
+  min-width: 2ch;
+  align-self: flex-start;
+  margin-top: 0.6em;
+}
+
+.linkLabel {
+  flex: 1;
+}
+
+.linkArrow {
+  opacity: 0;
+  transform: translate(-8px, 8px);
+  transition: opacity var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out);
+}
+
+.bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding-bottom: max(var(--space-6), env(safe-area-inset-bottom));
+  flex-shrink: 0;
+}
+
+.setting {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.settingLabel {
+  font-size: var(--fs-sm);
+  color: var(--content-secondary);
+}

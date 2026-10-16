@@ -1,0 +1,271 @@
+@use 'styles/tokens' as *;
+
+.section {
+  position: relative;
+}
+
+.wrapper {
+  position: relative;
+}
+
+// Figma 21:1149 — 1936×1080 (100% da viewport)
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--background-base);
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 700ms var(--ease-out), visibility 0s linear 700ms;
+
+  &[data-active='true'] {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 700ms var(--ease-out), visibility 0s;
+    z-index: 1;
+
+    .col > * {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+.media {
+  position: absolute;
+  inset: -8% 0;
+  will-change: transform;
+}
+
+// Figma 21:1152 — 1484 de largura, -84.79deg: transparente 3.1% → background/base 78.22%
+.overlay {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(1484 / 1936 * 100%);
+  background: linear-gradient(-84.79deg, rgba(var(--project-overlay), 0) 3.111%, rgba(var(--project-overlay), 1) 78.22%);
+
+  @include down(lg) {
+    width: 100%;
+    background: linear-gradient(90deg, rgba(var(--project-overlay), 0.96) 0%, rgba(var(--project-overlay), 0.75) 55%, rgba(var(--project-overlay), 0) 100%);
+  }
+}
+
+.content {
+  position: relative;
+
+  @include between-md-xl {
+    padding-left: 140px;
+  }
+}
+
+// Figma 21:1173 — coluna de 393px
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 393px;
+
+  > * {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 600ms var(--ease-out), transform 700ms var(--ease-out);
+  }
+
+  @for $i from 1 through 4 {
+    > *:nth-child(#{$i}) {
+      transition-delay: #{100 + $i * 60}ms;
+    }
+  }
+}
+
+.label {
+  font-size: 0.875rem;
+  line-height: 20px;
+  color: var(--content-tertiary-project);
+}
+
+.title {
+  margin-top: var(--space-2);
+  max-width: 288px;
+  font-size: clamp(2rem, 1.6rem + 1.2vw, 2.5rem);
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: var(--content-project);
+  white-space: pre-line;
+  text-wrap: initial;
+}
+
+.description {
+  margin-top: var(--space-2);
+  font-size: 1.125rem;
+  line-height: 26px;
+  color: var(--content-secondary-cool);
+}
+
+.caseLink {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  margin-top: var(--space-6);
+  min-height: 28px;
+  font-size: 1rem;
+  line-height: 24px;
+  color: var(--content-secondary-cool);
+  transition: color var(--dur-base) var(--ease-out);
+
+  img {
+    transition: transform var(--dur-base) var(--ease-out);
+
+    :global([data-theme='dark']) & {
+      filter: invert(1);
+    }
+  }
+
+  @include hover {
+    color: var(--accent-primary);
+
+    img {
+      transform: translateX(3px);
+    }
+  }
+}
+
+// Figma 21:1153 — navegação lateral, x 40, centralizada verticalmente
+.side {
+  position: absolute;
+  z-index: 2;
+  left: 40px;
+  top: 50%;
+  translate: 0 -50%;
+
+  @include down(lg) {
+    left: var(--gutter);
+  }
+}
+
+.sideTitle {
+  padding-block: var(--space-4);
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 26px;
+  color: var(--content-project);
+}
+
+.sideItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  height: 80px;
+  text-align: left;
+  font-size: 1.125rem;
+  line-height: 26px;
+  color: var(--content-tertiary-project);
+  transition: color var(--dur-base) var(--ease-out);
+
+  &[aria-current='true'] {
+    font-weight: 700;
+    color: var(--accent-primary);
+  }
+
+  @include hover {
+    color: var(--content-project);
+  }
+
+  &[aria-current='true']:hover {
+    color: var(--accent-primary);
+  }
+}
+
+// Linha 2×80 + marcador (cheio no ativo, vazado nos demais) — Figma 21:1157
+.sideMarker {
+  position: relative;
+  width: 16px;
+  height: 80px;
+  margin-inline: -7px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--border-project-nav);
+    transition: background-color var(--dur-base) var(--ease-out);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0.5px;
+    top: 32.5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid var(--border-project-nav);
+    background: var(--background-base);
+    transition: all var(--dur-base) var(--ease-out);
+  }
+
+  [aria-current='true'] & {
+    &::before {
+      background: var(--accent-primary);
+    }
+
+    &::after {
+      left: 0;
+      top: 32px;
+      width: 16px;
+      height: 16px;
+      border-color: var(--accent-primary);
+      background: var(--accent-primary);
+    }
+  }
+}
+
+.sideLabel {
+  @include down(lg) {
+    @include visually-hidden;
+  }
+}
+
+// ---------- Mobile ----------
+.stacked {
+  padding-block: var(--section-y) 0;
+  background: var(--background-base);
+}
+
+.stackedTitle {
+  margin-bottom: var(--space-8);
+}
+
+.stackedList {
+  display: grid;
+}
+
+.card {
+  display: grid;
+}
+
+.cardMedia {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-block: var(--space-6) var(--space-10);
+}

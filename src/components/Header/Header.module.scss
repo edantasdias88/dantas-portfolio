@@ -1,0 +1,100 @@
+@use 'styles/tokens' as *;
+
+.header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 50;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-h);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  border-radius: var(--radius-xs);
+}
+
+.logo {
+  width: 229px;
+  height: auto;
+  filter: var(--logo-filter);
+
+  @include down(sm) {
+    width: 176px;
+  }
+}
+
+// Figma 18:323 — 102×46, borda 2px branca, gradiente de vidro, sombra Site/Header/Shadow
+.nav {
+  display: flex;
+  align-items: center;
+  height: 46px;
+  padding: 0 4px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--glass-border);
+  background: linear-gradient(
+    90deg,
+    var(--glass-header-highlight) 0%,
+    var(--glass-header-surface) 50%,
+    var(--glass-header-reflection) 100%
+  );
+  box-shadow: var(--glass-header-shadow);
+  backdrop-filter: blur(16px);
+}
+
+.navButton {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 42px;
+  border-radius: var(--radius-pill);
+  color: var(--content-primary);
+  transition: color var(--dur-base) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+
+  @include hover {
+    color: var(--accent-primary);
+  }
+
+  &:active {
+    transform: scale(0.92);
+  }
+
+  &:focus-visible {
+    outline-offset: -2px;
+  }
+
+  svg {
+    stroke-width: 1.4;
+  }
+}
+
+.divider {
+  width: 1px;
+  height: 30px;
+  margin-inline: 2px;
+  background: var(--glass-divider);
+}
+
+// Figma 18:327 — círculo 24 (glass/control-surface) + 3 linhas
+.menuIcon {
+  display: grid;
+  place-content: center;
+  gap: 3.7px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--glass-control-surface);
+
+  span {
+    display: block;
+    width: 12px;
+    height: 1.8px;
+    background: currentColor;
+  }
+}

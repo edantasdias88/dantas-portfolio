@@ -1,0 +1,464 @@
+{
+  "meta": {
+    "siteName": "Edilson Dantas",
+    "home": {
+      "title": "Edilson Dantas — Design, strategy and technology",
+      "description": "Digital product designer. I bring strategy, design and technology together to turn complex problems into simple, useful and human products."
+    },
+    "projects": {
+      "title": "Projects — Edilson Dantas",
+      "description": "Case studies in digital products, mobile experiences and design systems by Edilson Dantas."
+    },
+    "about": {
+      "title": "About me — Edilson Dantas",
+      "description": "Learn about Edilson Dantas's background, way of thinking and approach to work."
+    },
+    "contact": {
+      "title": "Contact — Edilson Dantas",
+      "description": "Tell me a little about your project and let's see how I can help."
+    },
+    "notFound": {
+      "title": "Page not found — Edilson Dantas",
+      "description": "The page you're looking for doesn't exist or has moved."
+    }
+  },
+  "a11y": {
+    "skipToContent": "Skip to content",
+    "home": "Edilson Dantas — home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNav": "Main navigation",
+    "footerNav": "Footer navigation",
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme",
+    "languageSwitch": "Language",
+    "closeContact": "Close contact",
+    "backToTop": "Back to top",
+    "opensInNewTab": "(opens in a new tab)",
+    "slide": "Project {{current}} of {{total}}",
+    "goToSlide": "Go to project {{index}}: {{name}}",
+    "carouselDots": "Card position",
+    "goToCard": "Go to card {{index}}",
+    "decorative": "Illustrative image"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "aboutMe": "About me",
+    "projects": "Projects",
+    "services": "Services",
+    "process": "Process",
+    "designSystem": "Design System",
+    "contact": "Contact",
+    "menu": "Menu",
+    "close": "Close",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark",
+    "language": "Language"
+  },
+  "common": {
+    "cta": "Let's talk",
+    "viewCase": "View full case",
+    "viewAllProjects": "View all projects",
+    "backHome": "Back to home",
+    "nextProject": "Next project"
+  },
+  "hero": {
+    "eyebrow": "Design · Strategy · Technology",
+    "title": "Design for real products.",
+    "subtitle": "I turn complex problems into digital experiences that are simple, useful and human.",
+    "scroll": "Scroll\nto explore",
+    "titleLead": "Design for",
+    "titleMuted": "real products."
+  },
+  "help": {
+    "eyebrow": "How I can help",
+    "title": "I design digital experiences for\npeople who want to turn good ideas into results.",
+    "drag": "drag",
+    "items": [
+      {
+        "title": "Get an idea\noff the ground",
+        "description": "Turn an opportunity into a digital product with direction and purpose."
+      },
+      {
+        "title": "Build something\nthat stands out",
+        "description": "Create a digital presence with personality and a consistent experience."
+      },
+      {
+        "title": "Improve an\nexisting product",
+        "description": "Find the problems and make the experience simpler, clearer and more efficient."
+      },
+      {
+        "title": "Build a\nstrong brand",
+        "description": "Bring strategy, visual identity and experience together into one coherent brand."
+      },
+      {
+        "title": "Find new\nopportunities",
+        "description": "Remove friction and create experiences that help people move forward."
+      },
+      {
+        "title": "Scale with a\nDesign System",
+        "description": "Create reusable patterns to gain consistency and speed up product evolution."
+      },
+      {
+        "title": "Make design a differentiator",
+        "description": "Turn design decisions into value that customers and the business can see."
+      },
+      {
+        "title": "Deliver\nefficiently",
+        "description": "Bring design and development closer to cut noise and ease implementation."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Services",
+    "title": "What I can do for your",
+    "description": "From early direction to the final experience, I combine strategy, design and technology to build solutions that make sense for people and for the business.",
+    "related": "See related projects",
+    "items": {
+      "products": {
+        "title": "Digital Products",
+        "description": "I design transformative digital experiences for every industry, focused on your business goals, excellent usability, striking visuals and digital best practices.",
+        "tags": [
+          "Research",
+          "UX",
+          "UI",
+          "Prototyping",
+          "SaaS",
+          "Systems",
+          "Platforms",
+          "Dashboards",
+          "Mobile apps",
+          "Wireframes"
+        ],
+        "summary": "Apps, systems and platforms focused on usability and business.",
+        "category": "Apps, systems and platforms",
+        "headline": "High-level",
+        "headlineMuted": "interfaces."
+      },
+      "websites": {
+        "title": "Websites",
+        "description": "I create websites that combine clarity, visual identity and an easy browsing experience. Every decision aims to communicate the brand's value and guide visitors to the action that matters.",
+        "tags": [
+          "UX/UI",
+          "Web Design",
+          "Responsive",
+          "Conversion"
+        ],
+        "summary": "Corporate websites and digital products focused on experience and results.",
+        "category": "Corporate websites and landing pages",
+        "headline": "A digital presence",
+        "headlineMuted": "that drives action."
+      },
+      "brands": {
+        "title": "Brands",
+        "description": "I build visual identities that translate a brand's positioning into a consistent visual language, ready to work across every touchpoint.",
+        "tags": [
+          "Brand strategy",
+          "Visual identity",
+          "Visual systems"
+        ],
+        "summary": "Visual identities and brand systems for digital products and companies.",
+        "category": "Identity and visual systems",
+        "headline": "Brands with",
+        "headlineMuted": "personality."
+      },
+      "audit": {
+        "title": "UX/UI audit",
+        "description": "I review interfaces and journeys to find usability issues, inconsistencies and opportunities. The audit turns observations into prioritized recommendations that guide how the product evolves.",
+        "tags": [
+          "Usability",
+          "Heuristics",
+          "Accessibility",
+          "Improvement plan"
+        ],
+        "summary": "A strategic review of the experience to uncover opportunities and drive impact.",
+        "category": "Experience diagnosis",
+        "headline": "Clarity to",
+        "headlineMuted": "evolve."
+      },
+      "designSystems": {
+        "title": "Design Systems",
+        "description": "I structure design systems with tokens, components and reusable patterns that help teams stay consistent, reduce rework and evolve products more efficiently.",
+        "tags": [
+          "Design Tokens",
+          "Components",
+          "Documentation",
+          "Governance"
+        ]
+      },
+      "frontend": {
+        "title": "Front-end development",
+        "description": "I turn layouts and prototypes into functional, responsive interfaces that stay true to the design. Keeping design and development close preserves the visual intent through implementation.",
+        "tags": [
+          "Front-end",
+          "Responsive interfaces",
+          "UI implementation"
+        ]
+      }
+    },
+    "titleMuted": "product.",
+    "open": "Open",
+    "close": "Close"
+  },
+  "process": {
+    "eyebrow": "Process",
+    "title": "A clear process to go further.",
+    "description": "More than a set of steps, it's a way of thinking. A flexible, collaborative process focused on outcomes.",
+    "steps": [
+      {
+        "title": "Understand",
+        "description": "I start with a strategic alignment to understand your business, context and goals. At this stage, I define the scope and run research that grounds decisions throughout the project."
+      },
+      {
+        "title": "Structure",
+        "description": "I organize information, priorities and possibilities to set a clear direction before moving forward."
+      },
+      {
+        "title": "Design",
+        "description": "I turn strategy into flows, interfaces and visual systems, validating decisions along the way."
+      },
+      {
+        "title": "Deliver",
+        "description": "I prepare the solution for implementation, help with the adjustments needed and take care of the details that make the difference."
+      }
+    ],
+    "titleLead": "A clear process",
+    "titleMuted": "to go further.",
+    "supportLead": "More than a set of steps, it's a way of thinking.",
+    "supportMuted": "A flexible, collaborative process focused on outcomes."
+  },
+  "projects": {
+    "eyebrow": "Projects",
+    "title": "Projects",
+    "items": {
+      "caa": {
+        "name": "CAA",
+        "category": "Real estate platform · Digital product",
+        "title": "Homes\nthat connect people.",
+        "description": "A platform that brings together those who are searching and those who are offering. More opportunities for agents, more achievements for people.",
+        "tags": [
+          "Product Design",
+          "UX/UI",
+          "Web platform"
+        ],
+        "navName": "CAA"
+      },
+      "iruas": {
+        "name": "iRuas",
+        "category": "Real estate · Mobile experience",
+        "title": "A new way to discover homes.",
+        "description": "A property search experience that explores different ways to find your next place to live, connecting people with the homes and neighborhoods that make sense for them.",
+        "tags": [
+          "Mobile",
+          "UX/UI",
+          "Search & discovery"
+        ],
+        "navName": "iRuas"
+      },
+      "dantasDs": {
+        "name": "Dantas DS",
+        "category": "Design System · Scalability",
+        "title": "Consistent design, ready to evolve.",
+        "description": "A design system built to connect foundations, tokens and components, bringing visual consistency and a reusable base for different products and brands.",
+        "tags": [
+          "Design Tokens",
+          "Components",
+          "Multi-brand"
+        ],
+        "navName": "Dantas"
+      }
+    }
+  },
+  "working": {
+    "eyebrow": "The partnership",
+    "title": "What it's like to work with me",
+    "description": "A good outcome depends as much on design decisions as on how we work together.",
+    "items": [
+      {
+        "title": "Fast pace, no fluff",
+        "description": "I work with focus and speed, keeping quality high and meeting the agreed deadlines."
+      },
+      {
+        "title": "Transparent communication",
+        "description": "I keep you in the loop at every stage, open to questions, suggestions and alignment."
+      },
+      {
+        "title": "Tailored collaboration",
+        "description": "I work independently and, when the project calls for it, collaborate with trusted professionals."
+      },
+      {
+        "title": "Quality in every detail",
+        "description": "I care for the experience from start to finish, refining solutions until they meet the defined goals."
+      }
+    ]
+  },
+  "about": {
+    "eyebrow": "About me",
+    "title": "Driven by creativity and the desire to turn ideas into experiences that make a difference.",
+    "description": "I see design as a way to connect people, technology and real goals. My work goes beyond the interface: it means understanding problems, shaping possibilities and turning ideas into coherent digital experiences.",
+    "cta": "Explore my background",
+    "imageAlt": "Portrait of Edilson Dantas",
+    "titleLead": "Driven by creativity\nand the desire to turn ideas into experiences that",
+    "titleMuted": "make a difference.",
+    "support": "Through design, technology and a people-centered vision."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Can I clear up",
+    "description": "I've gathered the most common questions about my work here. If you can't find what you're looking for, just reach out.",
+    "items": [
+      {
+        "q": "How does design benefit my business?",
+        "a": "Good design helps attract more users, improve the experience, increase conversion and strengthen your brand. More than aesthetics, design is a strategic tool to solve real problems and drive results for your business.",
+        "tags": [
+          "More users",
+          "Better experience",
+          "Higher conversion",
+          "Stronger brand",
+          "Real results"
+        ]
+      },
+      {
+        "q": "How much does it cost to hire you for a project?",
+        "a": "The investment depends on the scope, complexity and deliverables. Once I understand your context and goals, I can propose a suitable scope and share an estimate."
+      },
+      {
+        "q": "How does the work process go?",
+        "a": "We start by understanding the problem and the project's goals. Then we structure the solution, develop the design proposals and prepare the handoff. The process adapts to the context, the scope and the people involved."
+      },
+      {
+        "q": "How long does it take to finish a project?",
+        "a": "Timelines vary with complexity, deliverables and review rounds. Once the scope is set, we agree on a realistic schedule with the main milestones and expectations."
+      },
+      {
+        "q": "Do you also do development?",
+        "a": "Yes. Besides design, I also do front-end development, bringing visual design and implementation closer together. How involved I am in development depends on each project's needs and scope."
+      },
+      {
+        "q": "When can you start?",
+        "a": "Availability depends on ongoing projects and the scope requested. Get in touch so we can talk about your needs, timeline and next steps."
+      }
+    ],
+    "titleMuted": "any questions?"
+  },
+  "finalCta": {
+    "title": "Let's get your next idea off the ground.",
+    "support": "Tell me a little about your project and let's see how I can help.",
+    "titleLead": "Let's get your\nnext idea",
+    "titleMuted": "off the ground."
+  },
+  "footer": {
+    "navigation": "Navigation",
+    "services": "Services",
+    "contact": "Direct contact",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "signature": "Digital product design and technology.",
+    "rights": "© {{year}} Edilson Dantas. All rights reserved.",
+    "backToTop": "Back to top",
+    "sendMessage": "Send a message",
+    "serviceLinks": [
+      "Product Design",
+      "UI/UX Design",
+      "Design System",
+      "Development"
+    ]
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Let's talk.",
+    "description": "Tell me a little about your project and let's see how I can help.",
+    "direct": "Direct contact",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "What should I call you?",
+      "email": "Email",
+      "emailPlaceholder": "you@company.com",
+      "company": "Company (optional)",
+      "companyPlaceholder": "Company name",
+      "type": "Project type",
+      "types": {
+        "product": "Digital product",
+        "website": "Website",
+        "brand": "Brand",
+        "audit": "UX/UI audit",
+        "designSystem": "Design System",
+        "other": "Other"
+      },
+      "message": "Message",
+      "messagePlaceholder": "Tell me about the context, goals and timeline.",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "required": "required"
+    },
+    "errors": {
+      "nameRequired": "Please enter your name.",
+      "emailRequired": "Please enter your email.",
+      "emailInvalid": "Please enter a valid email, like name@company.com.",
+      "messageRequired": "Please write a message.",
+      "messageShort": "Your message needs at least 20 characters.",
+      "summary": "Please review the highlighted fields before sending.",
+      "network": "We couldn't send your message right now. Check your connection and try again.",
+      "server": "The sending service returned an error. Please try again in a few minutes."
+    },
+    "success": {
+      "title": "Message sent.",
+      "description": "Thanks for reaching out. I'll read your message and get back to you soon.",
+      "again": "Send another message"
+    },
+    "notConfigured": "Message sending hasn't been set up on this site yet. The form will be enabled as soon as the sending service is connected."
+  },
+  "projectsPage": {
+    "eyebrow": "Projects",
+    "title": "Work that brings strategy, design and technology together.",
+    "description": "A selection of digital product, mobile experience and design system projects."
+  },
+  "case": {
+    "overview": "Overview",
+    "category": "Category",
+    "focus": "Focus",
+    "inPreparation": "Full case study in progress",
+    "inPreparationText": "This case study is being documented with the role I played, the decisions made and the project's outcomes. In the meantime, get in touch to see the work in detail.",
+    "sections": {
+      "context": "Context",
+      "role": "My role",
+      "decisions": "Decisions",
+      "results": "Outcomes"
+    },
+    "allProjects": "All projects"
+  },
+  "aboutPage": {
+    "eyebrow": "About me",
+    "title": "Design with strategy. Technology with purpose.",
+    "intro": "I bring strategy, design and technology together to turn complex problems into digital products and experiences that are simple, useful and relevant.",
+    "valueTitle": "What I bring to every project",
+    "values": [
+      {
+        "title": "For companies",
+        "description": "Understanding complex problems, working with a product mindset and contributing to decisions that go beyond the interface."
+      },
+      {
+        "title": "For freelance clients",
+        "description": "Turning needs and ideas into concrete digital experiences."
+      },
+      {
+        "title": "For both",
+        "description": "Combining strategic thinking, visual care, collaboration and technical understanding."
+      }
+    ],
+    "skillsTitle": "Areas of work",
+    "processTitle": "How I think about a project",
+    "imageAlt": "Portrait of Edilson Dantas"
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "Let's get your next idea off the ground."
+  },
+  "notFound": {
+    "code": "404",
+    "title": "This page doesn't exist.",
+    "description": "The address may have changed or be incorrect. Head back home or take a look at the projects."
+  }
+}

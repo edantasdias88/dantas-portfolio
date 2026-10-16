@@ -1,0 +1,42 @@
+@use 'styles/tokens' as *;
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 var(--space-1);
+  border-radius: var(--radius-pill);
+}
+
+.track {
+  position: relative;
+  width: 56px;
+  height: 32px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-default);
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  transition: border-color var(--dur-base) var(--ease-out);
+
+  .toggle:hover & {
+    border-color: var(--border-strong);
+  }
+}
+
+.thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  display: grid;
+  place-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--background-inverse);
+  color: var(--content-inverse);
+  transition: transform var(--dur-base) var(--ease-out);
+
+  [data-dark='true'] & {
+    transform: translateX(24px);
+  }
+}

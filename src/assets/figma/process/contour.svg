@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="579.2" height="372.529" viewBox="0 0 579.2 372.529" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Contour du pli" d="M282.6 0.528696C342.456 32.6465 390.945 63.1065 436.249 92.1394M436.249 92.1394C484.042 122.767 528.29 151.807 578.6 179.529M436.249 92.1394C428.618 83.7673 420.214 76.5008 410.6 70.5287M436.249 92.1394C481.004 141.244 499.147 228.386 578.6 315.529M0.6 0.528696V0.529696M578.6 372.529V372.528" stroke-width="1.2" stroke="url(#paint0_linear_0_9)"/>
+<defs>
+<linearGradient id="paint0_linear_0_9" x1="0.6" y1="0.528696" x2="578.6" y2="0.528696" gradientUnits="userSpaceOnUse">
+<stop stop-color="#3A84CD" stop-opacity="0.4"/>
+<stop offset="0.68" stop-color="#82BBFF"/>
+<stop offset="1" stop-color="white"/>
+</linearGradient>
+</defs>
+</svg>

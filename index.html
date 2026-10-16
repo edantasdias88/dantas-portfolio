@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Edilson Dantas — Design, estratégia e tecnologia</title>
+    <meta name="description" content="Portfólio de Edilson Dantas, designer de produtos digitais. Conecto estratégia, design e tecnologia para criar produtos simples, úteis e humanos." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Edilson Dantas" />
+    <meta property="og:title" content="Edilson Dantas — Design, estratégia e tecnologia" />
+    <meta property="og:description" content="Design para produtos reais. Conecto estratégia, design e tecnologia para criar produtos simples, úteis e humanos." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script>
+      // Aplica tema e idioma antes do primeiro paint para evitar flashes.
+      (function () {
+        var d = document.documentElement;
+        var theme = null, lang = null;
+        try { theme = localStorage.getItem('ed-theme'); lang = localStorage.getItem('ed-lang'); } catch (e) {}
+        if (theme !== 'light' && theme !== 'dark') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        d.dataset.theme = theme;
+        d.style.colorScheme = theme;
+        if (lang !== 'pt-BR' && lang !== 'en') {
+          var nav = (navigator.languages && navigator.languages[0]) || navigator.language || '';
+          lang = /^en/i.test(nav) ? 'en' : 'pt-BR';
+        }
+        d.lang = lang;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

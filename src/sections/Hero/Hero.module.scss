@@ -1,0 +1,287 @@
+@use 'styles/tokens' as *;
+
+// Figma 13:232 — seção 1936×1096, fundo background/hero-warm
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
+  padding-top: var(--header-h);
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--background-hero);
+
+  @include down(md) {
+    min-height: max(100svh, 680px);
+  }
+}
+
+// ---------- Arte ----------
+.art {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+// O frame mantém a proporção do Figma e cobre a seção (como object-fit: cover, ancorado à esquerda/topo).
+.frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max(100%, calc(100svh * 1936 / 1095));
+  aspect-ratio: 1936 / 1095;
+  min-height: 100%;
+
+  @include down(md) {
+    // No mobile, a dobra de seda (lado direito do frame) fica visível atrás do texto.
+    left: auto;
+    right: 0;
+    width: calc(max(100svh, 680px) * 1936 / 1095);
+  }
+}
+
+.luminous {
+  position: absolute;
+  left: 0;
+  top: calc(24 / 1095 * 100%);
+  width: calc(1930 / 1936 * 100%);
+  height: calc(1086 / 1095 * 100%);
+  background: linear-gradient(90deg, var(--hero-from) 0%, var(--hero-via) 50%, var(--hero-to) 100%);
+}
+
+.layers {
+  position: absolute;
+  inset: 0;
+  opacity: var(--hero-art-opacity);
+}
+
+.layer {
+  position: absolute;
+  max-width: none;
+  user-select: none;
+  transform-origin: 60% 40%;
+}
+
+// "Lumière de lecture" — clareia a área do texto
+.reading {
+  position: absolute;
+  left: 0;
+  top: calc(24 / 1095 * 100%);
+  width: calc(947 / 1936 * 100%);
+  height: calc(1086 / 1095 * 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(var(--hero-reading), 0.76) 20%,
+    rgba(var(--hero-reading), 0.4) 77.6%,
+    rgba(var(--hero-reading), 0) 100%
+  );
+}
+
+.signature {
+  position: absolute;
+  max-width: none;
+
+  :global([data-theme='dark']) & {
+    filter: invert(1);
+    opacity: 0.35;
+  }
+}
+
+.signatureFade {
+  position: absolute;
+  left: 0;
+  top: calc(787 / 1095 * 100%);
+  width: calc(1930 / 1936 * 100%);
+  height: calc(323 / 1095 * 100%);
+  background: linear-gradient(180deg, rgba(var(--hero-fade), 0) 0%, rgba(var(--hero-fade), 0.46) 100%);
+}
+
+// Movimento sutil e contínuo das curvas (ondulação lenta)
+.drift1 {
+  animation: silk-1 18s var(--ease-in-out) infinite alternate;
+}
+
+.drift2 {
+  animation: silk-2 24s var(--ease-in-out) infinite alternate;
+}
+
+.drift3 {
+  animation: silk-3 30s var(--ease-in-out) infinite alternate;
+}
+
+@keyframes silk-1 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) skewX(0deg);
+  }
+  50% {
+    transform: translate3d(-0.6%, 1.2%, 0) rotate(-0.6deg) skewX(0.6deg);
+  }
+  100% {
+    transform: translate3d(0.4%, -0.8%, 0) rotate(0.5deg) skewX(-0.4deg);
+  }
+}
+
+@keyframes silk-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scaleY(1);
+  }
+  50% {
+    transform: translate3d(0.5%, -0.9%, 0) scaleY(1.015);
+  }
+  100% {
+    transform: translate3d(-0.4%, 0.7%, 0) scaleY(0.99);
+  }
+}
+
+@keyframes silk-3 {
+  from {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate3d(-1.5%, 2%, 0);
+    opacity: 0.8;
+  }
+}
+
+@include reduced-motion {
+  .drift1,
+  .drift2,
+  .drift3 {
+    animation: none;
+  }
+}
+
+// ---------- Conteúdo (Figma 18:305, largura 751) ----------
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-block: var(--space-9) var(--space-11);
+}
+
+.title {
+  max-width: 751px;
+  padding-top: var(--space-4);
+  font-size: var(--fs-h1);
+  font-weight: 400;
+  line-height: var(--lh-tight);
+  letter-spacing: -2px;
+  color: var(--content-primary);
+
+  span {
+    display: block;
+  }
+
+  @include down(md) {
+    letter-spacing: -1px;
+  }
+}
+
+.titleMuted {
+  color: var(--content-secondary-heading);
+}
+
+.description {
+  display: grid;
+  gap: var(--space-5);
+  padding-top: var(--space-6);
+
+  &::before {
+    content: '';
+    width: 77px;
+    height: 1.5px;
+    background: var(--border-strong);
+  }
+
+  p {
+    max-width: 22ch;
+    font-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+    line-height: 1.273;
+    color: var(--content-secondary);
+
+    @include up(md) {
+      max-width: 523px;
+      width: 15.5em;
+    }
+  }
+}
+
+.action {
+  padding-top: var(--space-6);
+}
+
+// Figma 18:314 — 289×65, pílula brand com borda branca translúcida
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  width: 289px;
+  height: 65px;
+  padding: 0 28px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.59);
+  background: var(--accent-primary);
+  color: var(--content-on-brand);
+  font-size: 1.1875rem;
+  line-height: 1;
+  transition: background-color var(--dur-base) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+
+  img {
+    transition: transform var(--dur-base) var(--ease-out);
+  }
+
+  @include hover {
+    background: var(--accent-hover);
+
+    img {
+      transform: translateX(4px);
+    }
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  @include down(sm) {
+    width: 100%;
+    max-width: 289px;
+    height: 58px;
+  }
+}
+
+// Figma 13:266 — x 114 no frame de 1936, base a 56px
+.scroll {
+  position: absolute;
+  left: max(var(--gutter), calc(114 / 1936 * 100%));
+  bottom: 56px;
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-5);
+  font-size: 10px;
+  line-height: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  white-space: pre-line;
+  color: var(--content-scroll-hint);
+  transition: color var(--dur-base) var(--ease-out);
+
+  &:hover {
+    color: var(--content-primary);
+  }
+
+  @include down(md) {
+    bottom: var(--space-6);
+  }
+}
+
+.repere {
+  :global([data-theme='dark']) & {
+    filter: invert(1);
+  }
+}
