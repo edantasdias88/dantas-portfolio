@@ -7,15 +7,73 @@
   overflow: hidden;
   padding-block: var(--section-y);
   background: var(--background-base);
+  --services-background-height: max(2000px, 100vh);
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0 0 auto;
+    height: var(--services-background-height);
+    background: radial-gradient(
+      ellipse 58% 62% at 38% 48%,
+      var(--services-glow-color),
+      transparent 72%
+    );
+    opacity: var(--services-glow-opacity);
+    transform: translate3d(-7%, -2%, 0) scale(1);
+    animation: services-light-drift 22s var(--ease-in-out) infinite;
+    will-change: transform, opacity;
+    pointer-events: none;
+  }
+}
+
+:global([data-theme='light']) .section {
+  --services-glow-color: color-mix(in srgb, var(--accent-primary) 52%, transparent);
+  --services-glow-opacity: 0.8;
+}
+
+:global([data-theme='dark']) .section {
+  --services-glow-color: color-mix(in srgb, var(--accent-primary) 68%, transparent);
+  --services-glow-opacity: 0.62;
 }
 
 .silk {
   position: absolute;
-  inset: 0;
+  inset: 0 0 auto;
+  height: var(--services-background-height);
   z-index: -1;
   background: url('@/assets/images/silk.webp') left top / cover no-repeat;
   opacity: var(--silk-opacity);
   pointer-events: none;
+}
+
+@keyframes services-light-drift {
+  0%,
+  100% {
+    transform: translate3d(-7%, -2%, 0) scale(1);
+    opacity: calc(var(--services-glow-opacity) * 0.84);
+  }
+  25% {
+    transform: translate3d(-1%, 0.5%, 0) scale(1.035);
+    opacity: calc(var(--services-glow-opacity) * 0.93);
+  }
+  50% {
+    transform: translate3d(6%, 1.5%, 0) scale(1.07);
+    opacity: var(--services-glow-opacity);
+  }
+  75% {
+    transform: translate3d(1%, 0, 0) scale(1.035);
+    opacity: calc(var(--services-glow-opacity) * 0.92);
+  }
+}
+
+@include reduced-motion {
+  .section::after {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
 }
 
 .grid {
@@ -34,119 +92,6 @@
     position: sticky;
     top: var(--space-10);
   }
-}
-
-.list {
-  min-width: 0;
-}
-
-.item[data-open='false'] {
-  border-bottom: 1px solid var(--border-subtle);
-}
-
-// Primeiro item recolhido após o expandido ganha o divisor superior do Figma ("Outros serviços": pt 24 + divisor)
-.item[data-open='true'] + .item {
-  margin-top: var(--space-5);
-  border-top: 1px solid var(--border-subtle);
-}
-
-.heading {
-  font: inherit;
-}
-
-.trigger {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-height: 90px;
-  text-align: left;
-  color: var(--content-service);
-
-  [data-open='true'] & {
-    min-height: 60px;
-    align-items: flex-start;
-    padding-bottom: 14px;
-  }
-
-  @include hover {
-    .control {
-      background: var(--background-elevated);
-    }
-  }
-
-  &:focus-visible {
-    outline-offset: -2px;
-  }
-}
-
-.index {
-  flex-shrink: 0;
-  width: 57px;
-  font-size: 1.0625rem;
-
-  [data-open='true'] & {
-    width: 53px;
-    line-height: 46px;
-  }
-
-  @include down(md) {
-    width: 36px;
-  }
-}
-
-.dash {
-  flex-shrink: 0;
-  width: 79px;
-
-  &::before {
-    content: '';
-    display: block;
-    width: 43px;
-    height: 1px;
-    background: var(--border-strong-cool);
-  }
-
-  [data-open='true'] & {
-    width: 68px;
-    align-self: center;
-    margin-top: -14px;
-  }
-
-  @include down(md) {
-    width: 40px;
-
-    &::before {
-      width: 24px;
-    }
-  }
-}
-
-.name {
-  flex: 1;
-  min-width: 0;
-  font-size: clamp(1.375rem, 1rem + 1.2vw, 1.8125rem);
-  line-height: 1.3;
-
-  [data-open='true'] & {
-    font-size: clamp(1.4375rem, 1rem + 1.3vw, 1.875rem);
-    line-height: 46px;
-  }
-}
-
-.summary {
-  flex-shrink: 0;
-  width: 335px;
-  font-size: 0.875rem;
-  line-height: 19px;
-  color: var(--content-tertiary);
-
-  @include down(xl) {
-    display: none;
-  }
-}
-
-.control {
-  margin-left: max(var(--space-4), calc(95px - 46px));
 }
 
 // Figma 18:710 — card expandido
@@ -231,6 +176,12 @@
       height: 100%;
       object-fit: cover;
       object-position: left top;
+    }
+
+    &[data-media-kind='websites'] img,
+    &[data-media-kind='brands'] img,
+    &[data-media-kind='audit'] img {
+      object-position: right center;
     }
   }
 

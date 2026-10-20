@@ -27,7 +27,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: clip;
-  transition: background-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
+}
+
+html[data-language-transition] :where(
+  h1:not([style]),
+  h2:not([style]),
+  h3:not([style]),
+  h4:not([style]),
+  p:not([style]),
+  label:not([style]),
+  summary:not([style]),
+  a:not(:has(img, svg)):not([style]),
+  button:not(:has(img, svg)):not([style])
+) {
+  animation: language-copy-transition 250ms var(--ease-out) both;
 }
 
 body.is-locked {
@@ -169,6 +182,11 @@ button {
 
 .section {
   padding-block: var(--section-y);
+}
+
+main section[id],
+footer[id] {
+  scroll-margin-top: calc(var(--header-h) + var(--space-3));
 }
 
 .section-title {

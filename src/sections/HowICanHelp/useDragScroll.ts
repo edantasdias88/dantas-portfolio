@@ -13,12 +13,19 @@ export function useDragScroll(ref: RefObject<HTMLElement | null>, enabled: boole
     let lastT = 0
     let velocity = 0
     let raf = 0
+    let pointerId: number | null = null
+
+    const finishDrag = () => {
+      delete el.dataset.dragging
+      pointerId = null
+    }
 
     const onDown = (e: PointerEvent) => {
       if (e.pointerType !== 'mouse' || e.button !== 0) return
-      if ((e.target as HTMLElement).closest('a, button, input, textarea, select')) return
+      if (e.target instanceof Element && e.target.closest('a, button, input, textarea, select')) return
       cancelAnimationFrame(raf)
       dragging = true
+      pointerId = e.pointerId
       startX = lastX = e.clientX
       lastT = performance.now()
       startScroll = el.scrollLeft
@@ -38,16 +45,21 @@ export function useDragScroll(ref: RefObject<HTMLElement | null>, enabled: boole
     }
 
     const onUp = (e: PointerEvent) => {
-      if (!dragging) return
+      if (!dragging || e.pointerId !== pointerId) return
       dragging = false
-      delete el.dataset.dragging
       if (el.hasPointerCapture(e.pointerId)) el.releasePointerCapture(e.pointerId)
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-      // Inércia curta para um arraste natural.
-      let v = velocity * 16
+      if (e.type === 'pointercancel' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        finishDrag()
+        return
+      }
+      // Limita a inércia para evitar saltos longos ao soltar o ponteiro.
+      let v = Math.max(-1, Math.min(1, velocity)) * 16
       const step = () => {
         v *= 0.92
-        if (Math.abs(v) < 0.5) return
+        if (Math.abs(v) < 0.5) {
+          finishDrag()
+          return
+        }
         el.scrollLeft -= v
         raf = requestAnimationFrame(step)
       }
@@ -60,6 +72,7 @@ export function useDragScroll(ref: RefObject<HTMLElement | null>, enabled: boole
     el.addEventListener('pointercancel', onUp)
     return () => {
       cancelAnimationFrame(raf)
+      finishDrag()
       el.removeEventListener('pointerdown', onDown)
       el.removeEventListener('pointermove', onMove)
       el.removeEventListener('pointerup', onUp)

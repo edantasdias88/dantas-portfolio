@@ -1,6 +1,7 @@
 import { RouterProvider } from 'react-router'
 import { ContactProvider } from '@/lib/contact'
 import { ThemeProvider } from '@/lib/theme'
+import { InitialLoader } from '@/components/InitialLoader'
 import { router } from './router'
 
 export function App() {
@@ -8,6 +9,7 @@ export function App() {
     <ThemeProvider>
       <ContactProvider>
         <RouterProvider router={router} />
+        <InitialLoader />
       </ContactProvider>
     </ThemeProvider>
   )

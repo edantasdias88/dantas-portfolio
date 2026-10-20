@@ -16,6 +16,11 @@
   color: var(--content-secondary);
   transition: background-color var(--dur-base) var(--ease-out), color var(--dur-base) var(--ease-out);
 
+  // A troca de idioma anima o texto interno; o controle permanece estável.
+  :global(html[data-language-transition]) & {
+    animation: none;
+  }
+
   &:hover {
     color: var(--content-primary);
   }
@@ -23,5 +28,24 @@
   &[aria-pressed='true'] {
     background: var(--background-inverse);
     color: var(--content-inverse);
+
+    .label {
+      animation: language-option-change 240ms var(--ease-out) both;
+    }
+  }
+}
+
+.label {
+  display: inline-block;
+}
+
+@keyframes language-option-change {
+  from {
+    opacity: 0.65;
+    transform: scale(0.82);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

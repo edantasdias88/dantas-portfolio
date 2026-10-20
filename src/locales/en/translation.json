@@ -24,6 +24,7 @@
   },
   "a11y": {
     "skipToContent": "Skip to content",
+    "loadingPortfolio": "Loading portfolio",
     "home": "Edilson Dantas — home",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
@@ -139,6 +140,7 @@
       },
       "websites": {
         "title": "Websites",
+        "imageAlt": "Architecture studio website displayed on a desktop monitor",
         "description": "I create websites that combine clarity, visual identity and an easy browsing experience. Every decision aims to communicate the brand's value and guide visitors to the action that matters.",
         "tags": [
           "UX/UI",
@@ -153,6 +155,7 @@
       },
       "brands": {
         "title": "Brands",
+        "imageAlt": "Visual identity applied to stationery and packaging",
         "description": "I build visual identities that translate a brand's positioning into a consistent visual language, ready to work across every touchpoint.",
         "tags": [
           "Brand strategy",
@@ -166,6 +169,7 @@
       },
       "audit": {
         "title": "UX/UI audit",
+        "imageAlt": "Digital interface review with usability annotations",
         "description": "I review interfaces and journeys to find usability issues, inconsistencies and opportunities. The audit turns observations into prioritized recommendations that guide how the product evolves.",
         "tags": [
           "Usability",

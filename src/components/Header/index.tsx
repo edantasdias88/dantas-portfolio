@@ -1,4 +1,5 @@
 import { useCallback, useState } from 'react'
+import { useMotionValueEvent, useScroll } from 'motion/react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import logo from '@/assets/images/logo-wordmark.webp'
@@ -12,12 +13,23 @@ export function Header() {
   const { theme, toggleTheme } = useTheme()
   const [menuOpen, setMenuOpen] = useState(false)
   const [trigger, setTrigger] = useState<HTMLButtonElement | null>(null)
+  const [isCompact, setIsCompact] = useState(
+    () => typeof window !== 'undefined' && window.scrollY > 48,
+  )
+  const { scrollY } = useScroll()
   const close = useCallback(() => setMenuOpen(false), [])
   const isDark = theme === 'dark'
 
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    setIsCompact((compact) => {
+      if (compact) return latest > 16
+      return latest > 48
+    })
+  })
+
   return (
     <header className={styles.header}>
-      <div className={`container ${styles.inner}`}>
+      <div className={`container ${styles.inner} ${isCompact ? styles.compact : ''}`}>
         <Link to="/" className={styles.brand} aria-label={t('a11y.home')}>
           <img className={styles.logo} src={logo} width={229} height={29} alt="" />
         </Link>
@@ -27,10 +39,11 @@ export function Header() {
           <button
             type="button"
             className={styles.navButton}
+            data-theme-control="true"
             onClick={toggleTheme}
             aria-label={isDark ? t('a11y.themeToLight') : t('a11y.themeToDark')}
           >
-            {isDark ? <Moon size={22} /> : <Sun size={24} />}
+            {isDark ? <Sun key="sun" size={24} /> : <Moon key="moon" size={22} />}
           </button>
           <span className={styles.divider} aria-hidden="true" />
           <button

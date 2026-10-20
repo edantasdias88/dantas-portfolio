@@ -26,6 +26,7 @@ export function ProjectVisual({ project, alt = '', className, loading = 'lazy', 
           src={project.image.src}
           width={project.image.width}
           height={project.image.height}
+          style={{ objectPosition: project.image.objectPosition }}
           alt={alt}
           loading={loading}
           decoding="async"

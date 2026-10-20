@@ -32,7 +32,7 @@ export function Footer() {
   }
 
   return (
-    <footer className={`surface-dark ${styles.footer}`}>
+    <footer id="contato" className={`surface-dark ${styles.footer}`}>
       <div className={`container ${styles.inner}`}>
         {/* Figma 51:1625 — Convite para conversar */}
         <div className={styles.invite}>

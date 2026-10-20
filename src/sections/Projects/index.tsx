@@ -2,7 +2,7 @@ import { motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform,
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import caseButton from '@/assets/figma/projects/button.svg'
+import contactAction from '@/assets/figma/footer/contact-action.svg'
 import { ProjectVisual } from '@/components/ProjectVisual'
 import { Reveal } from '@/components/Reveal'
 import { caseHref, projects, type Project } from '@/data/projects'
@@ -22,13 +22,17 @@ function PinnedProjects() {
   const { t } = useTranslation()
   const wrapper = useRef<HTMLDivElement>(null)
   const [active, setActive] = useState(0)
+  const activeRef = useRef(0)
   const reduce = useReducedMotion()
   const total = projects.length
   const { scrollYProgress } = useScroll({ target: wrapper, offset: ['start start', 'end end'] })
   const position = useTransform(scrollYProgress, (p) => p * (total - 1))
 
   useMotionValueEvent(position, 'change', (value) => {
-    setActive(Math.min(total - 1, Math.max(0, Math.round(value))))
+    const next = Math.min(total - 1, Math.max(0, Math.round(value)))
+    if (next === activeRef.current) return
+    activeRef.current = next
+    setActive(next)
   })
 
   const goTo = useCallback(
@@ -89,10 +93,7 @@ function PinnedProjects() {
             <Slide key={project.key} project={project} index={i} active={active === i} position={position} />
           ))}
 
-          <nav className={styles.side} aria-label={t('projects.title')}>
-            <p className={styles.sideTitle} aria-hidden="true">
-              {t('projects.title')}
-            </p>
+          <nav className={`container ${styles.side}`} aria-label={t('projects.title')}>
             <ol>
               {projects.map((project, i) => (
                 <li key={project.key}>
@@ -103,11 +104,11 @@ function PinnedProjects() {
                     aria-label={t('a11y.goToSlide', { index: i + 1, name: t(`projects.items.${project.key}.name`) })}
                     onClick={() => goTo(i)}
                   >
-                    <span className={styles.sideMarker} aria-hidden="true" />
-                    <span className={styles.sideLabel} aria-hidden="true">
-                      {String(i + 1).padStart(2, '0')}
-                      <br />
-                      {t(`projects.items.${project.key}.navName`)}
+                    <span className={styles.thumb} aria-hidden="true">
+                      <ProjectVisual project={project} className={styles.thumbVisual} />
+                    </span>
+                    <span className={styles.sideTooltip} aria-hidden="true">
+                      {t(`projects.items.${project.key}.name`)}
                     </span>
                   </button>
                 </li>
@@ -153,8 +154,8 @@ function Slide({
           <h3 className={styles.title}>{t(`projects.items.${key}.title`)}</h3>
           <p className={styles.description}>{t(`projects.items.${key}.description`)}</p>
           <Link to={caseHref(project)} className={styles.caseLink} tabIndex={active ? 0 : -1}>
-            <span>{t('common.viewCase')}</span>
-            <img src={caseButton} alt="" width={28} height={28} />
+            <span className={styles.caseLabel}>{t('common.viewCase')}</span>
+            <img src={contactAction} alt="" width={28} height={28} className={styles.caseIcon} />
           </Link>
         </div>
       </div>
@@ -187,8 +188,8 @@ function StackedProjects() {
                 <h3 className={styles.title}>{t(`projects.items.${project.key}.title`)}</h3>
                 <p className={styles.description}>{t(`projects.items.${project.key}.description`)}</p>
                 <Link to={caseHref(project)} className={styles.caseLink}>
-                  <span>{t('common.viewCase')}</span>
-                  <img src={caseButton} alt="" width={28} height={28} />
+                  <span className={styles.caseLabel}>{t('common.viewCase')}</span>
+                  <img src={contactAction} alt="" width={28} height={28} className={styles.caseIcon} />
                 </Link>
               </div>
             </Reveal>

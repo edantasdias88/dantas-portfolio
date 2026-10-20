@@ -1,5 +1,5 @@
-import caaImage from '@/assets/images/caa.webp'
-import iruasMockup from '@/assets/images/iruas-mockup.webp'
+import caaImage from '@/assets/images/caa-cover.png'
+import iruasCover from '@/assets/images/iruas-cover.png'
 
 export type ProjectKey = 'caa' | 'iruas' | 'dantasDs'
 export type ProjectVisualVariant = 'platform' | 'mobile' | 'system'
@@ -10,7 +10,7 @@ export interface Project {
   slug: string
   visual: ProjectVisualVariant
   /** Imagem real do projeto (substitui a composição ilustrativa quando definida). */
-  image?: { src: string; width: number; height: number; fit?: 'cover' | 'contain' }
+  image?: { src: string; width: number; height: number; fit?: 'cover' | 'contain'; objectPosition?: string }
 }
 
 export const projects: Project[] = [
@@ -19,7 +19,7 @@ export const projects: Project[] = [
     key: 'iruas',
     slug: 'irus',
     visual: 'mobile',
-    image: { src: iruasMockup, width: 604, height: 494, fit: 'contain' },
+    image: { src: iruasCover, width: 2048, height: 768, fit: 'cover', objectPosition: 'center' },
   },
   { key: 'dantasDs', slug: 'dantas-ds', visual: 'system' },
 ]

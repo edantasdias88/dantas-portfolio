@@ -12,6 +12,27 @@ export const resources = {
   en: { translation: en },
 } as const
 
+let languageTransitionFinish: ((event: AnimationEvent) => void) | null = null
+
+function beginLanguageTransition() {
+  const root = document.documentElement
+  if (languageTransitionFinish) {
+    root.removeEventListener('animationend', languageTransitionFinish)
+  }
+  root.removeAttribute('data-language-transition')
+  // Re-arm the animation on rapid language changes without delaying i18n.
+  void root.offsetWidth
+  root.setAttribute('data-language-transition', '')
+  const finish = (event: AnimationEvent) => {
+    if (event.animationName !== 'language-copy-transition') return
+    root.removeAttribute('data-language-transition')
+    root.removeEventListener('animationend', finish)
+    languageTransitionFinish = null
+  }
+  languageTransitionFinish = finish
+  root.addEventListener('animationend', finish)
+}
+
 function isLanguage(value: unknown): value is Language {
   return typeof value === 'string' && (LANGUAGES as readonly string[]).includes(value)
 }
@@ -30,6 +51,10 @@ function detectLanguage(): Language {
 }
 
 export function setLanguage(lang: Language) {
+  if (i18n.resolvedLanguage === lang) return
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    beginLanguageTransition()
+  }
   try {
     localStorage.setItem(STORAGE_KEY, lang)
   } catch {

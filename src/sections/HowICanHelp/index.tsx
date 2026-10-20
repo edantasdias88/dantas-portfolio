@@ -67,7 +67,7 @@ export function HowICanHelp() {
     const card = el?.children[index] as HTMLElement | undefined
     if (!el || !card) return
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    el.scrollTo({ left: card.offsetLeft - parseFloat(getComputedStyle(el).paddingLeft), behavior: reduce ? 'auto' : 'smooth' })
+    el.scrollTo({ left: card.offsetLeft, behavior: reduce ? 'auto' : 'smooth' })
   }
 
   return (
@@ -76,23 +76,30 @@ export function HowICanHelp() {
         <Reveal>
           <p className="eyebrow">{t('help.eyebrow')}</p>
         </Reveal>
-        <Reveal delay={0.05}>
+        <Reveal delay={0.05} className={styles.titleReveal}>
           <h2 id="help-title" className={`section-heading ${styles.title}`}>
             {t('help.title')}
           </h2>
         </Reveal>
       </div>
 
-      <div className={styles.viewport}>
+      <div className={`container ${styles.viewport}`}>
         <ul ref={track} className={styles.track} data-drag={finePointer && scrollable}>
           {items.map((item, i) => (
-            <li key={item.title} className={styles.card}>
-              <img className={styles.icon} src={ICONS[i]} width={56} height={56} alt="" draggable={false} />
+            <Reveal key={item.title} as="li" delay={i * 0.06} y={20} className={styles.card}>
+              <span
+                className={styles.icon}
+                aria-hidden="true"
+                style={{
+                  maskImage: `url("${ICONS[i]}")`,
+                  WebkitMaskImage: `url("${ICONS[i]}")`,
+                }}
+              />
               <div className={styles.cardBody}>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
                 <p className={styles.cardText}>{item.description}</p>
               </div>
-            </li>
+            </Reveal>
           ))}
         </ul>
         {finePointer && scrollable && <DragCursor area={track} label={t('help.drag')} />}

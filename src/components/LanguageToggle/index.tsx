@@ -23,7 +23,7 @@ export function LanguageToggle({ className }: { className?: string }) {
             aria-label={LABELS[lang].full}
             onClick={() => setLanguage(lang)}
           >
-            {LABELS[lang].short}
+            <span className={styles.label}>{LABELS[lang].short}</span>
           </button>
         )
       })}

@@ -24,6 +24,7 @@
   },
   "a11y": {
     "skipToContent": "Pular para o conteúdo",
+    "loadingPortfolio": "Carregando portfólio",
     "home": "Edilson Dantas — página inicial",
     "openMenu": "Abrir menu",
     "closeMenu": "Fechar menu",
@@ -139,6 +140,7 @@
       },
       "websites": {
         "title": "Websites",
+        "imageAlt": "Website de arquitetura exibido em um monitor desktop",
         "description": "Crio websites que combinam clareza, identidade visual e experiência de navegação. Cada decisão busca comunicar o valor da marca e facilitar o caminho do visitante até a ação desejada.",
         "tags": [
           "UX/UI",
@@ -153,6 +155,7 @@
       },
       "brands": {
         "title": "Marcas",
+        "imageAlt": "Identidade visual aplicada a papelaria e embalagens",
         "description": "Construo identidades visuais que traduzem o posicionamento de uma marca em uma linguagem visual consistente, preparada para funcionar em diferentes pontos de contato.",
         "tags": [
           "Estratégia de marca",
@@ -166,6 +169,7 @@
       },
       "audit": {
         "title": "Auditoria UX/UI",
+        "imageAlt": "Avaliação de interface digital com anotações de usabilidade",
         "description": "Analiso interfaces e jornadas para identificar problemas de usabilidade, inconsistências e oportunidades de melhoria. A auditoria transforma observações em recomendações priorizadas para orientar a evolução do produto.",
         "tags": [
           "Usabilidade",

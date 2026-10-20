@@ -15,7 +15,7 @@ export function ThemeToggle({ className }: { className?: string }) {
       aria-label={isDark ? t('a11y.themeToLight') : t('a11y.themeToDark')}
     >
       <span className={styles.track} data-dark={isDark}>
-        <span className={styles.thumb}>{isDark ? <Moon size={14} /> : <Sun size={14} />}</span>
+        <span className={styles.thumb}>{isDark ? <Sun size={14} /> : <Moon size={14} />}</span>
       </span>
     </button>
   )

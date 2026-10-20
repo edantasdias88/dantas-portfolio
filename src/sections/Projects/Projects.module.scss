@@ -52,11 +52,20 @@
   position: absolute;
   inset: 0 auto 0 0;
   width: calc(1484 / 1936 * 100%);
-  background: linear-gradient(-84.79deg, rgba(var(--project-overlay), 0) 3.111%, rgba(var(--project-overlay), 1) 78.22%);
+  background: linear-gradient(
+    -84.79deg,
+    color-mix(in srgb, var(--project-overlay) 0%, transparent) 3.111%,
+    var(--project-overlay) 78.22%
+  );
 
   @include down(lg) {
     width: 100%;
-    background: linear-gradient(90deg, rgba(var(--project-overlay), 0.96) 0%, rgba(var(--project-overlay), 0.75) 55%, rgba(var(--project-overlay), 0) 100%);
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--project-overlay) 96%, transparent) 0%,
+      color-mix(in srgb, var(--project-overlay) 75%, transparent) 55%,
+      color-mix(in srgb, var(--project-overlay) 0%, transparent) 100%
+    );
   }
 }
 
@@ -65,6 +74,10 @@
 
   @include between-md-xl {
     padding-left: 140px;
+
+    @include up(lg) {
+      padding-left: clamp(32px, calc(42.1875vw - 400px), 140px);
+    }
   }
 }
 
@@ -114,128 +127,160 @@
 
 .caseLink {
   display: inline-flex;
-  align-items: flex-start;
+  align-items: center;
   gap: var(--space-2);
   margin-top: var(--space-6);
   min-height: 28px;
   font-size: 1rem;
   line-height: 24px;
   color: var(--content-secondary-cool);
-  transition: color var(--dur-base) var(--ease-out);
 
-  img {
-    transition: transform var(--dur-base) var(--ease-out);
+  .caseLabel {
+    position: relative;
+    padding-bottom: 5px;
 
-    :global([data-theme='dark']) & {
-      filter: invert(1);
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 2px;
+      background: currentColor;
+      transform-origin: left;
+      transition: transform var(--dur-slow) var(--ease-out);
     }
   }
 
-  @include hover {
-    color: var(--accent-primary);
+  .caseIcon {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 28px;
+    transition: transform var(--dur-slow) var(--ease-out);
+  }
 
-    img {
-      transform: translateX(3px);
+  @include hover {
+    .caseLabel::after {
+      transform: scaleX(0.6);
+    }
+
+    .caseIcon {
+      transform: rotate(45deg);
     }
   }
 }
 
-// Figma 21:1153 — navegação lateral, x 40, centralizada verticalmente
+// Seletor de thumbnails alinhado no canto inferior esquerdo dos slides.
 .side {
   position: absolute;
   z-index: 2;
-  left: 40px;
-  top: 50%;
-  translate: 0 -50%;
+  left: 0;
+  right: 0;
+  bottom: 40px;
 
   @include down(lg) {
-    left: var(--gutter);
+    bottom: var(--space-5);
   }
 }
 
-.sideTitle {
-  padding-block: var(--space-4);
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 26px;
-  color: var(--content-project);
+.side ol {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
 }
 
 .sideItem {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
-  height: 80px;
-  text-align: left;
-  font-size: 1.125rem;
-  line-height: 26px;
-  color: var(--content-tertiary-project);
-  transition: color var(--dur-base) var(--ease-out);
+  position: relative;
+  display: block;
+  width: 64px;
+  height: 64px;
+  flex: 0 0 64px;
+  border: 1px solid var(--border-project-nav);
+  border-radius: var(--radius-sm);
+  transition:
+    border-color var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+
+  &:focus-visible {
+    outline: 2px solid var(--border-focus);
+    outline-offset: 3px;
+    z-index: 1;
+  }
 
   &[aria-current='true'] {
-    font-weight: 700;
-    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 1px var(--accent-primary);
   }
 
   @include hover {
-    color: var(--content-project);
-  }
+    border-color: var(--accent-primary);
 
-  &[aria-current='true']:hover {
-    color: var(--accent-primary);
+    .thumbVisual {
+      filter: grayscale(0);
+    }
+
+    .sideTooltip {
+      opacity: 1;
+      translate: -50% 0;
+      scale: 1;
+    }
   }
 }
 
-// Linha 2×80 + marcador (cheio no ativo, vazado nos demais) — Figma 21:1157
-.sideMarker {
-  position: relative;
-  width: 16px;
-  height: 80px;
-  margin-inline: -7px;
+.thumb {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+}
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: 7px;
-    top: 0;
-    width: 2px;
+.thumbVisual {
+  filter: grayscale(1);
+  transition: filter 360ms var(--ease-out);
+}
+
+.thumbVisual[data-fit='contain'] {
+  display: block;
+  padding: 0;
+
+  > :global(img) {
+    width: 100%;
     height: 100%;
-    background: var(--border-project-nav);
-    transition: background-color var(--dur-base) var(--ease-out);
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0.5px;
-    top: 32.5px;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    border: 1px solid var(--border-project-nav);
-    background: var(--background-base);
-    transition: all var(--dur-base) var(--ease-out);
-  }
-
-  [aria-current='true'] & {
-    &::before {
-      background: var(--accent-primary);
-    }
-
-    &::after {
-      left: 0;
-      top: 32px;
-      width: 16px;
-      height: 16px;
-      border-color: var(--accent-primary);
-      background: var(--accent-primary);
-    }
+    max-width: none;
+    max-height: none;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: cover;
   }
 }
 
-.sideLabel {
-  @include down(lg) {
-    @include visually-hidden;
+.sideItem[aria-current='true'] .thumbVisual {
+  filter: grayscale(0);
+}
+
+.sideTooltip {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: calc(100% + 8px);
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--content-primary);
+  color: var(--background-base);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  translate: -50% 4px;
+  scale: 0.6;
+  transition:
+    opacity var(--dur-base) var(--ease-out),
+    translate var(--dur-base) var(--ease-out),
+    scale var(--dur-base) var(--ease-out);
+
+  :global([data-theme='dark']) & {
+    box-shadow: 0 0 0 1px var(--background-base);
   }
 }
 

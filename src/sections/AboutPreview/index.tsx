@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import aboutArrow from '@/assets/figma/controls/about-arrow.svg'
+import contactAction from '@/assets/figma/footer/contact-action.svg'
+import footerStyles from '@/components/Footer/Footer.module.scss'
 import { Portrait } from '@/components/Portrait'
 import { Reveal } from '@/components/Reveal'
 import styles from './AboutPreview.module.scss'
@@ -8,7 +9,7 @@ import styles from './AboutPreview.module.scss'
 export function AboutPreview() {
   const { t } = useTranslation()
   return (
-    <section className={styles.section} aria-labelledby="about-title">
+    <section id="sobre" className={styles.section} aria-labelledby="about-title">
       <div className={`container ${styles.outer}`}>
         <div className={styles.block}>
           <div className={styles.text}>
@@ -21,9 +22,15 @@ export function AboutPreview() {
                 </h2>
                 <p className={styles.support}>{t('about.support')}</p>
               </div>
-              <Link to="/sobre-mim" className={styles.cta}>
-                <span>{t('about.cta')}</span>
-                <img src={aboutArrow} alt="" width={61} height={61} />
+              <Link to="/sobre-mim" className={`${footerStyles.cta} ${styles.cta}`}>
+                <span className={`${footerStyles.ctaLabel} ${styles.ctaLabel}`}>{t('about.cta')}</span>
+                <img
+                  src={contactAction}
+                  alt=""
+                  width={72}
+                  height={72}
+                  className={`${footerStyles.ctaIcon} ${styles.ctaIcon}`}
+                />
               </Link>
             </Reveal>
           </div>

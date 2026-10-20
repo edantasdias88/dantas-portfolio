@@ -26,6 +26,7 @@
   width: auto;
   height: 24px;
   filter: var(--logo-filter);
+  transition: filter var(--dur-theme) var(--ease-out);
 }
 
 .close {

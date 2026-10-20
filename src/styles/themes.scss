@@ -1,5 +1,65 @@
+@use 'sass:list';
+
 // Tokens globais e semânticos. Valores extraídos das variáveis do Figma (arquivo Ryxhb4ajakSKVEleXmk2lT).
 // Os semânticos mudam por tema; componentes usam apenas os semânticos.
+$theme-color-properties: (
+  '--content-primary': #0b0c0b, '--content-secondary': #70706e,
+  '--content-secondary-heading': #6d6d6b, '--content-secondary-cool': #4a5565,
+  '--content-tertiary': #738097, '--content-tertiary-heading': #8792a3,
+  '--content-service': #0d1725, '--content-label': #344156,
+  '--content-project': #0e1522, '--content-tertiary-project': #6b7889,
+  '--content-partnership': #030515, '--content-secondary-partnership': #626479,
+  '--content-scroll-hint': #363735, '--content-disabled': #b6b3ac,
+  '--content-danger': #d93636, '--background-base': #f8f9fb,
+  '--background-subtle': #edf2f9, '--background-elevated': #ffffff,
+  '--background-elevated-service': #fcfdff, '--background-hero': #f5f2ec,
+  '--background-inverse': #0b1520, '--background-brand': #0f7fff,
+  '--border-subtle': #d7deea, '--border-default': #e4eaf3,
+  '--border-strong': #979994, '--border-strong-cool': #253449,
+  '--border-warm': #b6b3ac, '--border-project-nav': #98a4b3,
+  '--border-focus': #0f7fff, '--accent-primary': #0f7fff,
+  '--accent-hover': #0069ef, '--accent-pressed': #0656c9,
+  '--accent-subtle': rgba(15, 127, 255, 0.1), '--accent-content': #0f7fff,
+  '--glass-header-highlight': rgba(255, 255, 255, 0.65),
+  '--glass-header-surface': rgba(241, 234, 225, 0.48),
+  '--glass-header-reflection': rgba(255, 255, 255, 0.61),
+  '--glass-border': rgba(255, 255, 255, 0.8), '--glass-divider': #cfc8bf,
+  '--glass-control-surface': rgba(220, 214, 206, 0.6),
+  '--glass-control-elevated': rgba(248, 250, 253, 0.56),
+  '--glass-control-border': #ffffff, '--glass-bg': rgba(248, 249, 251, 0.7),
+  '--glass-highlight': rgba(255, 255, 255, 0.55), '--overlay': rgba(11, 21, 32, 0.4),
+  '--hero-from': #f7f5f0, '--hero-via': #f1ede6, '--hero-to': #f7f4ee,
+  '--hero-reading': #f6f3ef, '--hero-fade': #f5f2ec,
+  '--project-overlay': #f8f9fb, '--display-ink': rgba(11, 12, 11, 0.045)
+);
+
+$theme-color-transitions: ();
+@each $name, $initial-value in $theme-color-properties {
+  @property #{$name} {
+    syntax: '<color>';
+    inherits: true;
+    initial-value: #{$initial-value};
+  }
+
+  $theme-color-transitions: list.append(
+    $theme-color-transitions,
+    #{$name} 400ms var(--ease-out),
+    comma
+  );
+}
+
+@property --hero-art-opacity {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 1;
+}
+
+@property --silk-opacity {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0.36;
+}
+
 :root {
   // Escala de espaçamento (8 pt, Figma: spacing/*)
   --space-1: 4px;
@@ -62,6 +122,10 @@
   --dur-fast: 160ms;
   --dur-base: 280ms;
   --dur-slow: 520ms;
+  --dur-theme: 400ms;
+
+  transition: #{$theme-color-transitions}, --hero-art-opacity 400ms var(--ease-out),
+    --silk-opacity 400ms var(--ease-out);
 
   // Paleta base (Figma)
   --brand-500: #0f7fff;
@@ -138,12 +202,12 @@
   --hero-from: #f7f5f0;
   --hero-via: #f1ede6;
   --hero-to: #f7f4ee;
-  --hero-reading: 246, 243, 239;
-  --hero-fade: 245, 242, 236;
+  --hero-reading: #f6f3ef;
+  --hero-fade: #f5f2ec;
   --hero-art-opacity: 1;
 
   // Projetos
-  --project-overlay: 248, 249, 251;
+  --project-overlay: #f8f9fb;
 
   --silk-opacity: 0.36;
   --logo-filter: none;
@@ -211,11 +275,11 @@
   --hero-from: #14120f;
   --hero-via: #100f0d;
   --hero-to: #13110e;
-  --hero-reading: 17, 16, 14;
-  --hero-fade: 17, 16, 14;
+  --hero-reading: #11100e;
+  --hero-fade: #11100e;
   --hero-art-opacity: 0.16;
 
-  --project-overlay: 10, 13, 18;
+  --project-overlay: #0a0d12;
 
   --silk-opacity: 0.06;
   --logo-filter: invert(1) hue-rotate(180deg);

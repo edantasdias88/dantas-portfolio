@@ -17,7 +17,7 @@ export default function NotFoundPage() {
         <h1 className={page.heroTitle}>{t('notFound.title')}</h1>
         <p className="lead">{t('notFound.description')}</p>
         <div className={styles.actions}>
-          <ButtonLink to="/" arrow>
+          <ButtonLink to="/" arrow arrowDirection="up-right">
             {t('common.backHome')}
           </ButtonLink>
           <ButtonLink to="/projetos" variant="secondary">

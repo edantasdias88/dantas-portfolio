@@ -27,8 +27,8 @@ export function Process() {
   const [active, setActive] = useState(0)
 
   return (
-    <section id="processo" className={`surface-dark ${styles.section}`} aria-labelledby="process-title">
-      <img className={styles.backdrop} src={bg} alt="" aria-hidden="true" />
+    <section id="processo" className={styles.section} aria-labelledby="process-title">
+      <div className={styles.backdrop} style={{ backgroundImage: `url("${bg}")` }} aria-hidden="true" />
       <div className={`container ${styles.inner}`}>
         <Reveal>
           <p className={`eyebrow ${styles.eyebrow}`}>{t('process.eyebrow')}</p>
@@ -49,13 +49,23 @@ export function Process() {
             const panelId = `${uid}-panel-${i}`
             return (
               <li key={step.title} className={styles.step} data-active={isActive}>
+                <span className={styles.surface} aria-hidden="true" />
+                <span className={styles.activeSurface} aria-hidden="true" />
                 <Decoration />
                 <span className={styles.number} aria-hidden="true">
                   {String(i + 1).padStart(2, '0')}
                 </span>
                 <div className={styles.body}>
                   <div className={styles.titleGroup}>
-                    <img className={styles.icon} src={ICONS[i].src} width={ICONS[i].w} height={64} alt="" />
+                    <span
+                      className={styles.icon}
+                      aria-hidden="true"
+                      style={{
+                        width: ICONS[i].w,
+                        maskImage: `url("${ICONS[i].src}")`,
+                        WebkitMaskImage: `url("${ICONS[i].src}")`,
+                      }}
+                    />
                     <h3 className={styles.stepHeading}>
                       <button
                         id={buttonId}
@@ -89,7 +99,12 @@ function Decoration() {
   return (
     <span className={styles.deco} aria-hidden="true">
       <span className={styles.halo} />
-      <img src={eclatInferieur} alt="" style={{ left: 446.7, top: 282.7, width: 220, height: 191 }} />
+      <img
+        className={styles.lowerGlow}
+        src={eclatInferieur}
+        alt=""
+        style={{ left: 'auto', top: 'auto', right: -54, bottom: -42, width: 'clamp(112px, 30%, 170px)', height: 'auto' }}
+      />
       <img src={eclatLateral} alt="" style={{ left: 541.7, top: 19.7, width: 63, height: 191 }} />
       <img src={pli} alt="" style={{ left: 280.7, top: -1.3, width: 296, height: 372 }} />
       <img src={contour} alt="" style={{ left: -1.9, top: -1.8, width: 579.2, height: 372.5 }} />

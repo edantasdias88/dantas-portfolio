@@ -13,13 +13,28 @@
 
 // Figma 44:1294 — fundo #0a0b0b, raio 32, p40, gap 80
 .block {
+  --about-surface: var(--about-950);
+  --about-content: #f5f5f5;
+  --about-muted: #a4a4a4;
+  --about-support: #b3b3b3;
+  --about-badge-surface: var(--background-elevated);
+  --about-badge-content: var(--content-primary);
   display: flex;
   flex-direction: column;
   gap: var(--space-7);
   padding: var(--space-5);
   border-radius: var(--radius-lg);
-  background: var(--about-950);
-  color: #f5f5f5;
+  background: var(--about-surface);
+  color: var(--about-content);
+
+  :global([data-theme='dark']) & {
+    --about-surface: var(--content-inverse);
+    --about-content: var(--background-base);
+    --about-muted: var(--content-secondary-heading);
+    --about-support: var(--background-inverse);
+    --about-badge-surface: var(--border-default);
+    --about-badge-content: var(--content-inverse);
+  }
 
   @include up(md) {
     padding: var(--space-7);
@@ -48,10 +63,10 @@
   height: 44px;
   padding-inline: 22px;
   border-radius: var(--radius-pill);
-  background: #202120;
+  background: var(--about-badge-surface);
   font-size: 1.0625rem;
   font-weight: 700;
-  color: #f5f5f5;
+  color: var(--about-badge-content);
 }
 
 .bottom {
@@ -70,7 +85,7 @@
   font-size: clamp(1.5rem, 1.1rem + 1.1vw, 2rem); // 32/40
   font-weight: 500;
   line-height: 1.25;
-  color: #f5f5f5;
+  color: var(--about-content);
 
   span {
     display: block;
@@ -82,33 +97,32 @@
 }
 
 .titleMuted {
-  color: #a4a4a4;
+  color: var(--about-muted);
 }
 
 .support {
   max-width: 24em;
   font-size: 1rem;
   line-height: 24px;
-  color: #b3b3b3;
+  color: var(--about-support);
 }
 
 .cta {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-5);
+  gap: var(--space-4);
+  margin-left: 0;
+  color: var(--about-content);
+
+  .block & {
+    color: var(--about-content);
+  }
+}
+
+.ctaLabel {
   font-size: clamp(1.125rem, 1rem + 0.4vw, 1.375rem);
-  font-weight: 500;
-  color: #f5f5f5;
+}
 
-  img {
-    transition: transform var(--dur-base) var(--ease-out);
-  }
-
-  @include hover {
-    img {
-      transform: translateX(4px);
-    }
-  }
+.ctaIcon {
+  width: clamp(48px, 4vw + 22px, 60px);
 }
 
 .media {

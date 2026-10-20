@@ -36,6 +36,10 @@
   color: var(--content-inverse);
   transition: transform var(--dur-base) var(--ease-out);
 
+  svg {
+    animation: theme-icon-change 240ms var(--ease-out) both;
+  }
+
   [data-dark='true'] & {
     transform: translateX(24px);
   }

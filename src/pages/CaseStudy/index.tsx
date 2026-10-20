@@ -87,7 +87,7 @@ export default function CaseStudyPage() {
           <ButtonLink to="/projetos" variant="ghost">
             ← {t('case.allProjects')}
           </ButtonLink>
-          <ButtonLink to={caseHref(next)} variant="secondary" arrow>
+          <ButtonLink to={caseHref(next)} variant="secondary" arrow arrowDirection="up-right">
             {t('common.nextProject')}: {t(`projects.items.${next.key}.name`)}
           </ButtonLink>
         </div>

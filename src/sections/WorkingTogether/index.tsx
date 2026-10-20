@@ -12,7 +12,7 @@ export function WorkingTogether() {
   const { t } = useTranslation()
   const items = t('working.items', { returnObjects: true })
   return (
-    <section className={styles.section} aria-labelledby="working-title">
+    <section id="como-e-trabalhar-comigo" className={styles.section} aria-labelledby="working-title">
       <div className={`container ${styles.inner}`}>
         <Reveal>
           <p className="eyebrow">{t('working.eyebrow')}</p>

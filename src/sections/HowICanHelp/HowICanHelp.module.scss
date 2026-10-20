@@ -1,10 +1,6 @@
 @use 'styles/tokens' as *;
 
 .section {
-  overflow: hidden;
-}
-
-.section {
   background: var(--background-base);
 }
 
@@ -14,34 +10,34 @@
   align-items: flex-start;
 }
 
-.title {
-  white-space: pre-line;
+.titleReveal {
+  width: 100%;
+}
 
-  @include down(lg) {
-    white-space: normal;
-    max-width: 22ch;
-  }
+.title {
+  width: 100%;
+  max-width: none;
+  white-space: normal;
 }
 
 .viewport {
   position: relative;
+  --container-edge: max(var(--gutter), calc((100vw - var(--container)) / 2 + var(--gutter)));
   margin-top: var(--space-6);
-  // Distância entre a borda da viewport e o conteúdo do container: o primeiro card alinha
-  // ao container e o último termina exatamente no limite direito dele.
-  --edge: max(var(--gutter), calc((100% - var(--container)) / 2 + var(--gutter)));
-
-  @include between-md-xl {
-    --gutter: 32px;
-  }
 }
 
 .track {
   display: flex;
+  width: calc(100% + var(--container-edge) + var(--container-edge));
+  margin-inline: calc(0px - var(--container-edge));
+  margin-block: -20px;
   gap: var(--space-4);
-  padding-inline: var(--edge);
+  padding-inline: var(--container-edge);
+  padding-block: 20px;
   overflow-x: auto;
+  overflow-y: hidden;
   overscroll-behavior-x: contain;
-  scroll-padding-inline: var(--edge);
+  scroll-padding-inline: var(--container-edge);
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -53,8 +49,13 @@
 
   &[data-drag='true'] {
     cursor: none;
+  }
+
+  &[data-dragging='true'] {
+    cursor: grabbing;
     scroll-snap-type: none;
   }
+
 }
 
 // Figma 18:480 — 330×348, p24, raio 24, borda border/default
@@ -71,22 +72,44 @@
   background: var(--background-elevated);
   border: 1px solid var(--border-default);
   scroll-snap-align: start;
-  transition: border-color var(--dur-base) var(--ease-out), box-shadow var(--dur-base) var(--ease-out);
+  transition:
+    translate 225ms var(--ease-out),
+    background-color var(--dur-base) var(--ease-out),
+    border-color var(--dur-base) var(--ease-out),
+    box-shadow var(--dur-base) var(--ease-out);
+
+  @include hover {
+    translate: 0 -2px;
+  }
+
+  @include reduced-motion {
+    @include hover {
+      translate: none;
+    }
+  }
 
   &:last-child {
     scroll-snap-align: end;
   }
 
-  @include hover {
-    border-color: var(--border-subtle);
-    box-shadow: 0 12px 32px -18px rgba(13, 23, 37, 0.18);
+  @media (min-width: 1024px) {
+    width: min(calc((100% - 2 * var(--space-4)) / 3), 330px);
   }
 }
 
 .icon {
+  display: block;
   width: 56px;
   height: 56px;
   pointer-events: none;
+  background-color: var(--accent-primary);
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  transition: background-color var(--dur-base) var(--ease-out);
 }
 
 .cardBody {
@@ -99,6 +122,7 @@
   font-weight: 400;
   line-height: 34px;
   color: var(--content-primary);
+  transition: color var(--dur-base) var(--ease-out);
   white-space: pre-line;
   text-wrap: initial;
 }
@@ -107,6 +131,7 @@
   font-size: 1.125rem;
   line-height: 26px;
   color: var(--content-secondary-cool);
+  transition: color var(--dur-base) var(--ease-out);
 }
 
 .dots {
@@ -144,8 +169,8 @@
   z-index: 60;
   padding: 10px 18px;
   border-radius: var(--radius-pill);
-  background: #0a0a0b;
-  color: #fff;
+  background: var(--content-primary);
+  color: var(--content-inverse);
   font-size: var(--fs-sm);
   font-weight: 500;
   white-space: nowrap;
@@ -164,6 +189,8 @@
   }
 
   :global([data-theme='dark']) & {
+    background: var(--content-inverse);
+    color: var(--background-base);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.18);
   }
 }
