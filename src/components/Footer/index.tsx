@@ -16,7 +16,7 @@ const NAV = [
 ] as const
 
 /** Destinos dos links de serviços do rodapé (mesma ordem de footer.serviceLinks). */
-const SERVICE_LINKS = ['/case/irus', '/#servicos', '/case/dantas-ds', '/#servicos']
+const SERVICE_LINKS = ['/case/iruas', '/#servicos', '/case/dantas-ds', '/#servicos']
 
 const YEAR = new Date().getFullYear()
 

@@ -57,6 +57,10 @@
   filter: var(--logo-filter);
   transition: width var(--dur-slow) var(--ease-out), filter var(--dur-theme) var(--ease-out);
 
+  :global(html[data-initial-transition]) & {
+    opacity: 0;
+  }
+
   @include down(sm) {
     width: 176px;
   }

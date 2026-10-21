@@ -7,8 +7,9 @@ import logo from '@/assets/images/logo-wordmark.webp'
 import styles from './InitialLoader.module.scss'
 
 const PROGRESS_DURATION = 3000
-const EXIT_DURATION = 240
+const EXIT_DURATION = 800
 const MAX_WAIT_DURATION = 8000
+const EASING = 'cubic-bezier(0.22, 1, 0.36, 1)'
 
 export function InitialLoader() {
   const { t } = useTranslation()
@@ -18,6 +19,7 @@ export function InitialLoader() {
   const [leaving, setLeaving] = useState(false)
   const [visible, setVisible] = useState(true)
   const lastProgress = useRef(-1)
+  const logoFill = useRef<HTMLImageElement>(null)
 
   useEffect(() => {
     let frame = 0
@@ -26,28 +28,82 @@ export function InitialLoader() {
     let animationDone = false
     let contentReady = false
     let exitStarted = false
+    let logoAnimation: Animation | null = null
+
+    const completeExit = () => {
+      window.clearTimeout(removeTimer)
+      document.documentElement.removeAttribute('data-initial-transition')
+      setVisible(false)
+    }
 
     const finish = () => {
       if (exitStarted) return
       exitStarted = true
       window.clearTimeout(fallbackTimer)
       setLeaving(true)
-      removeTimer = window.setTimeout(() => setVisible(false), EXIT_DURATION)
+
+      if (shouldReduceMotion) {
+        removeTimer = window.setTimeout(completeExit, 80)
+        return
+      }
+
+      const source = logoFill.current
+      const target = document.querySelector<HTMLImageElement>('[data-brand-logo]')
+      if (!source || !target || typeof source.animate !== 'function') {
+        removeTimer = window.setTimeout(completeExit, EXIT_DURATION)
+        return
+      }
+
+      const sourceRect = source.getBoundingClientRect()
+      const targetRect = target.getBoundingClientRect()
+      if (!sourceRect.width || !targetRect.width) {
+        removeTimer = window.setTimeout(completeExit, EXIT_DURATION)
+        return
+      }
+      const scale = targetRect.width / sourceRect.width
+      const deltaX = targetRect.left - sourceRect.left
+      const scaledHeight = sourceRect.height * scale
+      const deltaY = targetRect.top + (targetRect.height - scaledHeight) / 2 - sourceRect.top
+
+      // Keep the loading logo as the one visible element while it travels to the header.
+      document.documentElement.setAttribute('data-initial-transition', '')
+      Object.assign(source.style, {
+        position: 'fixed',
+        inset: 'auto',
+        left: `${sourceRect.left}px`,
+        top: `${sourceRect.top}px`,
+        width: `${sourceRect.width}px`,
+        height: `${sourceRect.height}px`,
+        zIndex: '10001',
+        clipPath: 'none',
+        transformOrigin: 'top left',
+        willChange: 'transform',
+      })
+
+      logoAnimation = source.animate(
+        [
+          { transform: 'translate3d(0, 0, 0) scale(1)' },
+          { transform: `translate3d(${deltaX}px, ${deltaY}px, 0) scale(${scale})` },
+        ],
+        { duration: EXIT_DURATION, easing: EASING, fill: 'forwards' },
+      )
+      logoAnimation.onfinish = completeExit
+      removeTimer = window.setTimeout(completeExit, EXIT_DURATION + 160)
     }
 
     const finishWhenReady = () => {
       if (animationDone && contentReady) finish()
     }
 
-    const unsubscribe = subscribeToHeroReady(() => {
-      contentReady = true
-      finishWhenReady()
-    })
-
     fallbackTimer = window.setTimeout(() => {
       setProgress(100)
       finish()
     }, MAX_WAIT_DURATION)
+
+    const unsubscribe = subscribeToHeroReady(() => {
+      contentReady = true
+      finishWhenReady()
+    })
 
     if (shouldReduceMotion) {
       setProgress(100)
@@ -78,6 +134,8 @@ export function InitialLoader() {
       window.cancelAnimationFrame(frame)
       window.clearTimeout(removeTimer)
       window.clearTimeout(fallbackTimer)
+      logoAnimation?.cancel()
+      document.documentElement.removeAttribute('data-initial-transition')
       unsubscribe()
     }
   }, [shouldReduceMotion])
@@ -107,6 +165,7 @@ export function InitialLoader() {
           />
           <img
             className={styles.logoFill}
+            ref={logoFill}
             src={logo}
             width={640}
             height={80}

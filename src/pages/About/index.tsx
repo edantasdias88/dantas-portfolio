@@ -1,19 +1,87 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router'
+import adobexd from '@/assets/about/tools/adobexd.svg'
+import confluence from '@/assets/about/tools/confluence.svg'
+import css3 from '@/assets/about/tools/css3.svg'
+import figma from '@/assets/about/tools/figma.svg'
+import googleanalytics from '@/assets/about/tools/googleanalytics.svg'
+import hotjar from '@/assets/about/tools/hotjar.svg'
+import html5 from '@/assets/about/tools/html5.svg'
+import jira from '@/assets/about/tools/jira.svg'
+import javascript from '@/assets/about/tools/javascript.svg'
+import miro from '@/assets/about/tools/miro.svg'
+import sketch from '@/assets/about/tools/sketch.svg'
+import zeplin from '@/assets/about/tools/zeplin.svg'
+import zeroheight from '@/assets/about/tools/zeroheight.svg'
 import { Portrait } from '@/components/Portrait'
 import { Reveal } from '@/components/Reveal'
 import { Seo } from '@/components/Seo'
-import { areas } from '@/data/services'
 import page from '../page.module.scss'
+import styles from './About.module.scss'
+
+const tools = [
+  { id: 'figma', name: 'Figma', src: figma },
+  { id: 'sketch', name: 'Sketch', src: sketch },
+  { id: 'adobexd', name: 'Adobe XD', src: adobexd },
+  { id: 'zeplin', name: 'Zeplin', src: zeplin },
+  { id: 'miro', name: 'Miro', src: miro },
+  { id: 'zeroheight', name: 'Zeroheight', src: zeroheight },
+  { id: 'jira', name: 'Jira', src: jira },
+  { id: 'confluence', name: 'Confluence', src: confluence },
+  { id: 'html5', name: 'HTML', src: html5 },
+  { id: 'css3', name: 'CSS', src: css3 },
+  { id: 'javascript', name: 'JavaScript', src: javascript },
+  { id: 'googleanalytics', name: 'Google Analytics', src: googleanalytics },
+  { id: 'hotjar', name: 'Hotjar', src: hotjar },
+] as const
 
 export default function AboutPage() {
   const { t } = useTranslation()
-  const values = t('aboutPage.values', { returnObjects: true })
-  const steps = t('process.steps', { returnObjects: true })
-  const working = t('working.items', { returnObjects: true })
+  const trajectory = t('aboutPage.trajectoryBody', { returnObjects: true })
+  const vision = t('aboutPage.visionBody', { returnObjects: true })
+  const [hoveredTool, setHoveredTool] = useState<string | null>(null)
+  const [focusedTool, setFocusedTool] = useState<string | null>(null)
+  const [pinnedTool, setPinnedTool] = useState<string | null>(null)
+  const isPaused = Boolean(hoveredTool || focusedTool || pinnedTool)
+
+  const renderTool = (tool: (typeof tools)[number]) => {
+    const tooltipId = `about-tool-${tool.id}`
+    const tooltipVisible = hoveredTool === tool.id || focusedTool === tool.id || pinnedTool === tool.id
+
+    return (
+      <li key={tool.id} className={styles.toolItem}>
+        <button
+          type="button"
+          className={styles.tool}
+          aria-label={tool.name}
+          aria-describedby={tooltipId}
+          aria-pressed={pinnedTool === tool.id}
+          onPointerEnter={() => {
+            setHoveredTool(tool.id)
+            setPinnedTool(null)
+          }}
+          onPointerLeave={() => setHoveredTool((current) => (current === tool.id ? null : current))}
+          onFocus={() => setFocusedTool(tool.id)}
+          onBlur={() => setFocusedTool((current) => (current === tool.id ? null : current))}
+          onClick={() => setPinnedTool((current) => (current === tool.id ? null : tool.id))}
+          onKeyDown={(event) => {
+            if (event.key === 'Escape') setPinnedTool(null)
+          }}
+        >
+          <img className={styles.logo} src={tool.src} width="36" height="36" alt="" loading="lazy" />
+          <span id={tooltipId} className={styles.tooltip} role="tooltip" data-visible={tooltipVisible}>
+            {tool.name}
+          </span>
+        </button>
+      </li>
+    )
+  }
 
   return (
     <>
       <Seo title={t('meta.about.title')} description={t('meta.about.description')} />
+
       <section className={page.hero}>
         <div className={`container ${page.heroSplit}`}>
           <div className={page.heroInner}>
@@ -27,83 +95,77 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={page.block} aria-labelledby="about-story">
-        <div className={`container ${page.blockGrid}`}>
-          <h2 id="about-story" className={page.blockTitle}>
-            {t('about.eyebrow')}
-          </h2>
-          <div>
-            <p className="lead" style={{ color: 'var(--content-primary)' }}>
-              {t('about.title')}
-            </p>
-            <p className={page.muted} style={{ marginTop: 'var(--space-5)', maxWidth: '60ch' }}>
-              {t('about.description')}
-            </p>
+      <section className={styles.section} aria-labelledby="about-trajectory">
+        <div className={`container ${styles.editorial}`}>
+          <Reveal className={styles.editorialHeading}>
+            <p className="eyebrow">{t('aboutPage.trajectoryEyebrow')}</p>
+            <h2 id="about-trajectory" className={styles.sectionTitle}>
+              {t('aboutPage.trajectoryTitle')}
+            </h2>
+          </Reveal>
+          <div className={styles.trajectoryCopy}>
+            {trajectory.map((paragraph, index) => (
+              <Reveal key={paragraph} delay={index * 0.06}>
+                <p className={index === 0 ? 'lead' : styles.bodyCopy}>{paragraph}</p>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className={page.block} aria-labelledby="about-value">
-        <div className={`container ${page.blockGrid}`}>
-          <h2 id="about-value" className={page.blockTitle}>
-            {t('aboutPage.valueTitle')}
-          </h2>
-          <ul className={page.cols3}>
-            {values.map((value, i) => (
-              <Reveal as="li" key={value.title} delay={i * 0.06}>
-                <h3 className={page.itemTitle}>{value.title}</h3>
-                <p className={page.muted}>{value.description}</p>
-              </Reveal>
-            ))}
-          </ul>
+      <section className={styles.toolsSection} aria-label={t('aboutPage.toolsLabel')}>
+        <div className={`container ${styles.toolsContainer}`}>
+          <div className={styles.toolViewport} data-paused={isPaused}>
+            <div className={styles.track}>
+              <ul className={styles.toolGroup} aria-label={t('aboutPage.toolsLabel')}>
+                {tools.map(renderTool)}
+              </ul>
+              <ul className={styles.toolGroup} aria-hidden="true" inert>
+                {tools.map((tool) => (
+                  <li key={tool.id} className={styles.toolItem}>
+                    <span className={styles.tool}>
+                      <img className={styles.logo} src={tool.src} width="36" height="36" alt="" loading="lazy" />
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className={page.block} aria-labelledby="about-skills">
-        <div className={`container ${page.blockGrid}`}>
-          <h2 id="about-skills" className={page.blockTitle}>
-            {t('aboutPage.skillsTitle')}
-          </h2>
-          <ul className={page.chips}>
-            {areas.map((key) => (
-              <li key={key} className={page.chip}>
-                {t(`services.items.${key}.title`)}
-              </li>
+      <section className={styles.section} aria-labelledby="about-vision">
+        <div className={`container ${styles.vision}`}>
+          <Reveal className={styles.visionHeading}>
+            <p className="eyebrow">{t('aboutPage.visionEyebrow')}</p>
+            <h2 id="about-vision" className={styles.sectionTitle}>
+              {t('aboutPage.visionTitle')}
+            </h2>
+          </Reveal>
+          <div className={styles.visionCopy}>
+            {vision.map((paragraph, index) => (
+              <Reveal key={paragraph} delay={index * 0.06}>
+                <p className={index === 0 ? 'lead' : styles.bodyCopy}>{paragraph}</p>
+              </Reveal>
             ))}
-          </ul>
+          </div>
         </div>
       </section>
 
-      <section className={page.block} aria-labelledby="about-process">
-        <div className={`container ${page.blockGrid}`}>
-          <h2 id="about-process" className={page.blockTitle}>
-            {t('aboutPage.processTitle')}
-          </h2>
-          <ol className={page.cols2}>
-            {steps.map((step, i) => (
-              <Reveal as="li" key={step.title} delay={i * 0.05}>
-                <span className={page.index}>{String(i + 1).padStart(2, '0')}</span>
-                <h3 className={page.itemTitle}>{step.title}</h3>
-                <p className={page.muted}>{step.description}</p>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className={page.block} aria-labelledby="about-working" style={{ paddingBottom: 'var(--section-y)' }}>
-        <div className={`container ${page.blockGrid}`}>
-          <h2 id="about-working" className={page.blockTitle}>
-            {t('working.title')}
-          </h2>
-          <ul className={page.cols2}>
-            {working.map((item, i) => (
-              <Reveal as="li" key={item.title} delay={i * 0.05}>
-                <h3 className={page.itemTitle}>{item.title}</h3>
-                <p className={page.muted}>{item.description}</p>
-              </Reveal>
-            ))}
-          </ul>
+      <section className={styles.servicesCta} aria-labelledby="about-services-title">
+        <div className={`container ${styles.servicesCtaInner}`}>
+          <Reveal className={styles.servicesCtaCopy}>
+            <h2 id="about-services-title" className={styles.ctaTitle}>
+              {t('aboutPage.servicesCtaTitle')}
+            </h2>
+            <p className={styles.bodyCopy}>{t('aboutPage.servicesCtaDescription')}</p>
+          </Reveal>
+          <Reveal>
+            <Link className={styles.servicesLink} to="/#servicos">
+              <span>{t('aboutPage.servicesCtaLink')}</span>
+              <span aria-hidden="true">↗</span>
+            </Link>
+          </Reveal>
         </div>
       </section>
     </>

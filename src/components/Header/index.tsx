@@ -31,7 +31,14 @@ export function Header() {
     <header className={styles.header}>
       <div className={`container ${styles.inner} ${isCompact ? styles.compact : ''}`}>
         <Link to="/" className={styles.brand} aria-label={t('a11y.home')}>
-          <img className={styles.logo} src={logo} width={229} height={29} alt="" />
+          <img
+            className={styles.logo}
+            data-brand-logo
+            src={logo}
+            width={229}
+            height={29}
+            alt=""
+          />
         </Link>
 
         {/* Figma: "Navigation" — pílula de vidro com tema | menu */}

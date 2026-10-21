@@ -50,6 +50,23 @@
   max-width: 60ch;
 }
 
+.story {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 68ch;
+  color: var(--content-secondary);
+  line-height: 1.7;
+
+  p {
+    margin: 0;
+  }
+
+  strong {
+    color: var(--content-primary);
+    font-weight: 600;
+  }
+}
+
 .next {
   padding-bottom: var(--section-y);
 }

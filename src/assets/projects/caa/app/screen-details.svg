@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" fill="none">
+  <rect width="390" height="844" rx="48" fill="#121416"/>
+  <rect x="9" y="9" width="372" height="826" rx="40" fill="#F7F7F5"/>
+  <rect x="145" y="17" width="100" height="24" rx="12" fill="#121416"/>
+  <text x="30" y="59" fill="#161819" font-family="Arial,sans-serif" font-size="12" font-weight="700">9:41</text>
+  <circle cx="49" cy="99" r="19" fill="#FFFFFF"/>
+  <path d="m52 92-7 7 7 7" stroke="#303537" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="82" y="105" fill="#202426" font-family="Arial,sans-serif" font-size="15" font-weight="700">Detalhes do imóvel</text>
+  <text x="31" y="132" fill="#777B7D" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.5">TELA ILUSTRATIVA</text>
+  <rect x="24" y="151" width="342" height="263" rx="20" fill="#D9D7CE"/>
+  <rect x="24" y="151" width="342" height="212" rx="20" fill="#D8E1E3"/>
+  <path d="M24 334 111 250l76 43 73-74 106 70v74H24z" fill="#99A48D"/>
+  <rect x="93" y="271" width="171" height="92" fill="#ECE9E1"/>
+  <path d="m81 275 99-78 96 78H81Z" fill="#4D4944"/>
+  <rect x="110" y="296" width="45" height="67" fill="#8CA2A3"/>
+  <rect x="168" y="296" width="40" height="38" fill="#A6BFC0"/>
+  <rect x="220" y="296" width="30" height="38" fill="#A6BFC0"/>
+  <rect x="37" y="165" width="117" height="24" rx="12" fill="#FFFFFF" fill-opacity=".92"/>
+  <text x="95" y="181" text-anchor="middle" fill="#373B3C" font-family="Arial,sans-serif" font-size="9" font-weight="700">ILUSTRAÇÃO DE IMÓVEL</text>
+  <circle cx="336" cy="180" r="20" fill="#FFFFFF"/>
+  <path d="M336 188s-9-6-9-12a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 6-9 12-9 12Z" stroke="#F58232" stroke-width="1.6"/>
+  <text x="26" y="449" fill="#202426" font-family="Arial,sans-serif" font-size="21" font-weight="700">Casa em condomínio</text>
+  <text x="26" y="474" fill="#777B7D" font-family="Arial,sans-serif" font-size="12">Alphaville · Barueri, SP</text>
+  <text x="26" y="520" fill="#202426" font-family="Arial,sans-serif" font-size="22" font-weight="700">R$ 1.850.000</text>
+  <text x="26" y="551" fill="#777B7D" font-family="Arial,sans-serif" font-size="11">3 quartos  ·  3 vagas  ·  250 m²</text>
+  <path d="M24 572h342" stroke="#E1E0DC"/>
+  <text x="26" y="609" fill="#202426" font-family="Arial,sans-serif" font-size="14" font-weight="700">Sobre este imóvel</text>
+  <rect x="26" y="627" width="300" height="8" rx="4" fill="#D7D8D5"/>
+  <rect x="26" y="646" width="319" height="8" rx="4" fill="#E4E4E0"/>
+  <rect x="26" y="665" width="238" height="8" rx="4" fill="#E4E4E0"/>
+  <rect x="24" y="712" width="342" height="52" rx="18" fill="#F58232"/>
+  <text x="195" y="744" text-anchor="middle" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="14" font-weight="700">Tenho interesse</text>
+  <text x="195" y="791" text-anchor="middle" fill="#929594" font-family="Arial,sans-serif" font-size="9">INTERFACE CONCEITUAL · SUBSTITUÍVEL</text>
+</svg>

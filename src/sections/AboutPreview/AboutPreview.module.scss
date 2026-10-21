@@ -30,7 +30,7 @@
   :global([data-theme='dark']) & {
     --about-surface: var(--content-inverse);
     --about-content: var(--background-base);
-    --about-muted: var(--content-secondary-heading);
+    --about-muted: #858a92;
     --about-support: var(--background-inverse);
     --about-badge-surface: var(--border-default);
     --about-badge-content: var(--content-inverse);

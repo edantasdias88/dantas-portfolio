@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" fill="none">
+  <rect width="390" height="844" rx="48" fill="#121416"/>
+  <rect x="9" y="9" width="372" height="826" rx="40" fill="#F7F7F5"/>
+  <rect x="145" y="17" width="100" height="24" rx="12" fill="#121416"/>
+  <text x="30" y="59" fill="#161819" font-family="Arial,sans-serif" font-size="12" font-weight="700">9:41</text>
+  <text x="28" y="105" fill="#202426" font-family="Arial,sans-serif" font-size="25" font-weight="700">Serviços</text>
+  <text x="28" y="130" fill="#777B7D" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.5">TELA ILUSTRATIVA</text>
+  <text x="28" y="175" fill="#202426" font-family="Arial,sans-serif" font-size="15" font-weight="700">Tudo para facilitar sua jornada</text>
+  <text x="28" y="198" fill="#777B7D" font-family="Arial,sans-serif" font-size="12">Apoio para cada etapa da mudança.</text>
+  <rect x="24" y="225" width="342" height="154" rx="20" fill="#FFFFFF"/>
+  <rect x="40" y="242" width="58" height="58" rx="17" fill="#FFF0E5"/>
+  <path d="m55 270 14-12 14 12v14H55v-14Z" stroke="#E8782A" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M64 284v-9h10v9" stroke="#E8782A" stroke-width="2"/>
+  <text x="113" y="261" fill="#202426" font-family="Arial,sans-serif" font-size="15" font-weight="700">Reformas</text>
+  <text x="113" y="284" fill="#777B7D" font-family="Arial,sans-serif" font-size="11">Encontre profissionais para</text>
+  <text x="113" y="301" fill="#777B7D" font-family="Arial,sans-serif" font-size="11">transformar seu novo espaço.</text>
+  <path d="m338 269 6 6-6 6" stroke="#898D8E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 325h310" stroke="#ECEBE7"/>
+  <text x="40" y="352" fill="#A0A3A1" font-family="Arial,sans-serif" font-size="9">CONCEITO VISUAL · SUBSTITUÍVEL</text>
+  <rect x="24" y="394" width="342" height="154" rx="20" fill="#FFFFFF"/>
+  <rect x="40" y="411" width="58" height="58" rx="17" fill="#EAF1F2"/>
+  <path d="M54 430h30v23H54z" stroke="#527176" stroke-width="2"/>
+  <path d="M59 425v10m20-10v10M54 438h30" stroke="#527176" stroke-width="2" stroke-linecap="round"/>
+  <text x="113" y="430" fill="#202426" font-family="Arial,sans-serif" font-size="15" font-weight="700">Mudança</text>
+  <text x="113" y="453" fill="#777B7D" font-family="Arial,sans-serif" font-size="11">Organize o transporte para</text>
+  <text x="113" y="470" fill="#777B7D" font-family="Arial,sans-serif" font-size="11">sua nova casa com facilidade.</text>
+  <path d="m338 438 6 6-6 6" stroke="#898D8E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 494h310" stroke="#ECEBE7"/>
+  <text x="40" y="521" fill="#A0A3A1" font-family="Arial,sans-serif" font-size="9">CONCEITO VISUAL · SUBSTITUÍVEL</text>
+  <rect x="24" y="563" width="342" height="154" rx="20" fill="#FFFFFF"/>
+  <rect x="40" y="580" width="58" height="58" rx="17" fill="#F1EEE5"/>
+  <path d="M55 596h29v25H55z" stroke="#81724F" stroke-width="2"/>
+  <path d="M62 603h15m-15 6h15m-15 6h9" stroke="#81724F" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="113" y="599" fill="#202426" font-family="Arial,sans-serif" font-size="15" font-weight="700">Documentação</text>
+  <text x="113" y="622" fill="#777B7D" font-family="Arial,sans-serif" font-size="11">Conte com suporte durante</text>
+  <text x="113" y="639" fill="#777B7D" font-family="Arial,sans-serif" font-size="11">a negociação do imóvel.</text>
+  <path d="m338 607 6 6-6 6" stroke="#898D8E" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M40 663h310" stroke="#ECEBE7"/>
+  <text x="40" y="690" fill="#A0A3A1" font-family="Arial,sans-serif" font-size="9">CONCEITO VISUAL · SUBSTITUÍVEL</text>
+  <path d="M52 752h286" stroke="#E4E3DF" stroke-width="1"/>
+  <text x="63" y="781" fill="#777B7D" font-family="Arial,sans-serif" font-size="10">BUSCAR</text>
+  <text x="151" y="781" fill="#777B7D" font-family="Arial,sans-serif" font-size="10">FAVORITOS</text>
+  <text x="247" y="781" fill="#F58232" font-family="Arial,sans-serif" font-size="10" font-weight="700">SERVIÇOS</text>
+  <text x="329" y="781" text-anchor="middle" fill="#777B7D" font-family="Arial,sans-serif" font-size="10">MAIS</text>
+</svg>

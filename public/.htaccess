@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# PHP endpoint must be handled by PHP; never send API paths to the SPA fallback.
+RewriteRule ^api(/|$) - [L,NC]
+
+# Let Vite assets and real files pass through; route client-side URLs to React Router.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^ index.html [L]

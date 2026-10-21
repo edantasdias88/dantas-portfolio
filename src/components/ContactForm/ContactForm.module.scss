@@ -1,8 +1,13 @@
 @use 'styles/tokens' as *;
 
 .form {
+  --field-border: #848f9c;
   display: grid;
   gap: var(--space-5);
+}
+
+:global([data-theme='dark']) .form {
+  --field-border: #5f6b7d;
 }
 
 .fieldset {
@@ -45,7 +50,7 @@
     min-height: 52px;
     padding: var(--space-3) 0;
     border: 0;
-    border-bottom: 1px solid var(--border-default);
+    border-bottom: 1px solid var(--field-border);
     border-radius: 0;
     background: transparent;
     font-size: 1.0625rem;

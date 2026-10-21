@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import experienceAudit from '@/assets/images/experience-audit.jpg'
 import brandsIdentity from '@/assets/images/brands-identity.jpg'
-import iruasMockup from '@/assets/images/iruas-mockup.webp'
+import iruasMockup from '@/assets/projects/iruas/iruas-mockup.webp'
 import websitesDesktop from '@/assets/images/websites-desktop.jpg'
 import { Accordion } from '@/components/Accordion'
 import { Reveal } from '@/components/Reveal'

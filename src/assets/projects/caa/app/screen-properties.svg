@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" fill="none">
+  <rect width="390" height="844" rx="48" fill="#121416"/>
+  <rect x="9" y="9" width="372" height="826" rx="40" fill="#F7F7F5"/>
+  <rect x="145" y="17" width="100" height="24" rx="12" fill="#121416"/>
+  <text x="30" y="59" fill="#161819" font-family="Arial,sans-serif" font-size="12" font-weight="700">9:41</text>
+  <text x="30" y="101" fill="#17191B" font-family="Arial,sans-serif" font-size="25" font-weight="700">CAA</text>
+  <text x="30" y="123" fill="#777B7D" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.5">TELA ILUSTRATIVA</text>
+  <circle cx="342" cy="98" r="20" fill="#FFFFFF"/>
+  <path d="M337 98h10m-5-5v10" stroke="#2C3032" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="24" y="145" width="342" height="52" rx="17" fill="#FFFFFF" stroke="#E6E5E1"/>
+  <circle cx="48" cy="171" r="7" stroke="#777B7D" stroke-width="1.7"/>
+  <path d="m53 176 5 5" stroke="#777B7D" stroke-width="1.7" stroke-linecap="round"/>
+  <text x="70" y="175" fill="#777B7D" font-family="Arial,sans-serif" font-size="13">Buscar imóveis, regiões...</text>
+  <rect x="24" y="214" width="92" height="36" rx="18" fill="#F58232"/>
+  <text x="70" y="237" text-anchor="middle" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="12" font-weight="700">Comprar</text>
+  <rect x="124" y="214" width="92" height="36" rx="18" fill="#FFFFFF"/>
+  <text x="170" y="237" text-anchor="middle" fill="#34383A" font-family="Arial,sans-serif" font-size="12">Alugar</text>
+  <rect x="224" y="214" width="142" height="36" rx="18" fill="#FFFFFF"/>
+  <text x="295" y="237" text-anchor="middle" fill="#34383A" font-family="Arial,sans-serif" font-size="12">Lançamentos</text>
+  <text x="25" y="286" fill="#202426" font-family="Arial,sans-serif" font-size="17" font-weight="700">Imóveis para você</text>
+  <rect x="24" y="303" width="342" height="220" rx="18" fill="#D8D5CC"/>
+  <rect x="24" y="303" width="342" height="144" rx="18" fill="#D5DCE0"/>
+  <path d="M24 405 116 344l83 48 76-66 91 60v61H24z" fill="#9BA98E"/>
+  <rect x="99" y="371" width="166" height="76" rx="3" fill="#EFEDE6"/>
+  <path d="m85 375 96-63 99 63H85Z" fill="#5A5149"/>
+  <rect x="117" y="392" width="37" height="55" fill="#798A8C"/>
+  <rect x="169" y="392" width="37" height="31" fill="#A8C1C0"/>
+  <rect x="220" y="392" width="30" height="31" fill="#A8C1C0"/>
+  <rect x="39" y="317" width="117" height="25" rx="12" fill="#FFFFFF" fill-opacity=".92"/>
+  <text x="97" y="334" text-anchor="middle" fill="#373B3C" font-family="Arial,sans-serif" font-size="10" font-weight="700">ILUSTRAÇÃO DE IMÓVEL</text>
+  <text x="42" y="475" fill="#202426" font-family="Arial,sans-serif" font-size="14" font-weight="700">Casa contemporânea</text>
+  <text x="42" y="497" fill="#777B7D" font-family="Arial,sans-serif" font-size="11">Alphaville · Barueri, SP</text>
+  <text x="42" y="544" fill="#202426" font-family="Arial,sans-serif" font-size="16" font-weight="700">R$ 1.850.000</text>
+  <rect x="24" y="569" width="342" height="117" rx="18" fill="#FFFFFF" stroke="#E6E5E1"/>
+  <rect x="37" y="582" width="116" height="91" rx="12" fill="#D4D9D2"/>
+  <path d="m37 638 45-36 30 20 41-34v85H37z" fill="#849581"/>
+  <rect x="166" y="588" width="159" height="10" rx="5" fill="#D7D8D5"/>
+  <rect x="166" y="610" width="127" height="8" rx="4" fill="#ECECE9"/>
+  <rect x="166" y="630" width="145" height="8" rx="4" fill="#ECECE9"/>
+  <text x="166" y="663" fill="#262A2B" font-family="Arial,sans-serif" font-size="13" font-weight="700">R$ 980.000</text>
+  <path d="M52 752h286" stroke="#E4E3DF" stroke-width="1"/>
+  <text x="63" y="781" fill="#F58232" font-family="Arial,sans-serif" font-size="10" font-weight="700">BUSCAR</text>
+  <text x="151" y="781" fill="#777B7D" font-family="Arial,sans-serif" font-size="10">FAVORITOS</text>
+  <text x="247" y="781" fill="#777B7D" font-family="Arial,sans-serif" font-size="10">CONVERSAS</text>
+  <text x="329" y="781" text-anchor="middle" fill="#777B7D" font-family="Arial,sans-serif" font-size="10">MAIS</text>
+  <text x="195" y="817" text-anchor="middle" fill="#929594" font-family="Arial,sans-serif" font-size="9">INTERFACE CONCEITUAL · SUBSTITUÍVEL</text>
+</svg>

@@ -17,3 +17,5 @@ npm run dev
 - `src/styles` — tokens, temas (claro/escuro), globais e animações
 - `src/locales` — traduções pt-BR e en
 - `src/data` — projetos, serviços, navegação e dados de contato
+
+Para configurar e publicar o endpoint PHP do formulário na TurboSite, consulte [`backend/README.md`](backend/README.md).

@@ -231,7 +231,7 @@
   padding: 0 28px;
   border-radius: var(--radius-pill);
   border: 1px solid rgba(255, 255, 255, 0.59);
-  background: var(--accent-primary);
+  background: var(--cta-white-fill);
   color: var(--content-on-brand);
   font-size: 1.1875rem;
   line-height: 1;
@@ -242,7 +242,7 @@
   }
 
   @include hover {
-    background: var(--accent-hover);
+    background: var(--cta-white-hover);
 
     img {
       transform: translateX(4px);

@@ -241,6 +241,12 @@
         "name": "CAA",
         "category": "Plataforma imobiliária · Produto digital",
         "title": "Imóveis\nque conectam pessoas.",
+        "hero": {
+          "logoAlt": "Compre & alugue agora",
+          "role": "UX/UI Designer\nProduct Design",
+          "period": "2024 — 2025",
+          "platform": "Web e App\niOS e Android"
+        },
         "description": "Uma plataforma que aproxima quem busca, de quem oferece. Mais oportunidades para corretores, mais conquistas para pessoas.",
         "tags": [
           "Product Design",
@@ -254,6 +260,11 @@
         "category": "Mercado imobiliário · Experiência mobile",
         "title": "Uma nova forma de descobrir imóveis.",
         "description": "Uma experiência de busca imobiliária que explora diferentes maneiras de encontrar o próximo lugar para morar, aproximando as pessoas dos imóveis e das regiões que fazem sentido para elas.",
+        "hero": {
+          "logoAlt": "Logo iRuas",
+          "role": "UX/UI e Product Design",
+          "platform": "Aplicativo mobile"
+        },
         "tags": [
           "Mobile",
           "UX/UI",
@@ -380,17 +391,10 @@
       "namePlaceholder": "Como posso te chamar?",
       "email": "E-mail",
       "emailPlaceholder": "voce@empresa.com",
+      "phone": "Telefone",
+      "phonePlaceholder": "(11) 99999-9999",
       "company": "Empresa (opcional)",
       "companyPlaceholder": "Nome da empresa",
-      "type": "Tipo de projeto",
-      "types": {
-        "product": "Produto digital",
-        "website": "Website",
-        "brand": "Marca",
-        "audit": "Auditoria UX/UI",
-        "designSystem": "Design System",
-        "other": "Outro"
-      },
       "message": "Mensagem",
       "messagePlaceholder": "Conte sobre o contexto, objetivos e prazos.",
       "submit": "Enviar mensagem",
@@ -401,9 +405,15 @@
       "nameRequired": "Informe seu nome.",
       "emailRequired": "Informe seu e-mail.",
       "emailInvalid": "Informe um e-mail válido, como nome@empresa.com.",
+      "phoneRequired": "Informe seu telefone.",
+      "phoneInvalid": "Informe um telefone brasileiro válido com DDD.",
       "messageRequired": "Escreva uma mensagem.",
-      "messageShort": "A mensagem precisa ter pelo menos 20 caracteres.",
+      "nameTooLong": "O nome deve ter no máximo 120 caracteres.",
+      "companyTooLong": "A empresa deve ter no máximo 120 caracteres.",
+      "messageTooLong": "A mensagem deve ter no máximo 5.000 caracteres.",
       "summary": "Revise os campos destacados antes de enviar.",
+      "serverValidation": "Confira os dados informados e tente novamente.",
+      "rateLimited": "Muitas tentativas em pouco tempo. Aguarde alguns minutos e tente novamente.",
       "network": "Não foi possível enviar agora. Verifique sua conexão e tente novamente.",
       "server": "O serviço de envio retornou um erro. Tente novamente em alguns minutos."
     },
@@ -425,9 +435,91 @@
     "focus": "Foco",
     "inPreparation": "Case completo em preparação",
     "inPreparationText": "Este case está sendo documentado com o papel desempenhado, as decisões tomadas e os resultados do projeto. Enquanto isso, fale comigo para conhecer o trabalho em detalhes.",
+    "caaStory": {
+      "title": "Por trás da experiência",
+      "intro": "O Compre & Alugue Agora (CAA) é um aplicativo que conecta pessoas e oportunidades no mercado imobiliário. A experiência reúne a busca por imóveis para compra e aluguel, lançamentos, serviços e ferramentas de relacionamento em um único ambiente digital, buscando simplificar conexões e tornar a jornada mais intuitiva.",
+      "challenge": {
+        "label": "Desafio",
+        "text": "Organizar diferentes funcionalidades e necessidades em um único aplicativo, mantendo uma navegação clara e fácil de usar. Era necessário considerar diferentes perfis de usuários, facilitar o acesso aos recursos e evitar que a variedade de possibilidades tornasse a experiência complexa."
+      },
+      "process": {
+        "label": "Processo",
+        "text": "Minha atuação em UX/UI e Product Design contemplou a definição da hierarquia das informações, a organização dos fluxos de interação, a estruturação da navegação e o desenvolvimento das interfaces das diferentes áreas do aplicativo, buscando garantir uma experiência intuitiva, consistente e alinhada aos objetivos do produto.",
+        "continuation": "O trabalho também envolveu a construção de padrões visuais e funcionais, buscando manter a consistência entre as funcionalidades e criar uma base preparada para a evolução do produto."
+      },
+      "results": {
+        "label": "Resultados",
+        "text": "O trabalho contribuiu para estruturar a experiência do aplicativo, organizando diferentes funcionalidades em uma jornada mais clara e integrada.",
+        "continuation": "A organização da navegação, a hierarquia das informações e a consistência das interfaces estabeleceram uma base para apoiar a evolução contínua do produto, com foco na clareza da navegação e na facilidade de uso."
+      }
+    },
+    "iruasStory": {
+      "title": "Uma busca que acompanha diferentes contextos",
+      "intro": "O iRuas é um aplicativo de descoberta de imóveis que reúne diferentes formas de encontrar oportunidades imobiliárias.",
+      "challenge": {
+        "label": "Desafio",
+        "text": "Organizar diferentes necessidades e modalidades de busca em uma experiência intuitiva e coerente."
+      },
+      "role": {
+        "label": "Minha atuação",
+        "text": "Trabalhei em UX/UI e Product Design, incluindo a concepção do produto, a definição das modalidades de busca e a estruturação da experiência."
+      },
+      "solution": {
+        "label": "Solução",
+        "text": "A proposta combina quatro modalidades — busca por gestos, câmera, rotas e texto — em uma única experiência."
+      },
+      "difference": {
+        "label": "Diferencial",
+        "text": "Explorar diferentes formas de descobrir imóveis permite adaptar a busca a contextos de uso distintos."
+      }
+    },
+    "caaAppSequence": {
+      "ariaLabel": "Apresentação visual do aplicativo CAA",
+      "mainAlt": "Mockup ilustrativo do aplicativo CAA diante de uma casa contemporânea.",
+      "provisional": "Mockup ilustrativo · interface substituível",
+      "screensLabel": "Telas ilustrativas do aplicativo",
+      "screens": {
+        "properties": { "label": "Busca de imóveis", "alt": "Tela conceitual de busca e listagem de imóveis." },
+        "details": { "label": "Detalhes do imóvel", "alt": "Tela conceitual com detalhes de um imóvel." },
+        "services": { "label": "Serviços", "alt": "Tela conceitual da área de serviços do aplicativo." },
+        "iago": { "label": "Assistente IAgo", "alt": "Tela conceitual de conversa com o assistente IAgo." }
+      },
+      "pairLabel": "Imóvel e aplicativo em contexto",
+      "propertyAlt": "Fotografia ilustrativa de uma casa contemporânea com jardim.",
+      "appInUseAlt": "Mockup ilustrativo de um aplicativo imobiliário em um smartphone.",
+      "contextAlt": "Mockup ilustrativo do aplicativo em uso durante a visita a um apartamento.",
+      "closingLabel": "Pilares da experiência CAA",
+      "closingDeviceAlt": "Tela conceitual do assistente IAgo em um smartphone.",
+      "pillars": {
+        "properties": "Imóveis",
+        "services": "Serviços",
+        "relationship": "Relacionamento",
+        "intelligence": "Inteligência"
+      }
+    },
+    "iruasSequence": {
+      "ariaLabel": "Sequência visual conceitual do aplicativo iRuas",
+      "heroAlt": "Uma pessoa explora a fachada de um edifício residencial com o celular em uma rua urbana.",
+      "provisional": "Visual conceitual · interface ilustrativa, não oficial",
+      "screensLabel": "Modalidades conceituais de busca do iRuas",
+      "screens": {
+        "gestures": { "label": "Busca por gestos", "alt": "Ilustração conceitual de descoberta de imóveis por gestos, não é uma captura oficial do iRuas." },
+        "camera": { "label": "Busca por câmera", "alt": "Ilustração conceitual de busca de imóveis por câmera, não é uma captura oficial do iRuas." },
+        "routes": { "label": "Busca por rotas", "alt": "Ilustração conceitual de descoberta de imóveis ao longo de uma rota, não é uma captura oficial do iRuas." },
+        "text": { "label": "Busca por texto", "alt": "Ilustração conceitual de pesquisa textual de imóveis, não é uma captura oficial do iRuas." }
+      },
+      "pairLabel": "Arquitetura e interface conceitual do aplicativo",
+      "propertyAlt": "Casa contemporânea e edifício residencial em uma rua arborizada ao anoitecer.",
+      "detailAlt": "Mockup conceitual de um celular com uma tela ilustrativa de detalhes de imóvel, não é uma captura oficial do iRuas.",
+      "passengerAlt": "Passageira consulta uma interface conceitual de mapa enquanto observa uma rua residencial pelo carro.",
+      "streetAlt": "Vista ampla de uma rua residencial contemporânea, com casas, edifícios, árvores e fachadas iluminadas.",
+      "closingLabel": "Quatro modalidades ilustrativas de descoberta de imóveis"
+    },
     "sections": {
       "context": "Contexto",
       "role": "Meu papel",
+      "period": "Período",
+      "platform": "Plataforma",
       "decisions": "Decisões",
       "results": "Resultados"
     },
@@ -436,24 +528,27 @@
   "aboutPage": {
     "eyebrow": "Sobre mim",
     "title": "Design com estratégia. Tecnologia com propósito.",
-    "intro": "Conecto estratégia, design e tecnologia para transformar problemas complexos em produtos e experiências digitais simples, úteis e relevantes.",
-    "valueTitle": "O que levo para cada projeto",
-    "values": [
-      {
-        "title": "Para empresas",
-        "description": "Entender problemas complexos, trabalhar com visão de produto e contribuir para decisões que vão além da interface."
-      },
-      {
-        "title": "Para clientes freelance",
-        "description": "Transformar necessidades e ideias em experiências digitais concretas."
-      },
-      {
-        "title": "Para ambos",
-        "description": "Combinar pensamento estratégico, cuidado visual, colaboração e entendimento técnico."
-      }
+    "intro": "Com mais de 18 anos de experiência, conecto estratégia, design e tecnologia para transformar problemas complexos em produtos e experiências digitais simples, úteis e relevantes.",
+    "trajectoryEyebrow": "Minha trajetória",
+    "trajectoryTitle": "Uma trajetória que conecta diferentes perspectivas.",
+    "trajectoryBody": [
+      "Minha trajetória começou com Web Design e Front-end e evoluiu para UX/UI Design e Product Design, ampliando minha visão sobre como experiência, tecnologia e negócio se conectam.",
+      "Ao longo de mais de 18 anos na área digital, desenvolvi uma perspectiva que vai além da interface. Minha experiência me permite considerar tanto a experiência de quem utiliza um produto quanto a viabilidade da implementação, a consistência das soluções e a evolução do produto ao longo do tempo.",
+      "Também trabalhei com Design Ops e Design Systems, contribuindo para estruturar processos, organizar padrões e criar bases mais consistentes para a evolução de produtos digitais.",
+      "Hoje, gosto de conectar essas diferentes perspectivas para transformar desafios complexos em soluções claras, funcionais e preparadas para crescer."
     ],
-    "skillsTitle": "Áreas de atuação",
-    "processTitle": "Como penso um projeto",
+    "toolsLabel": "Ferramentas do meu dia a dia",
+    "visionEyebrow": "Minha visão de design",
+    "visionTitle": "Clareza na complexidade.",
+    "visionBody": [
+      "Acredito que um bom design não começa na tela. Começa na compreensão do problema e nas decisões que orientam a solução.",
+      "Gosto de organizar informações, encontrar padrões e simplificar jornadas. Valorizo a consistência, a acessibilidade e a colaboração entre design, tecnologia e negócio.",
+      "Para mim, Design Systems e experiência do usuário não são assuntos isolados. São partes de uma mesma visão: construir produtos digitais que façam sentido para as pessoas, atendam aos objetivos do negócio e evoluam sem perder coerência.",
+      "O que me motiva é transformar desafios em soluções concretas, questionar o óbvio e encontrar maneiras melhores de fazer as coisas. Mesmo depois de tantos anos na área, continuo valorizando a curiosidade, o aprendizado e a possibilidade de evoluir a cada projeto."
+    ],
+    "servicesCtaTitle": "O próximo passo começa com boas ideias.",
+    "servicesCtaDescription": "Conheça como posso ajudar a transformar desafios em experiências e produtos digitais.",
+    "servicesCtaLink": "Explore meus serviços",
     "imageAlt": "Retrato de Edilson Dantas"
   },
   "contactPage": {

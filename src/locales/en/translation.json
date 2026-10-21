@@ -241,6 +241,12 @@
         "name": "CAA",
         "category": "Real estate platform · Digital product",
         "title": "Homes\nthat connect people.",
+        "hero": {
+          "logoAlt": "Compre & alugue agora",
+          "role": "UX/UI Designer\nProduct Design",
+          "period": "2024 — 2025",
+          "platform": "Web and app\niOS and Android"
+        },
         "description": "A platform that brings together those who are searching and those who are offering. More opportunities for agents, more achievements for people.",
         "tags": [
           "Product Design",
@@ -254,6 +260,11 @@
         "category": "Real estate · Mobile experience",
         "title": "A new way to discover homes.",
         "description": "A property search experience that explores different ways to find your next place to live, connecting people with the homes and neighborhoods that make sense for them.",
+        "hero": {
+          "logoAlt": "iRuas logo",
+          "role": "UX/UI and Product Design",
+          "platform": "Mobile app"
+        },
         "tags": [
           "Mobile",
           "UX/UI",
@@ -380,17 +391,10 @@
       "namePlaceholder": "What should I call you?",
       "email": "Email",
       "emailPlaceholder": "you@company.com",
+      "phone": "Phone",
+      "phonePlaceholder": "(11) 99999-9999",
       "company": "Company (optional)",
       "companyPlaceholder": "Company name",
-      "type": "Project type",
-      "types": {
-        "product": "Digital product",
-        "website": "Website",
-        "brand": "Brand",
-        "audit": "UX/UI audit",
-        "designSystem": "Design System",
-        "other": "Other"
-      },
       "message": "Message",
       "messagePlaceholder": "Tell me about the context, goals and timeline.",
       "submit": "Send message",
@@ -401,9 +405,15 @@
       "nameRequired": "Please enter your name.",
       "emailRequired": "Please enter your email.",
       "emailInvalid": "Please enter a valid email, like name@company.com.",
+      "phoneRequired": "Please enter your phone number.",
+      "phoneInvalid": "Please enter a valid Brazilian phone number with area code.",
       "messageRequired": "Please write a message.",
-      "messageShort": "Your message needs at least 20 characters.",
+      "nameTooLong": "Name must be no longer than 120 characters.",
+      "companyTooLong": "Company must be no longer than 120 characters.",
+      "messageTooLong": "Message must be no longer than 5,000 characters.",
       "summary": "Please review the highlighted fields before sending.",
+      "serverValidation": "Please check the submitted details and try again.",
+      "rateLimited": "Too many attempts in a short time. Wait a few minutes and try again.",
       "network": "We couldn't send your message right now. Check your connection and try again.",
       "server": "The sending service returned an error. Please try again in a few minutes."
     },
@@ -425,9 +435,91 @@
     "focus": "Focus",
     "inPreparation": "Full case study in progress",
     "inPreparationText": "This case study is being documented with the role I played, the decisions made and the project's outcomes. In the meantime, get in touch to see the work in detail.",
+    "caaStory": {
+      "title": "Behind the experience",
+      "intro": "Compre & Alugue Agora (CAA) is an app that connects people with opportunities in the real estate market. It brings together property search for buying and renting, new developments, services and relationship tools in one digital environment, aiming to simplify connections and make the journey more intuitive.",
+      "challenge": {
+        "label": "Challenge",
+        "text": "Organize different features and needs in a single app while keeping navigation clear and easy to use. It was necessary to consider different user profiles, make resources easy to access and prevent the range of possibilities from making the experience complex."
+      },
+      "process": {
+        "label": "Process",
+        "text": "My work in UX/UI and Product Design covered defining the information hierarchy, organizing interaction flows, structuring navigation and developing interfaces for the app's different areas, with the goal of creating an intuitive, consistent experience aligned with the product's objectives.",
+        "continuation": "The work also involved building visual and functional patterns to keep features consistent and create a foundation for the product's evolution."
+      },
+      "results": {
+        "label": "Results",
+        "text": "The work helped structure the app experience, bringing different features together in a clearer, more integrated journey.",
+        "continuation": "The navigation structure, information hierarchy and consistent interfaces established a foundation for the product's ongoing evolution, with a focus on clear navigation and ease of use."
+      }
+    },
+    "iruasStory": {
+      "title": "A search shaped around different contexts",
+      "intro": "iRuas is a property discovery app that brings together different ways to find real estate opportunities.",
+      "challenge": {
+        "label": "Challenge",
+        "text": "Organize different needs and search modes into an intuitive, coherent experience."
+      },
+      "role": {
+        "label": "My role",
+        "text": "I worked in UX/UI and Product Design, including product conception, defining the search modes and structuring the experience."
+      },
+      "solution": {
+        "label": "Solution",
+        "text": "The concept brings gesture, camera, route and text search together in one experience."
+      },
+      "difference": {
+        "label": "Approach",
+        "text": "Exploring different ways to discover properties lets the search adapt to different contexts of use."
+      }
+    },
+    "caaAppSequence": {
+      "ariaLabel": "Visual presentation of the CAA app",
+      "mainAlt": "Illustrative mockup of the CAA app in front of a contemporary home.",
+      "provisional": "Illustrative mockup · replaceable interface",
+      "screensLabel": "Illustrative app screens",
+      "screens": {
+        "properties": { "label": "Property search", "alt": "Concept screen for searching and browsing properties." },
+        "details": { "label": "Property details", "alt": "Concept screen showing property details." },
+        "services": { "label": "Services", "alt": "Concept screen for the app services area." },
+        "iago": { "label": "IAgo assistant", "alt": "Concept conversation screen with the IAgo assistant." }
+      },
+      "pairLabel": "Property and app in context",
+      "propertyAlt": "Illustrative photograph of a contemporary home with a garden.",
+      "appInUseAlt": "Illustrative real-estate app mockup on a smartphone.",
+      "contextAlt": "Illustrative app mockup in use during an apartment visit.",
+      "closingLabel": "CAA experience pillars",
+      "closingDeviceAlt": "Concept screen of the IAgo assistant on a smartphone.",
+      "pillars": {
+        "properties": "Properties",
+        "services": "Services",
+        "relationship": "Relationships",
+        "intelligence": "Intelligence"
+      }
+    },
+    "iruasSequence": {
+      "ariaLabel": "Conceptual visual sequence for the iRuas app",
+      "heroAlt": "A person explores a residential building facade with a phone on an urban street.",
+      "provisional": "Concept visual · illustrative, unofficial interface",
+      "screensLabel": "Conceptual iRuas search modes",
+      "screens": {
+        "gestures": { "label": "Gesture search", "alt": "Concept illustration of gesture-based property discovery, not an official iRuas screenshot." },
+        "camera": { "label": "Camera search", "alt": "Concept illustration of camera-based property search, not an official iRuas screenshot." },
+        "routes": { "label": "Route search", "alt": "Concept illustration of discovering properties along a route, not an official iRuas screenshot." },
+        "text": { "label": "Text search", "alt": "Concept illustration of text-based property search, not an official iRuas screenshot." }
+      },
+      "pairLabel": "Architecture and conceptual app interface",
+      "propertyAlt": "Contemporary home and residential building on a tree-lined street at dusk.",
+      "detailAlt": "Conceptual phone mockup showing an illustrative property-detail screen, not an official iRuas screenshot.",
+      "passengerAlt": "A passenger looks at a conceptual map interface while viewing a residential street from a car.",
+      "streetAlt": "Wide view of a contemporary residential street with homes, apartment buildings, trees and illuminated facades.",
+      "closingLabel": "Four illustrative ways to discover properties"
+    },
     "sections": {
       "context": "Context",
       "role": "My role",
+      "period": "Period",
+      "platform": "Platform",
       "decisions": "Decisions",
       "results": "Outcomes"
     },
@@ -436,24 +528,27 @@
   "aboutPage": {
     "eyebrow": "About me",
     "title": "Design with strategy. Technology with purpose.",
-    "intro": "I bring strategy, design and technology together to turn complex problems into digital products and experiences that are simple, useful and relevant.",
-    "valueTitle": "What I bring to every project",
-    "values": [
-      {
-        "title": "For companies",
-        "description": "Understanding complex problems, working with a product mindset and contributing to decisions that go beyond the interface."
-      },
-      {
-        "title": "For freelance clients",
-        "description": "Turning needs and ideas into concrete digital experiences."
-      },
-      {
-        "title": "For both",
-        "description": "Combining strategic thinking, visual care, collaboration and technical understanding."
-      }
+    "intro": "With more than 18 years of experience, I bring strategy, design and technology together to turn complex problems into simple, useful and relevant digital products and experiences.",
+    "trajectoryEyebrow": "My journey",
+    "trajectoryTitle": "A path connecting different perspectives.",
+    "trajectoryBody": [
+      "My journey began in Web Design and Front-end and grew into UX/UI Design and Product Design, broadening my view of how experience, technology and business connect.",
+      "Over more than 18 years in digital, I have developed a perspective that goes beyond the interface. My experience lets me consider both the experience of people using a product and the feasibility of implementation, the consistency of solutions and how a product evolves over time.",
+      "I have also worked with Design Ops and Design Systems, helping structure processes, organize patterns and create more consistent foundations for digital product evolution.",
+      "Today, I enjoy connecting these perspectives to turn complex challenges into clear, functional solutions built to grow."
     ],
-    "skillsTitle": "Areas of work",
-    "processTitle": "How I think about a project",
+    "toolsLabel": "Tools I use every day",
+    "visionEyebrow": "My design perspective",
+    "visionTitle": "Clarity in complexity.",
+    "visionBody": [
+      "I believe good design does not start on a screen. It starts with understanding the problem and the decisions that guide the solution.",
+      "I enjoy organizing information, finding patterns and simplifying journeys. I value consistency, accessibility and collaboration across design, technology and business.",
+      "To me, Design Systems and user experience are not separate topics. They are parts of one view: building digital products that make sense to people, meet business goals and evolve without losing coherence.",
+      "I am motivated by turning challenges into concrete solutions, questioning the obvious and finding better ways to do things. Even after many years in the field, I still value curiosity, learning and the chance to grow with every project."
+    ],
+    "servicesCtaTitle": "The next step starts with good ideas.",
+    "servicesCtaDescription": "See how I can help turn challenges into digital products and experiences.",
+    "servicesCtaLink": "Explore my services",
     "imageAlt": "Portrait of Edilson Dantas"
   },
   "contactPage": {

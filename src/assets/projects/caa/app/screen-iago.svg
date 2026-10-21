@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 844" fill="none">
+  <rect width="390" height="844" rx="48" fill="#121416"/>
+  <rect x="9" y="9" width="372" height="826" rx="40" fill="#F7F7F5"/>
+  <rect x="145" y="17" width="100" height="24" rx="12" fill="#121416"/>
+  <text x="30" y="59" fill="#161819" font-family="Arial,sans-serif" font-size="12" font-weight="700">9:41</text>
+  <circle cx="49" cy="99" r="19" fill="#FFFFFF"/>
+  <path d="m52 92-7 7 7 7" stroke="#303537" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="81" y="103" fill="#202426" font-family="Arial,sans-serif" font-size="17" font-weight="700">IAgo</text>
+  <text x="81" y="122" fill="#929594" font-family="Arial,sans-serif" font-size="10">ASSISTENTE ILUSTRATIVO</text>
+  <circle cx="338" cy="99" r="19" fill="#FFF0E5"/>
+  <path d="M330 99h16m-8-8v16m-6-13 12 10m0-10-12 10" stroke="#E8782A" stroke-width="1.3" stroke-linecap="round"/>
+  <path d="M24 145h342" stroke="#E4E3DF"/>
+  <text x="195" y="174" text-anchor="middle" fill="#A0A3A1" font-family="Arial,sans-serif" font-size="10">HOJE, 9:41</text>
+  <rect x="24" y="198" width="271" height="132" rx="20" fill="#FFFFFF"/>
+  <circle cx="53" cy="226" r="13" fill="#FFF0E5"/>
+  <path d="m47 227 6-6 6 6v7H47v-7Z" stroke="#E8782A" stroke-width="1.3" stroke-linejoin="round"/>
+  <text x="76" y="226" fill="#202426" font-family="Arial,sans-serif" font-size="12" font-weight="700">Olá! Eu sou o IAgo.</text>
+  <text x="43" y="259" fill="#555A5B" font-family="Arial,sans-serif" font-size="11">Posso ajudar você a encontrar</text>
+  <text x="43" y="276" fill="#555A5B" font-family="Arial,sans-serif" font-size="11">um imóvel ou tirar dúvidas sobre</text>
+  <text x="43" y="293" fill="#555A5B" font-family="Arial,sans-serif" font-size="11">a sua jornada de compra.</text>
+  <rect x="119" y="356" width="247" height="66" rx="19" fill="#FCE8D8"/>
+  <text x="139" y="383" fill="#303537" font-family="Arial,sans-serif" font-size="11">Quero encontrar uma casa</text>
+  <text x="139" y="401" fill="#303537" font-family="Arial,sans-serif" font-size="11">com área externa.</text>
+  <rect x="24" y="448" width="290" height="174" rx="20" fill="#FFFFFF"/>
+  <circle cx="52" cy="477" r="13" fill="#FFF0E5"/>
+  <path d="m46 478 6-6 6 6v7H46v-7Z" stroke="#E8782A" stroke-width="1.3" stroke-linejoin="round"/>
+  <text x="76" y="481" fill="#202426" font-family="Arial,sans-serif" font-size="11" font-weight="700">Entendi o que você procura.</text>
+  <text x="43" y="514" fill="#555A5B" font-family="Arial,sans-serif" font-size="11">Posso filtrar opções com quintal</text>
+  <text x="43" y="531" fill="#555A5B" font-family="Arial,sans-serif" font-size="11">e espaços ao ar livre. Em qual</text>
+  <text x="43" y="548" fill="#555A5B" font-family="Arial,sans-serif" font-size="11">região você gostaria de morar?</text>
+  <rect x="42" y="572" width="105" height="30" rx="15" fill="#FFF5ED" stroke="#F4D8C4"/>
+  <text x="94" y="591" text-anchor="middle" fill="#9B572B" font-family="Arial,sans-serif" font-size="10">Ver sugestões</text>
+  <rect x="24" y="684" width="342" height="54" rx="19" fill="#FFFFFF" stroke="#E4E3DF"/>
+  <text x="45" y="716" fill="#999D9C" font-family="Arial,sans-serif" font-size="12">Escreva sua mensagem...</text>
+  <circle cx="337" cy="711" r="17" fill="#F58232"/>
+  <path d="m329 711 15-6-5 14-3-6-7-2Z" fill="#FFFFFF"/>
+  <text x="195" y="774" text-anchor="middle" fill="#929594" font-family="Arial,sans-serif" font-size="9">INTERFACE CONCEITUAL · SUBSTITUÍVEL</text>
+</svg>

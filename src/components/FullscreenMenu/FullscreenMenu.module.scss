@@ -163,7 +163,7 @@
   }
 
   @include hover {
-    background-color: var(--accent-hover);
+    background-color: var(--cta-white-hover);
 
     .icon {
       transform: translateX(4px);

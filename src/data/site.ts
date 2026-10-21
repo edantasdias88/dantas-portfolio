@@ -9,8 +9,7 @@ export const site = {
   /** Apenas dígitos com DDI, ex.: 5511999999999 */
   whatsapp: import.meta.env.VITE_CONTACT_WHATSAPP ?? '',
   /**
-   * Endpoint que recebe POST JSON { name, email, company, type, message } e responde 2xx em caso de sucesso.
-   * Compatível com Formspree (https://formspree.io/f/xxxx), Getform, Basin ou uma função serverless própria.
+   * Endpoint PHP que recebe POST JSON { name, email, phone, company, message } e responde { ok: true } após aceitar o envio SMTP.
    */
   contactEndpoint: import.meta.env.VITE_CONTACT_ENDPOINT ?? '',
 } as const

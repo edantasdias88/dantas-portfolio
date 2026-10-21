@@ -5,7 +5,7 @@
 $theme-color-properties: (
   '--content-primary': #0b0c0b, '--content-secondary': #70706e,
   '--content-secondary-heading': #6d6d6b, '--content-secondary-cool': #4a5565,
-  '--content-tertiary': #738097, '--content-tertiary-heading': #8792a3,
+  '--content-tertiary': #626e80, '--content-tertiary-heading': #8792a3,
   '--content-service': #0d1725, '--content-label': #344156,
   '--content-project': #0e1522, '--content-tertiary-project': #6b7889,
   '--content-partnership': #030515, '--content-secondary-partnership': #626479,
@@ -19,7 +19,8 @@ $theme-color-properties: (
   '--border-warm': #b6b3ac, '--border-project-nav': #98a4b3,
   '--border-focus': #0f7fff, '--accent-primary': #0f7fff,
   '--accent-hover': #0069ef, '--accent-pressed': #0656c9,
-  '--accent-subtle': rgba(15, 127, 255, 0.1), '--accent-content': #0f7fff,
+  '--accent-subtle': rgba(15, 127, 255, 0.1), '--accent-content': #0069ef,
+  '--cta-white-fill': #0069ef, '--cta-white-hover': #0656c9,
   '--glass-header-highlight': rgba(255, 255, 255, 0.65),
   '--glass-header-surface': rgba(241, 234, 225, 0.48),
   '--glass-header-reflection': rgba(255, 255, 255, 0.61),
@@ -147,7 +148,7 @@ $theme-color-transitions: ();
   --content-secondary: #70706e;
   --content-secondary-heading: #6d6d6b;
   --content-secondary-cool: #4a5565;
-  --content-tertiary: #738097;
+  --content-tertiary: #626e80;
   --content-tertiary-heading: #8792a3;
   --content-service: #0d1725;
   --content-label: #344156;
@@ -181,7 +182,9 @@ $theme-color-transitions: ();
   --accent-hover: var(--brand-600);
   --accent-pressed: var(--brand-700);
   --accent-subtle: rgba(15, 127, 255, 0.1);
-  --accent-content: var(--brand-500);
+  --accent-content: var(--brand-600);
+  --cta-white-fill: var(--brand-600);
+  --cta-white-hover: var(--brand-700);
 
   // Glass (header / controles)
   --glass-header-highlight: rgba(255, 255, 255, 0.65);
@@ -257,6 +260,8 @@ $theme-color-transitions: ();
   --accent-pressed: var(--brand-600);
   --accent-subtle: rgba(15, 127, 255, 0.16);
   --accent-content: #4da3ff;
+  --cta-white-fill: #0069ef;
+  --cta-white-hover: #0656c9;
 
   --glass-header-highlight: rgba(40, 38, 35, 0.6);
   --glass-header-surface: rgba(28, 26, 24, 0.5);

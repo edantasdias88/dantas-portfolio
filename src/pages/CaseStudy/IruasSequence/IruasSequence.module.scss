@@ -1,0 +1,282 @@
+@use 'styles/tokens' as *;
+
+.sequence {
+  display: grid;
+  width: 100%;
+  gap: clamp(64px, 8vw, 120px);
+  margin-top: 0;
+  overflow: clip;
+}
+
+.fullBleed,
+.pairSection {
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+}
+
+.fullBleed {
+  position: relative;
+  margin-block: 0;
+  overflow: hidden;
+  background: #10171b;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.discovery {
+  aspect-ratio: 2.15 / 1;
+  max-height: 900px;
+
+  img {
+    object-position: 54% 52%;
+  }
+}
+
+.note {
+  position: absolute;
+  left: clamp(16px, 3vw, 40px);
+  bottom: clamp(16px, 3vw, 32px);
+  margin: 0;
+  padding: 7px 11px;
+  border: 1px solid rgb(255 255 255 / 38%);
+  border-radius: var(--radius-pill);
+  background: rgb(18 20 22 / 72%);
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.3;
+  backdrop-filter: blur(8px);
+}
+
+.screenSection {
+  padding-block: 8px;
+  background: var(--background-base);
+}
+
+.screenGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(18px, 3vw, 44px);
+}
+
+.screen {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-3);
+  min-width: 0;
+  margin: 0;
+
+  img {
+    display: block;
+    width: min(100%, 250px);
+    height: auto;
+    filter: drop-shadow(0 24px 36px rgb(0 0 0 / 16%));
+  }
+
+  figcaption {
+    color: var(--content-secondary);
+    font-size: var(--fs-sm);
+    text-align: center;
+  }
+}
+
+.screenNote {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: var(--content-tertiary);
+  font-size: var(--fs-xs);
+  text-align: center;
+}
+
+.pairSection {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 24px);
+  padding-inline: clamp(16px, 4vw, 64px);
+}
+
+.pairImage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  aspect-ratio: 4 / 3;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-photo);
+  background: #11181c;
+
+  > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.devicePanel {
+  background: radial-gradient(ellipse at 50% 44%, #37443e 0%, #1b2425 48%, #11181c 100%);
+
+  > img {
+    width: auto;
+    height: 92%;
+    object-fit: contain;
+    filter: drop-shadow(0 26px 36px rgb(0 0 0 / 45%));
+  }
+}
+
+.passenger {
+  aspect-ratio: 2 / 1;
+  max-height: 850px;
+
+  img {
+    object-position: center 56%;
+  }
+}
+
+.street {
+  aspect-ratio: 2.2 / 1;
+  max-height: 800px;
+
+  img {
+    object-position: center 56%;
+  }
+}
+
+.closing {
+  position: relative;
+  display: grid;
+  align-items: center;
+  min-height: clamp(480px, 48vw, 720px);
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 50% 95%, rgb(89 125 86 / 20%), transparent 50%),
+    linear-gradient(125deg, #11181d, #1b2428 52%, #10171b);
+}
+
+.closingInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 3vw, 44px);
+  width: 100%;
+  padding-block: 64px;
+  perspective: 1100px;
+}
+
+.closingPhone {
+  width: min(21%, 245px);
+  margin: 0;
+  filter: drop-shadow(0 32px 42px rgb(0 0 0 / 45%));
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.phone1,
+.phone4 {
+  transform: translateY(28px) rotateY(9deg) scale(.9);
+}
+
+.phone2 {
+  transform: translateY(-8px) rotateY(5deg);
+}
+
+.phone3 {
+  transform: translateY(10px) rotateY(-5deg);
+}
+
+.closingNote {
+  position: absolute;
+  right: clamp(16px, 3vw, 40px);
+  bottom: 20px;
+  margin: 0;
+  color: rgb(255 255 255 / 58%);
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .screenGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+  }
+
+  .screen {
+    width: min(100%, 250px);
+  }
+
+  .closingInner {
+    gap: clamp(8px, 2vw, 20px);
+  }
+}
+
+@media (max-width: 640px) {
+  .sequence {
+    gap: 64px;
+  }
+
+  .discovery {
+    aspect-ratio: 4 / 5;
+
+    img {
+      object-position: 55% center;
+    }
+  }
+
+  .screenGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .screen {
+    width: min(100%, 250px);
+  }
+
+  .pairSection {
+    grid-template-columns: 1fr;
+  }
+
+  .pairImage {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-md);
+  }
+
+  .passenger,
+  .street {
+    aspect-ratio: 4 / 3;
+  }
+
+  .passenger img {
+    object-position: 48% center;
+  }
+
+  .closing {
+    min-height: 0;
+  }
+
+  .closingInner {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-items: center;
+    gap: 16px;
+    padding-block: 52px 64px;
+  }
+
+  .closingPhone {
+    width: min(100%, 180px);
+  }
+
+  .phone1,
+  .phone2,
+  .phone3,
+  .phone4 {
+    transform: none;
+  }
+}

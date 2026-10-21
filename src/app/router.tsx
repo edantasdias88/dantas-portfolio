@@ -1,5 +1,5 @@
 import { lazy } from 'react'
-import { createBrowserRouter, Navigate } from 'react-router'
+import { createBrowserRouter } from 'react-router'
 import HomePage from '@/pages/Home'
 import NotFoundPage from '@/pages/NotFound'
 import { Layout } from './Layout'
@@ -18,7 +18,6 @@ export const router = createBrowserRouter(
         { path: 'projetos', element: <ProjectsPage /> },
         { path: 'sobre-mim', element: <AboutPage /> },
         { path: 'contato', element: <ContactPage /> },
-        { path: 'case/iruas', element: <Navigate to="/case/irus" replace /> },
         { path: 'case/:slug', element: <CaseStudyPage /> },
         { path: '*', element: <NotFoundPage /> },
       ],
