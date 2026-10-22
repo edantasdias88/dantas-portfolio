@@ -487,20 +487,20 @@
     },
     "caaAppSequence": {
       "ariaLabel": "Visual presentation of the CAA app",
-      "mainAlt": "Illustrative mockup of the CAA app in front of a contemporary home.",
-      "screensLabel": "Illustrative app screens",
+      "mainAlt": "The CAA app featured in front of a contemporary home.",
+      "screensLabel": "CAA app screens",
       "screens": {
-        "properties": { "label": "Property search", "alt": "Concept screen for searching and browsing properties." },
-        "details": { "label": "Property details", "alt": "Concept screen showing property details." },
-        "services": { "label": "Services", "alt": "Concept screen for the app services area." },
-        "iago": { "label": "IAgo assistant", "alt": "Concept conversation screen with the IAgo assistant." }
+        "properties": { "label": "Property search", "alt": "Property search and listing screen." },
+        "details": { "label": "Property details", "alt": "Screen showing property details." },
+        "services": { "label": "Services", "alt": "App services screen." },
+        "iago": { "label": "IAgo assistant", "alt": "Conversation screen with the IAgo assistant." }
       },
       "pairLabel": "Property and app in context",
-      "propertyAlt": "Illustrative photograph of a contemporary home with a garden.",
-      "appInUseAlt": "Illustrative real-estate app mockup on a smartphone.",
-      "contextAlt": "Illustrative app mockup in use during an apartment visit.",
+      "propertyAlt": "Contemporary home with a garden.",
+      "appInUseAlt": "Real-estate app displayed on a smartphone.",
+      "contextAlt": "CAA app in use during an apartment visit.",
       "closingLabel": "CAA experience pillars",
-      "closingDeviceAlt": "Concept screen of the IAgo assistant on a smartphone.",
+      "closingDeviceAlt": "IAgo assistant displayed on a smartphone.",
       "pillars": {
         "properties": "Properties",
         "services": "Services",
@@ -509,21 +509,21 @@
       }
     },
     "iruasSequence": {
-      "ariaLabel": "Conceptual visual sequence for the iRuas app",
+      "ariaLabel": "Visual sequence for the iRuas app",
       "heroAlt": "A person explores a residential building facade with a phone on an urban street.",
-      "screensLabel": "Conceptual iRuas search modes",
+      "screensLabel": "iRuas search modes",
       "screens": {
-        "gestures": { "label": "Gesture search", "alt": "Concept illustration of gesture-based property discovery, not an official iRuas screenshot." },
-        "camera": { "label": "Camera search", "alt": "Concept illustration of camera-based property search, not an official iRuas screenshot." },
-        "routes": { "label": "Route search", "alt": "Concept illustration of discovering properties along a route, not an official iRuas screenshot." },
-        "text": { "label": "Text search", "alt": "Concept illustration of text-based property search, not an official iRuas screenshot." }
+        "gestures": { "label": "Gesture search", "alt": "Screen for discovering properties with gestures." },
+        "camera": { "label": "Camera search", "alt": "Screen for searching properties with a camera." },
+        "routes": { "label": "Route search", "alt": "Screen for discovering properties along a route." },
+        "text": { "label": "Text search", "alt": "Screen for text-based property search." }
       },
-      "pairLabel": "Architecture and conceptual app interface",
+      "pairLabel": "Architecture and app interface",
       "propertyAlt": "Contemporary home and residential building on a tree-lined street at dusk.",
-      "detailAlt": "Conceptual phone mockup showing an illustrative property-detail screen, not an official iRuas screenshot.",
-      "passengerAlt": "A passenger looks at a conceptual map interface while viewing a residential street from a car.",
+      "detailAlt": "Property detail screen displayed on a smartphone.",
+      "passengerAlt": "A passenger checks a map while looking at a residential street from a car.",
       "streetAlt": "Wide view of a contemporary residential street with homes, apartment buildings, trees and illuminated facades.",
-      "closingLabel": "Four illustrative ways to discover properties"
+      "closingLabel": "Four ways to discover properties"
     },
     "sections": {
       "context": "Context",

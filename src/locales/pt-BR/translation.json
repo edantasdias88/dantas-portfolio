@@ -487,20 +487,20 @@
     },
     "caaAppSequence": {
       "ariaLabel": "Apresentação visual do aplicativo CAA",
-      "mainAlt": "Mockup ilustrativo do aplicativo CAA diante de uma casa contemporânea.",
-      "screensLabel": "Telas ilustrativas do aplicativo",
+      "mainAlt": "Aplicativo CAA em destaque diante de uma casa contemporânea.",
+      "screensLabel": "Telas do aplicativo CAA",
       "screens": {
-        "properties": { "label": "Busca de imóveis", "alt": "Tela conceitual de busca e listagem de imóveis." },
-        "details": { "label": "Detalhes do imóvel", "alt": "Tela conceitual com detalhes de um imóvel." },
-        "services": { "label": "Serviços", "alt": "Tela conceitual da área de serviços do aplicativo." },
-        "iago": { "label": "Assistente IAgo", "alt": "Tela conceitual de conversa com o assistente IAgo." }
+        "properties": { "label": "Busca de imóveis", "alt": "Tela de busca e listagem de imóveis." },
+        "details": { "label": "Detalhes do imóvel", "alt": "Tela com detalhes de um imóvel." },
+        "services": { "label": "Serviços", "alt": "Tela da área de serviços do aplicativo." },
+        "iago": { "label": "Assistente IAgo", "alt": "Tela de conversa com o assistente IAgo." }
       },
       "pairLabel": "Imóvel e aplicativo em contexto",
-      "propertyAlt": "Fotografia ilustrativa de uma casa contemporânea com jardim.",
-      "appInUseAlt": "Mockup ilustrativo de um aplicativo imobiliário em um smartphone.",
-      "contextAlt": "Mockup ilustrativo do aplicativo em uso durante a visita a um apartamento.",
+      "propertyAlt": "Casa contemporânea com jardim.",
+      "appInUseAlt": "Aplicativo imobiliário exibido em um smartphone.",
+      "contextAlt": "Aplicativo CAA em uso durante uma visita a um apartamento.",
       "closingLabel": "Pilares da experiência CAA",
-      "closingDeviceAlt": "Tela conceitual do assistente IAgo em um smartphone.",
+      "closingDeviceAlt": "Assistente IAgo exibido em um smartphone.",
       "pillars": {
         "properties": "Imóveis",
         "services": "Serviços",
@@ -509,21 +509,21 @@
       }
     },
     "iruasSequence": {
-      "ariaLabel": "Sequência visual conceitual do aplicativo iRuas",
+      "ariaLabel": "Sequência visual do aplicativo iRuas",
       "heroAlt": "Uma pessoa explora a fachada de um edifício residencial com o celular em uma rua urbana.",
-      "screensLabel": "Modalidades conceituais de busca do iRuas",
+      "screensLabel": "Modalidades de busca do iRuas",
       "screens": {
-        "gestures": { "label": "Busca por gestos", "alt": "Ilustração conceitual de descoberta de imóveis por gestos, não é uma captura oficial do iRuas." },
-        "camera": { "label": "Busca por câmera", "alt": "Ilustração conceitual de busca de imóveis por câmera, não é uma captura oficial do iRuas." },
-        "routes": { "label": "Busca por rotas", "alt": "Ilustração conceitual de descoberta de imóveis ao longo de uma rota, não é uma captura oficial do iRuas." },
-        "text": { "label": "Busca por texto", "alt": "Ilustração conceitual de pesquisa textual de imóveis, não é uma captura oficial do iRuas." }
+        "gestures": { "label": "Busca por gestos", "alt": "Tela de descoberta de imóveis por gestos." },
+        "camera": { "label": "Busca por câmera", "alt": "Tela de busca de imóveis por câmera." },
+        "routes": { "label": "Busca por rotas", "alt": "Tela de descoberta de imóveis ao longo de uma rota." },
+        "text": { "label": "Busca por texto", "alt": "Tela de pesquisa textual de imóveis." }
       },
-      "pairLabel": "Arquitetura e interface conceitual do aplicativo",
+      "pairLabel": "Arquitetura e interface do aplicativo",
       "propertyAlt": "Casa contemporânea e edifício residencial em uma rua arborizada ao anoitecer.",
-      "detailAlt": "Mockup conceitual de um celular com uma tela ilustrativa de detalhes de imóvel, não é uma captura oficial do iRuas.",
-      "passengerAlt": "Passageira consulta uma interface conceitual de mapa enquanto observa uma rua residencial pelo carro.",
+      "detailAlt": "Tela de detalhes de imóvel exibida em um smartphone.",
+      "passengerAlt": "Passageira consulta um mapa enquanto observa uma rua residencial do carro.",
       "streetAlt": "Vista ampla de uma rua residencial contemporânea, com casas, edifícios, árvores e fachadas iluminadas.",
-      "closingLabel": "Quatro modalidades ilustrativas de descoberta de imóveis"
+      "closingLabel": "Quatro modalidades de descoberta de imóveis"
     },
     "sections": {
       "context": "Contexto",

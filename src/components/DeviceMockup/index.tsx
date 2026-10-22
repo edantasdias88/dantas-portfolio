@@ -33,6 +33,7 @@ export function DeviceMockup({ src, alt, className }: Props) {
     if (!svg) return null
 
     const scoped = svg
+      .replace(/<title\b[^>]*>[\s\S]*?<\/title>/gi, '')
       .replace(/\bid="([^"]+)"/g, `id="${id}-$1"`)
       .replace(/url\(#([^)]+)\)/g, `url(#${id}-$1)`)
       .replace(/((?:xlink:)?href)="#([^"]+)"/g, `$1="#${id}-$2"`)
