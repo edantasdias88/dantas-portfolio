@@ -26,7 +26,8 @@ export function ContactForm({ autoFocus = false }: { autoFocus?: boolean }) {
   const [submitError, setSubmitError] = useState('')
   const formRef = useRef<HTMLFormElement>(null)
   const submitLock = useRef(false)
-  const configured = Boolean(site.contactEndpoint)
+  const contactEndpoint = site.contactEndpoint.trim()
+  const configured = contactEndpoint.length > 0
   const errorMessages: Record<string, string> = {
     nameRequired: t('contact.errors.nameRequired'),
     nameTooLong: t('contact.errors.nameTooLong'),
@@ -39,6 +40,7 @@ export function ContactForm({ autoFocus = false }: { autoFocus?: boolean }) {
     messageTooLong: t('contact.errors.messageTooLong'),
     serverValidation: t('contact.errors.serverValidation'),
     rateLimited: t('contact.errors.rateLimited'),
+    notConfigured: t('contact.errors.notConfigured'),
     server: t('contact.errors.server'),
     network: t('contact.errors.network'),
   }
@@ -57,6 +59,10 @@ export function ContactForm({ autoFocus = false }: { autoFocus?: boolean }) {
   const update = (field: Field, value: string) => {
     setValues((prev) => ({ ...prev, [field]: value }))
     if (errors[field]) setErrors((prev) => ({ ...prev, [field]: undefined }))
+    if (submitError) {
+      setSubmitError('')
+      setStatus('idle')
+    }
   }
 
   const updatePhone = (input: HTMLInputElement) => {
@@ -82,7 +88,7 @@ export function ContactForm({ autoFocus = false }: { autoFocus?: boolean }) {
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault()
-    if (!configured || submitLock.current) return
+    if (submitLock.current) return
 
     const found = validate(values)
     setErrors(found)
@@ -93,10 +99,16 @@ export function ContactForm({ autoFocus = false }: { autoFocus?: boolean }) {
       return
     }
 
+    if (!configured) {
+      setStatus('error')
+      setSubmitError('notConfigured')
+      return
+    }
+
     submitLock.current = true
     setStatus('sending')
     try {
-      const response = await fetch(site.contactEndpoint, {
+      const response = await fetch(contactEndpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
@@ -177,7 +189,7 @@ export function ContactForm({ autoFocus = false }: { autoFocus?: boolean }) {
         </p>
       )}
 
-      <fieldset className={styles.fieldset} disabled={!configured || status === 'sending'}>
+      <fieldset className={styles.fieldset} disabled={status === 'sending'}>
         <legend className="visually-hidden">{t('contact.title')}</legend>
 
         <div className={styles.row}>
@@ -287,7 +299,7 @@ export function ContactForm({ autoFocus = false }: { autoFocus?: boolean }) {
         {status === 'error' && <p className={styles.error}>{errorMessages[submitError]}</p>}
       </div>
 
-      <Button type="submit" size="lg" arrow disabled={!configured || status === 'sending'}>
+      <Button type="submit" size="lg" arrow disabled={status === 'sending'}>
         {status === 'sending' ? t('contact.form.sending') : t('contact.form.submit')}
       </Button>
     </form>

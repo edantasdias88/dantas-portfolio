@@ -19,7 +19,7 @@ export const router = createBrowserRouter(
         { path: 'sobre-mim', element: <AboutPage /> },
         { path: 'contato', element: <ContactPage /> },
         { path: 'case/:slug', element: <CaseStudyPage /> },
-        { path: '*', element: <NotFoundPage /> },
+        { id: 'not-found', path: '*', element: <NotFoundPage /> },
       ],
     },
   ],

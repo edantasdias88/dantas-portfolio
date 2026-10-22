@@ -1,17 +1,17 @@
 type ReadyListener = () => void
 
-let heroReady = false
+let initialContentReady = false
 const listeners = new Set<ReadyListener>()
 
-export function markHeroReady() {
-  if (heroReady) return
-  heroReady = true
+export function markInitialContentReady() {
+  if (initialContentReady) return
+  initialContentReady = true
   listeners.forEach((listener) => listener())
   listeners.clear()
 }
 
-export function subscribeToHeroReady(listener: ReadyListener) {
-  if (heroReady) {
+export function subscribeToInitialContentReady(listener: ReadyListener) {
+  if (initialContentReady) {
     listener()
     return () => {}
   }

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import type { CSSProperties } from 'react'
 import { useReducedMotion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
-import { subscribeToHeroReady } from '@/lib/initialLoad'
+import { subscribeToInitialContentReady } from '@/lib/initialLoad'
 import logo from '@/assets/images/logo-wordmark.webp'
 import styles from './InitialLoader.module.scss'
 
@@ -100,7 +100,7 @@ export function InitialLoader() {
       finish()
     }, MAX_WAIT_DURATION)
 
-    const unsubscribe = subscribeToHeroReady(() => {
+    const unsubscribe = subscribeToInitialContentReady(() => {
       contentReady = true
       finishWhenReady()
     })

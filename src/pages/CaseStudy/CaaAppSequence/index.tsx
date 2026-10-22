@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { DeviceMockup } from '@/components/DeviceMockup'
 import { caaAppAssets } from '@/data/caaAppAssets'
 import styles from './CaaAppSequence.module.scss'
 
@@ -17,7 +18,6 @@ export function CaaAppSequence() {
           loading="lazy"
           decoding="async"
         />
-        <figcaption className={styles.provisionalNote}>{t('case.caaAppSequence.provisional')}</figcaption>
       </figure>
 
       <section className={styles.screensSection} aria-label={t('case.caaAppSequence.screensLabel')}>
@@ -27,11 +27,10 @@ export function CaaAppSequence() {
 
             return (
               <figure className={styles.screen} key={screen.id}>
-                <img
+                <DeviceMockup
                   src={screen.src}
                   alt={t(`case.caaAppSequence.screens.${id}.alt`)}
-                  loading="lazy"
-                  decoding="async"
+                  className={styles.mockup}
                 />
                 <figcaption>{t(`case.caaAppSequence.screens.${id}.label`)}</figcaption>
               </figure>
@@ -46,7 +45,6 @@ export function CaaAppSequence() {
         </figure>
         <figure className={styles.pairImage}>
           <img src={caaAppAssets.appInUse} alt={t('case.caaAppSequence.appInUseAlt')} loading="lazy" decoding="async" />
-          <figcaption className={styles.provisionalNote}>{t('case.caaAppSequence.provisional')}</figcaption>
         </figure>
       </section>
 
@@ -57,7 +55,6 @@ export function CaaAppSequence() {
           loading="lazy"
           decoding="async"
         />
-        <figcaption className={styles.provisionalNote}>{t('case.caaAppSequence.provisional')}</figcaption>
       </figure>
 
       <section className={styles.closing} aria-label={t('case.caaAppSequence.closingLabel')}>
@@ -72,8 +69,11 @@ export function CaaAppSequence() {
             ))}
           </ul>
           <figure className={styles.closingDevice}>
-            <img src={caaAppAssets.closingScreen} alt={t('case.caaAppSequence.closingDeviceAlt')} loading="lazy" decoding="async" />
-            <figcaption className={styles.srOnly}>{t('case.caaAppSequence.provisional')}</figcaption>
+            <DeviceMockup
+              src={caaAppAssets.closingScreen}
+              alt={t('case.caaAppSequence.closingDeviceAlt')}
+              className={styles.mockup}
+            />
           </figure>
         </div>
       </section>

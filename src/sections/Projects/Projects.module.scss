@@ -126,48 +126,7 @@
 }
 
 .caseLink {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
   margin-top: var(--space-6);
-  min-height: 28px;
-  font-size: 1rem;
-  line-height: 24px;
-  color: var(--content-secondary-cool);
-
-  .caseLabel {
-    position: relative;
-    padding-bottom: 5px;
-
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 2px;
-      background: currentColor;
-      transform-origin: left;
-      transition: transform var(--dur-slow) var(--ease-out);
-    }
-  }
-
-  .caseIcon {
-    flex: 0 0 28px;
-    width: 28px;
-    height: 28px;
-    transition: transform var(--dur-slow) var(--ease-out);
-  }
-
-  @include hover {
-    .caseLabel::after {
-      transform: scaleX(0.6);
-    }
-
-    .caseIcon {
-      transform: rotate(45deg);
-    }
-  }
 }
 
 // Seletor de thumbnails alinhado no canto inferior esquerdo dos slides.

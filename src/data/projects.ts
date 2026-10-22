@@ -1,8 +1,8 @@
-import caaImage from '@/assets/projects/caa/caa-cover.png'
+import caaImage from '@/assets/projects/caa/caa-cover.jpg'
 import caaBrand from '@/assets/projects/caa/caa-brand.svg'
 import caaBrandDark from '@/assets/projects/caa/caa-brand-white.svg'
-import caaAppHero from '@/assets/projects/caa/caa-app-hero.png'
-import iruasCover from '@/assets/projects/iruas/iruas-cover.png'
+import caaAppHero from '@/assets/projects/caa/caa-app-hero.webp'
+import iruasCover from '@/assets/projects/iruas/iruas-cover.jpg'
 import iruasBrand from '@/assets/projects/iruas/iruas-brand-black.svg'
 import iruasBrandDark from '@/assets/projects/iruas/iruas-brand-lime.svg'
 import iruasCaseHero from '@/assets/projects/iruas/hero-camera-discovery.webp'
@@ -62,6 +62,9 @@ export const projects: Project[] = [
   },
   { key: 'dantasDs', slug: 'dantas-ds', visual: 'system' },
 ]
+
+/** Projects currently presented in the portfolio listings and Home carousel. */
+export const portfolioProjects = projects.filter((project) => project.key !== 'dantasDs')
 
 export function caseHref(project: Project) {
   return `/case/${project.slug}`

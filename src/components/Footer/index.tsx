@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import contactAction from '@/assets/figma/footer/contact-action.svg'
 import envelope from '@/assets/figma/footer/envelope.svg'
 import topIcon from '@/assets/figma/footer/top.svg'
 import whatsapp from '@/assets/figma/footer/whatsapp.svg'
+import { Button } from '@/components/Button'
 import { formatWhatsapp, site, whatsappUrl } from '@/data/site'
 import { useContact } from '@/lib/contact'
 import styles from './Footer.module.scss'
@@ -40,10 +40,9 @@ export function Footer() {
             <span className={styles.titleLead}>{t('finalCta.titleLead')}</span>{' '}
             <span className={styles.titleMuted}>{t('finalCta.titleMuted')}</span>
           </h2>
-          <button type="button" className={styles.cta} onClick={(e) => openContact(e.currentTarget)}>
-            <span className={styles.ctaLabel}>{t('common.cta')}</span>
-            <img src={contactAction} alt="" width={72} height={72} className={styles.ctaIcon} />
-          </button>
+          <Button arrow size="lg" className={styles.inviteAction} onClick={(e) => openContact(e.currentTarget)}>
+            {t('common.cta')}
+          </Button>
         </div>
 
         {/* Figma 51:1591 — Rodapé */}

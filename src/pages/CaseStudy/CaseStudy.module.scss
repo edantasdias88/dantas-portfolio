@@ -50,7 +50,15 @@
   max-width: 60ch;
 }
 
-.story {
+.storyLead {
+  display: grid;
+  align-content: start;
+  gap: var(--space-5);
+  min-width: 0;
+}
+
+.storyIntro,
+.storySections {
   display: grid;
   gap: var(--space-4);
   max-width: 68ch;
@@ -60,10 +68,22 @@
   p {
     margin: 0;
   }
+}
 
-  strong {
+.storySections {
+  gap: var(--space-6);
+}
+
+.storySection {
+  display: grid;
+  gap: var(--space-3);
+
+  h3 {
+    margin: 0;
     color: var(--content-primary);
     font-weight: 600;
+    font-size: 1em;
+    line-height: inherit;
   }
 }
 

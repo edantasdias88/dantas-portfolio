@@ -1,6 +1,13 @@
 {
   "meta": {
     "siteName": "Edilson Dantas",
+    "personJobTitle": "Designer de produtos digitais",
+    "socialImageAlt": "Retrato de Edilson Dantas, designer de produtos digitais.",
+    "cases": {
+      "caa": "Uma plataforma que aproxima quem busca de quem oferece imóveis, com mais oportunidades para corretores e pessoas.",
+      "iruas": "Uma experiência de busca imobiliária que explora diferentes formas de encontrar imóveis e regiões para morar.",
+      "dantasDs": "Um sistema de design que conecta fundamentos, tokens e componentes para criar consistência e reutilização entre produtos e marcas."
+    },
     "home": {
       "title": "Edilson Dantas — Design, estratégia e tecnologia",
       "description": "Designer de produtos digitais. Conecto estratégia, design e tecnologia para transformar problemas complexos em produtos simples, úteis e humanos."
@@ -18,8 +25,8 @@
       "description": "Conte um pouco sobre seu projeto e vamos entender como posso ajudar."
     },
     "notFound": {
-      "title": "Página não encontrada — Edilson Dantas",
-      "description": "A página que você procura não existe ou foi movida."
+      "title": "404 — Lost in the Flow | Edilson Dantas",
+      "description": "Você saiu do fluxo. Jogue uma partida enquanto encontra o caminho de volta ao portfólio."
     }
   },
   "a11y": {
@@ -39,8 +46,7 @@
     "slide": "Projeto {{current}} de {{total}}",
     "goToSlide": "Ir para o projeto {{index}}: {{name}}",
     "carouselDots": "Posição nos cards",
-    "goToCard": "Ir para o card {{index}}",
-    "decorative": "Imagem ilustrativa"
+    "goToCard": "Ir para o card {{index}}"
   },
   "nav": {
     "home": "Início",
@@ -244,8 +250,8 @@
         "hero": {
           "logoAlt": "Compre & alugue agora",
           "role": "UX/UI Designer\nProduct Design",
-          "period": "2024 — 2025",
-          "platform": "Web e App\niOS e Android"
+          "period": "2025",
+          "platform": "App\niOS e Android"
         },
         "description": "Uma plataforma que aproxima quem busca, de quem oferece. Mais oportunidades para corretores, mais conquistas para pessoas.",
         "tags": [
@@ -263,7 +269,8 @@
         "hero": {
           "logoAlt": "Logo iRuas",
           "role": "UX/UI e Product Design",
-          "platform": "Aplicativo mobile"
+          "period": "2026",
+          "platform": "App\niOS e Android"
         },
         "tags": [
           "Mobile",
@@ -414,6 +421,7 @@
       "summary": "Revise os campos destacados antes de enviar.",
       "serverValidation": "Confira os dados informados e tente novamente.",
       "rateLimited": "Muitas tentativas em pouco tempo. Aguarde alguns minutos e tente novamente.",
+      "notConfigured": "Os campos estão preenchidos corretamente, mas o envio ainda não está configurado. Suas informações foram mantidas.",
       "network": "Não foi possível enviar agora. Verifique sua conexão e tente novamente.",
       "server": "O serviço de envio retornou um erro. Tente novamente em alguns minutos."
     },
@@ -422,7 +430,7 @@
       "description": "Obrigado pelo contato. Vou ler sua mensagem e responder em breve.",
       "again": "Enviar outra mensagem"
     },
-    "notConfigured": "O envio de mensagens ainda não foi configurado neste site. O formulário será ativado assim que o serviço de envio estiver conectado."
+    "notConfigured": "Você pode preencher e validar o formulário, mas o envio de mensagens ainda não está disponível."
   },
   "projectsPage": {
     "eyebrow": "Projetos",
@@ -437,46 +445,49 @@
     "inPreparationText": "Este case está sendo documentado com o papel desempenhado, as decisões tomadas e os resultados do projeto. Enquanto isso, fale comigo para conhecer o trabalho em detalhes.",
     "caaStory": {
       "title": "Por trás da experiência",
-      "intro": "O Compre & Alugue Agora (CAA) é um aplicativo que conecta pessoas e oportunidades no mercado imobiliário. A experiência reúne a busca por imóveis para compra e aluguel, lançamentos, serviços e ferramentas de relacionamento em um único ambiente digital, buscando simplificar conexões e tornar a jornada mais intuitiva.",
+      "intro": "O CAA (Compre & Alugue Agora) é uma plataforma imobiliária que reúne diferentes necessidades relacionadas à busca de imóveis, conectando pessoas, propriedades e serviços em uma única experiência. A proposta vai além da pesquisa imobiliária tradicional, oferecendo um ambiente que integra descoberta de imóveis, relacionamento entre usuários e acesso a serviços relacionados ao mercado imobiliário.",
+      "introContinuation": "A concepção do produto considera diferentes perfis e necessidades, desde pessoas que procuram um imóvel para comprar ou alugar até profissionais que atuam nesse mercado. A plataforma foi pensada para organizar essas experiências em uma estrutura integrada, facilitando o acesso às funcionalidades e tornando a navegação mais clara e intuitiva.",
       "challenge": {
         "label": "Desafio",
-        "text": "Organizar diferentes funcionalidades e necessidades em um único aplicativo, mantendo uma navegação clara e fácil de usar. Era necessário considerar diferentes perfis de usuários, facilitar o acesso aos recursos e evitar que a variedade de possibilidades tornasse a experiência complexa."
+        "text": "O principal desafio foi organizar uma plataforma com diferentes funcionalidades, públicos e jornadas em uma experiência consistente. A diversidade de necessidades exigia uma estrutura de navegação capaz de facilitar o acesso às informações e aos recursos sem sobrecarregar a interface.",
+        "continuation": "Era necessário pensar em como conectar a busca de imóveis, os serviços, o feed e os recursos de inteligência artificial em uma experiência coerente, respeitando as particularidades de cada área. O desafio estava em equilibrar a variedade de funcionalidades com uma hierarquia clara, permitindo que cada usuário encontrasse o que precisava e compreendesse como navegar pela plataforma."
       },
       "process": {
         "label": "Processo",
-        "text": "Minha atuação em UX/UI e Product Design contemplou a definição da hierarquia das informações, a organização dos fluxos de interação, a estruturação da navegação e o desenvolvimento das interfaces das diferentes áreas do aplicativo, buscando garantir uma experiência intuitiva, consistente e alinhada aos objetivos do produto.",
-        "continuation": "O trabalho também envolveu a construção de padrões visuais e funcionais, buscando manter a consistência entre as funcionalidades e criar uma base preparada para a evolução do produto."
+        "text": "O trabalho envolveu a concepção e a estruturação da experiência do produto, considerando a organização das funcionalidades, a arquitetura de navegação e os fluxos de interação. A definição da estrutura buscou estabelecer relações claras entre as diferentes áreas da plataforma, facilitando a transição entre a descoberta de imóveis, o acesso a serviços e as demais atividades disponíveis.",
+        "continuation": "A experiência também considerou diferentes contextos de uso e dispositivos, com atenção à organização dos elementos, à hierarquia das informações e à consistência dos padrões de interface. A proposta foi criar uma base que permitisse integrar as diferentes funcionalidades sem comprometer a compreensão do produto."
       },
       "results": {
         "label": "Resultados",
-        "text": "O trabalho contribuiu para estruturar a experiência do aplicativo, organizando diferentes funcionalidades em uma jornada mais clara e integrada.",
-        "continuation": "A organização da navegação, a hierarquia das informações e a consistência das interfaces estabeleceram uma base para apoiar a evolução contínua do produto, com foco na clareza da navegação e na facilidade de uso."
+        "text": "O projeto resultou na concepção de uma plataforma imobiliária que reúne diferentes experiências em um único ambiente digital. A estrutura contempla a busca de imóveis, serviços, feed e o assistente IAgo, pensado como um ponto central de inteligência e apoio à jornada do usuário.",
+        "continuation": "A organização da navegação e das interfaces buscou tornar essas funcionalidades mais acessíveis e estabelecer uma experiência consistente entre as diferentes áreas do produto. A proposta foi estruturar uma plataforma capaz de atender a diferentes necessidades do mercado imobiliário, conectando busca, serviços e relacionamento em uma mesma experiência."
       }
     },
     "iruasStory": {
-      "title": "Uma busca que acompanha diferentes contextos",
-      "intro": "O iRuas é um aplicativo de descoberta de imóveis que reúne diferentes formas de encontrar oportunidades imobiliárias.",
+      "title": "Por trás da experiência",
+      "intro": "O iRuas é um aplicativo focado em busca de imóveis, transformando a maneira como as pessoas descobrem imóveis. A proposta parte da ideia de ampliar as possibilidades de busca, permitindo que a descoberta aconteça de diferentes formas, seja pela exploração visual de imóveis, pela observação do ambiente ao redor, por trajetos ou por pesquisas textuais.",
+      "introContinuation": "O aplicativo foi concebido para reunir essas diferentes experiências em um único produto, oferecendo alternativas para que o usuário explore imóveis de acordo com sua intenção e contexto. Dessa forma, a busca deixa de depender de um único caminho e passa a considerar diferentes maneiras de encontrar e conhecer imóveis.",
       "challenge": {
         "label": "Desafio",
-        "text": "Organizar diferentes necessidades e modalidades de busca em uma experiência intuitiva e coerente."
+        "text": "O desafio foi repensar a experiência tradicional de busca imobiliária e explorar novas formas de descoberta. Em vez de concentrar a jornada exclusivamente em filtros e pesquisas textuais, a proposta era ampliar as possibilidades de interação, considerando diferentes comportamentos e situações em que uma pessoa pode se interessar por um imóvel.",
+        "continuation": "Também era necessário reunir essas modalidades em uma experiência consistente, com fluxos claros e uma navegação que permitisse compreender cada forma de busca sem tornar o aplicativo complexo. O desafio estava em equilibrar a variedade de possibilidades com a simplicidade de uso, mantendo uma experiência coerente entre as diferentes modalidades."
       },
-      "role": {
-        "label": "Minha atuação",
-        "text": "Trabalhei em UX/UI e Product Design, incluindo a concepção do produto, a definição das modalidades de busca e a estruturação da experiência."
+      "process": {
+        "label": "Processo",
+        "text": "O processo envolveu a concepção do produto e a definição de quatro modalidades de busca: interação por cards, câmera, rotas e texto. Cada uma foi pensada para oferecer uma forma distinta de explorar imóveis, considerando diferentes intenções e contextos de uso.",
+        "continuation": "A busca por interação propõe uma exploração visual por meio de cards que podem ser deslizados. A modalidade por câmera aproxima a experiência digital dos lugares observados presencialmente. A busca por rotas permite explorar imóveis ao longo de um trajeto ou a partir de um percurso definido, enquanto a busca por texto oferece uma maneira direta de pesquisar e visualizar resultados.",
+        "goal": "Além da definição dessas modalidades, o trabalho envolveu a organização dos fluxos, da navegação e das interfaces, buscando integrar as diferentes experiências em um único aplicativo. O objetivo foi estruturar uma jornada clara e consistente, na qual cada modalidade contribuísse para ampliar as possibilidades de descoberta."
       },
-      "solution": {
-        "label": "Solução",
-        "text": "A proposta combina quatro modalidades — busca por gestos, câmera, rotas e texto — em uma única experiência."
-      },
-      "difference": {
-        "label": "Diferencial",
-        "text": "Explorar diferentes formas de descobrir imóveis permite adaptar a busca a contextos de uso distintos."
+      "results": {
+        "label": "Resultados",
+        "text": "O resultado foi a concepção de um aplicativo imobiliário estruturado em quatro modalidades de busca: interação por cards, câmera, rotas e texto. Essa combinação amplia as possibilidades de explorar imóveis, reunindo diferentes formas de descoberta em uma única experiência.",
+        "continuation": "A proposta permite abordar a busca imobiliária por diferentes perspectivas, desde uma exploração visual e interativa até a pesquisa direta ou a descoberta a partir do ambiente e dos trajetos do usuário. Em vez de depender de um único mecanismo, o iRuas foi concebido para oferecer diferentes caminhos de busca dentro de uma experiência integrada.",
+        "final": "O projeto avançou para a etapa de desenvolvimento, levando adiante a proposta de uma experiência imobiliária mais flexível e diversificada."
       }
     },
     "caaAppSequence": {
       "ariaLabel": "Apresentação visual do aplicativo CAA",
       "mainAlt": "Mockup ilustrativo do aplicativo CAA diante de uma casa contemporânea.",
-      "provisional": "Mockup ilustrativo · interface substituível",
       "screensLabel": "Telas ilustrativas do aplicativo",
       "screens": {
         "properties": { "label": "Busca de imóveis", "alt": "Tela conceitual de busca e listagem de imóveis." },
@@ -500,7 +511,6 @@
     "iruasSequence": {
       "ariaLabel": "Sequência visual conceitual do aplicativo iRuas",
       "heroAlt": "Uma pessoa explora a fachada de um edifício residencial com o celular em uma rua urbana.",
-      "provisional": "Visual conceitual · interface ilustrativa, não oficial",
       "screensLabel": "Modalidades conceituais de busca do iRuas",
       "screens": {
         "gestures": { "label": "Busca por gestos", "alt": "Ilustração conceitual de descoberta de imóveis por gestos, não é uma captura oficial do iRuas." },
@@ -557,7 +567,26 @@
   },
   "notFound": {
     "code": "404",
-    "title": "Esta página não existe.",
-    "description": "O endereço pode ter mudado ou estar incorreto. Volte para o início ou conheça os projetos."
+    "eyebrow": "404 / LOST IN THE FLOW",
+    "title": "Opa, você saiu do fluxo.",
+    "description": "Esta página não existe. Mas já que você chegou até aqui, que tal jogar uma partida?",
+    "backToPortfolio": "Voltar ao portfólio",
+    "gameRegion": "Jogo Endless Runner",
+    "gameLabel": "Uma pausa no caminho",
+    "canvasLabel": "Jogo. Pressione espaço ou seta para cima para começar e pular; toque para pular em dispositivos móveis.",
+    "score": "Pontos",
+    "record": "Recorde",
+    "desktopControls": "Espaço ou ↑ para começar e pular · Esc para pausar",
+    "mobileControls": "Toque na área do jogo para pular",
+    "startGame": "Iniciar jogo",
+    "pauseGame": "Pausar",
+    "resumeGame": "Continuar",
+    "playAgain": "Jogar novamente",
+    "pausedOverlay": "Partida pausada",
+    "gameOverOverlay": "Fim de jogo",
+    "readyStatus": "Jogo pronto. Pressione espaço ou use o botão para começar.",
+    "runningStatus": "Partida em andamento. Pressione espaço ou seta para cima para pular. Escape pausa o jogo.",
+    "pausedStatus": "Partida pausada. Use o botão ou Escape para continuar.",
+    "gameOverStatus": "Fim de jogo. Sua pontuação: {{score}}."
   }
 }

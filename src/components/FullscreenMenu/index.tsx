@@ -111,7 +111,6 @@ function Panel({ onClose, returnFocusTo }: Omit<Props, 'open'>) {
           </div>
           <Button
             arrow
-            className={styles.cta}
             onClick={(event) => {
               const trigger = returnFocusTo
               onClose()

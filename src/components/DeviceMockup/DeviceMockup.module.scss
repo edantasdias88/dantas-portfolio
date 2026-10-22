@@ -1,0 +1,26 @@
+.mockup {
+  --device-frame-outer: #121416;
+  --device-frame-start: #30343a;
+  --device-frame-end: #101215;
+  --device-frame-bezel: #090b0d;
+  display: block;
+  width: 100%;
+
+  :global(svg),
+  :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  :global([data-theme='dark']) & {
+    --device-frame-outer: #f8f9fb;
+    --device-frame-start: #ffffff;
+    --device-frame-end: #dfe4ea;
+    --device-frame-bezel: #eef1f5;
+  }
+
+  :global([data-theme='dark']) &[data-inline='false'] > :global(img) {
+    visibility: hidden;
+  }
+}

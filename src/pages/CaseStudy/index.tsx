@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router'
 import { Button, ButtonLink } from '@/components/Button'
+import { CaseLink } from '@/components/CaseLink'
 import { CaseHero, type CaseHeroDetail } from '@/components/CaseHero'
 import { ProjectVisual } from '@/components/ProjectVisual'
 import { CaaAppSequence } from './CaaAppSequence'
@@ -48,18 +49,28 @@ export default function CaseStudyPage() {
             values: [t('projects.items.iruas.hero.role')],
           },
           {
+            kind: 'period',
+            label: t('case.sections.period'),
+            values: [t('projects.items.iruas.hero.period')],
+          },
+          {
             kind: 'platform',
             label: t('case.sections.platform'),
-            values: [t('projects.items.iruas.hero.platform')],
+            values: t('projects.items.iruas.hero.platform').split('\n'),
           },
         ]
     : []
   const index = projects.indexOf(project)
-  const next = projects[(index + 1) % projects.length]
+  const nextKey = key === 'caa' ? 'iruas' : 'caa'
+  const next = projects.find((item) => item.key === nextKey) ?? projects[(index + 1) % projects.length]
 
   return (
     <article>
-      <Seo title={`${name} — ${t(`projects.items.${key}.title`)} | Edilson Dantas`} description={t(`projects.items.${key}.description`)} />
+      <Seo
+        title={`${name} — ${t(`projects.items.${key}.title`)}`}
+        description={t(`meta.cases.${key}`)}
+        workName={`${name} — ${t(`projects.items.${key}.title`).replace(/\s+/g, ' ')}`}
+      />
 
       {project.caseHero ? (
         <CaseHero
@@ -96,25 +107,30 @@ export default function CaseStudyPage() {
         <>
           <section className={page.block} aria-labelledby="caa-story-title">
             <div className={`container ${page.blockGrid}`}>
-              <h2 id="caa-story-title" className={page.blockTitle}>
-                {t('case.caaStory.title')}
-              </h2>
-              <div className={styles.story}>
-                <p>{t('case.caaStory.intro')}</p>
-                <p>
-                  <strong>{t('case.caaStory.challenge.label')}</strong>{' '}
-                  {t('case.caaStory.challenge.text')}
-                </p>
-                <p>
-                  <strong>{t('case.caaStory.process.label')}</strong>{' '}
-                  {t('case.caaStory.process.text')}
-                </p>
-                <p>{t('case.caaStory.process.continuation')}</p>
-                <p>
-                  <strong>{t('case.caaStory.results.label')}</strong>{' '}
-                  {t('case.caaStory.results.text')}
-                </p>
-                <p>{t('case.caaStory.results.continuation')}</p>
+              <div className={styles.storyLead}>
+                <h2 id="caa-story-title" className={page.blockTitle}>
+                  {t('case.caaStory.title')}
+                </h2>
+                <div className={styles.storyIntro}>
+                  <p>{t('case.caaStory.intro')}</p>
+                  <p>{t('case.caaStory.introContinuation')}</p>
+                </div>
+              </div>
+              <div className={styles.storySections}>
+                <section className={styles.storySection} aria-labelledby="caa-challenge-title">
+                  <h3 id="caa-challenge-title">{t('case.caaStory.challenge.label')}</h3>
+                  <p>{t('case.caaStory.challenge.text')}</p>
+                </section>
+                <section className={styles.storySection} aria-labelledby="caa-process-title">
+                  <h3 id="caa-process-title">{t('case.caaStory.process.label')}</h3>
+                  <p>{t('case.caaStory.process.text')}</p>
+                  <p>{t('case.caaStory.process.continuation')}</p>
+                </section>
+                <section className={styles.storySection} aria-labelledby="caa-results-title">
+                  <h3 id="caa-results-title">{t('case.caaStory.results.label')}</h3>
+                  <p>{t('case.caaStory.results.text')}</p>
+                  <p>{t('case.caaStory.results.continuation')}</p>
+                </section>
               </div>
             </div>
           </section>
@@ -124,27 +140,32 @@ export default function CaseStudyPage() {
         <>
           <section className={page.block} aria-labelledby="iruas-story-title">
             <div className={`container ${page.blockGrid}`}>
-              <h2 id="iruas-story-title" className={page.blockTitle}>
-                {t('case.iruasStory.title')}
-              </h2>
-              <div className={styles.story}>
-                <p>{t('case.iruasStory.intro')}</p>
-                <p>
-                  <strong>{t('case.iruasStory.challenge.label')}</strong>{' '}
-                  {t('case.iruasStory.challenge.text')}
-                </p>
-                <p>
-                  <strong>{t('case.iruasStory.role.label')}</strong>{' '}
-                  {t('case.iruasStory.role.text')}
-                </p>
-                <p>
-                  <strong>{t('case.iruasStory.solution.label')}</strong>{' '}
-                  {t('case.iruasStory.solution.text')}
-                </p>
-                <p>
-                  <strong>{t('case.iruasStory.difference.label')}</strong>{' '}
-                  {t('case.iruasStory.difference.text')}
-                </p>
+              <div className={styles.storyLead}>
+                <h2 id="iruas-story-title" className={page.blockTitle}>
+                  {t('case.iruasStory.title')}
+                </h2>
+                <div className={styles.storyIntro}>
+                  <p>{t('case.iruasStory.intro')}</p>
+                  <p>{t('case.iruasStory.introContinuation')}</p>
+                </div>
+              </div>
+              <div className={styles.storySections}>
+                <section className={styles.storySection} aria-labelledby="iruas-challenge-title">
+                  <h3 id="iruas-challenge-title">{t('case.iruasStory.challenge.label')}</h3>
+                  <p>{t('case.iruasStory.challenge.text')}</p>
+                </section>
+                <section className={styles.storySection} aria-labelledby="iruas-process-title">
+                  <h3 id="iruas-process-title">{t('case.iruasStory.process.label')}</h3>
+                  <p>{t('case.iruasStory.process.text')}</p>
+                  <p>{t('case.iruasStory.process.continuation')}</p>
+                  <p>{t('case.iruasStory.process.goal')}</p>
+                </section>
+                <section className={styles.storySection} aria-labelledby="iruas-results-title">
+                  <h3 id="iruas-results-title">{t('case.iruasStory.results.label')}</h3>
+                  <p>{t('case.iruasStory.results.text')}</p>
+                  <p>{t('case.iruasStory.results.continuation')}</p>
+                  <p>{t('case.iruasStory.results.final')}</p>
+                </section>
               </div>
             </div>
           </section>
@@ -200,9 +221,9 @@ export default function CaseStudyPage() {
           <ButtonLink to="/projetos" variant="ghost">
             ← {t('case.allProjects')}
           </ButtonLink>
-          <ButtonLink to={caseHref(next)} variant="secondary" arrow arrowDirection="up-right">
+          <CaseLink to={caseHref(next)} size="md">
             {t('common.nextProject')}: {t(`projects.items.${next.key}.name`)}
-          </ButtonLink>
+          </CaseLink>
         </div>
       </nav>
     </article>

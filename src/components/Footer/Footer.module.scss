@@ -20,6 +20,10 @@
   gap: var(--space-8);
 }
 
+.inviteAction {
+  align-self: flex-start;
+}
+
 // Figma 51:1632 — Medium 100/91
 .title {
   max-width: 1000px;

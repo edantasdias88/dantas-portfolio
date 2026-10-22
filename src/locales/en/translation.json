@@ -1,6 +1,13 @@
 {
   "meta": {
     "siteName": "Edilson Dantas",
+    "personJobTitle": "Digital product designer",
+    "socialImageAlt": "Portrait of Edilson Dantas, digital product designer.",
+    "cases": {
+      "caa": "A platform connecting people looking for properties with those offering them, creating more opportunities for brokers and buyers.",
+      "iruas": "A real estate search experience exploring different ways to discover homes and neighborhoods to live in.",
+      "dantasDs": "A design system connecting foundations, tokens, and components to support consistency and reuse across products and brands."
+    },
     "home": {
       "title": "Edilson Dantas — Design, strategy and technology",
       "description": "Digital product designer. I bring strategy, design and technology together to turn complex problems into simple, useful and human products."
@@ -18,8 +25,8 @@
       "description": "Tell me a little about your project and let's see how I can help."
     },
     "notFound": {
-      "title": "Page not found — Edilson Dantas",
-      "description": "The page you're looking for doesn't exist or has moved."
+      "title": "404 — Lost in the Flow | Edilson Dantas",
+      "description": "You lost the flow. Play a round while you find your way back to the portfolio."
     }
   },
   "a11y": {
@@ -39,8 +46,7 @@
     "slide": "Project {{current}} of {{total}}",
     "goToSlide": "Go to project {{index}}: {{name}}",
     "carouselDots": "Card position",
-    "goToCard": "Go to card {{index}}",
-    "decorative": "Illustrative image"
+    "goToCard": "Go to card {{index}}"
   },
   "nav": {
     "home": "Home",
@@ -244,8 +250,8 @@
         "hero": {
           "logoAlt": "Compre & alugue agora",
           "role": "UX/UI Designer\nProduct Design",
-          "period": "2024 — 2025",
-          "platform": "Web and app\niOS and Android"
+          "period": "2025",
+          "platform": "App\niOS and Android"
         },
         "description": "A platform that brings together those who are searching and those who are offering. More opportunities for agents, more achievements for people.",
         "tags": [
@@ -263,7 +269,8 @@
         "hero": {
           "logoAlt": "iRuas logo",
           "role": "UX/UI and Product Design",
-          "platform": "Mobile app"
+          "period": "2026",
+          "platform": "App\niOS and Android"
         },
         "tags": [
           "Mobile",
@@ -414,6 +421,7 @@
       "summary": "Please review the highlighted fields before sending.",
       "serverValidation": "Please check the submitted details and try again.",
       "rateLimited": "Too many attempts in a short time. Wait a few minutes and try again.",
+      "notConfigured": "Your fields are valid, but message sending is not configured yet. Your information has been kept.",
       "network": "We couldn't send your message right now. Check your connection and try again.",
       "server": "The sending service returned an error. Please try again in a few minutes."
     },
@@ -422,7 +430,7 @@
       "description": "Thanks for reaching out. I'll read your message and get back to you soon.",
       "again": "Send another message"
     },
-    "notConfigured": "Message sending hasn't been set up on this site yet. The form will be enabled as soon as the sending service is connected."
+    "notConfigured": "You can fill out and validate the form, but message sending is not available yet."
   },
   "projectsPage": {
     "eyebrow": "Projects",
@@ -437,46 +445,49 @@
     "inPreparationText": "This case study is being documented with the role I played, the decisions made and the project's outcomes. In the meantime, get in touch to see the work in detail.",
     "caaStory": {
       "title": "Behind the experience",
-      "intro": "Compre & Alugue Agora (CAA) is an app that connects people with opportunities in the real estate market. It brings together property search for buying and renting, new developments, services and relationship tools in one digital environment, aiming to simplify connections and make the journey more intuitive.",
+      "intro": "Compre & Alugue Agora (CAA) is a real estate platform that brings together different property-search needs, connecting people, properties and services in one experience. It goes beyond traditional property search, providing an environment that combines property discovery, relationships between users and access to services related to the real estate market.",
+      "introContinuation": "The product was conceived with different profiles and needs in mind, from people looking to buy or rent a home to professionals working in this market. The platform was designed to organize these experiences within an integrated structure, making features easier to access and navigation clearer and more intuitive.",
       "challenge": {
         "label": "Challenge",
-        "text": "Organize different features and needs in a single app while keeping navigation clear and easy to use. It was necessary to consider different user profiles, make resources easy to access and prevent the range of possibilities from making the experience complex."
+        "text": "The main challenge was to organize a platform with different features, audiences and journeys into a consistent experience. The range of needs called for navigation that made information and resources easy to access without overloading the interface.",
+        "continuation": "It was necessary to consider how property search, services, the feed and artificial intelligence features could connect in a coherent experience while respecting the specifics of each area. The challenge was to balance the range of features with a clear hierarchy, so each user could find what they needed and understand how to navigate the platform."
       },
       "process": {
         "label": "Process",
-        "text": "My work in UX/UI and Product Design covered defining the information hierarchy, organizing interaction flows, structuring navigation and developing interfaces for the app's different areas, with the goal of creating an intuitive, consistent experience aligned with the product's objectives.",
-        "continuation": "The work also involved building visual and functional patterns to keep features consistent and create a foundation for the product's evolution."
+        "text": "The work involved conceiving and structuring the product experience, including the organization of features, navigation architecture and interaction flows. The structure aimed to establish clear connections between the platform’s different areas, making it easier to move between property discovery, services and other available activities.",
+        "continuation": "The experience also considered different contexts of use and devices, with attention to the organization of elements, information hierarchy and consistency of interface patterns. The aim was to create a foundation that could bring the different features together without compromising the product’s clarity."
       },
       "results": {
         "label": "Results",
-        "text": "The work helped structure the app experience, bringing different features together in a clearer, more integrated journey.",
-        "continuation": "The navigation structure, information hierarchy and consistent interfaces established a foundation for the product's ongoing evolution, with a focus on clear navigation and ease of use."
+        "text": "The project resulted in the conception of a real estate platform that brings different experiences together in one digital environment. Its structure includes property search, services, a feed and the IAgo assistant, conceived as a central point of intelligence and support throughout the user journey.",
+        "continuation": "The navigation and interfaces were organized to make these features more accessible and provide a consistent experience across the product’s different areas. The proposal was to structure a platform for different needs in the real estate market, connecting search, services and relationships in one experience."
       }
     },
     "iruasStory": {
-      "title": "A search shaped around different contexts",
-      "intro": "iRuas is a property discovery app that brings together different ways to find real estate opportunities.",
+      "title": "Behind the experience",
+      "intro": "iRuas is an app focused on property search, rethinking how people discover homes. The idea is to broaden search possibilities, allowing discovery through different means: visual exploration of properties, observing the surrounding area, routes or text searches.",
+      "introContinuation": "The app was conceived to bring these experiences together in one product, offering alternatives for people to explore properties according to their intent and context. Rather than relying on a single path, the search considers different ways to find and learn about properties.",
       "challenge": {
         "label": "Challenge",
-        "text": "Organize different needs and search modes into an intuitive, coherent experience."
+        "text": "The challenge was to rethink the traditional real estate search experience and explore new ways of discovering properties. Instead of centering the journey solely on filters and text searches, the idea was to broaden interaction possibilities by considering different behaviors and situations in which someone might become interested in a property.",
+        "continuation": "These modes also needed to come together in a consistent experience, with clear flows and navigation that made each search method understandable without making the app complex. The challenge was to balance variety with ease of use and maintain a coherent experience across the different modes."
       },
-      "role": {
-        "label": "My role",
-        "text": "I worked in UX/UI and Product Design, including product conception, defining the search modes and structuring the experience."
+      "process": {
+        "label": "Process",
+        "text": "The process involved conceiving the product and defining four search modes: card interaction, camera, routes and text. Each was designed to offer a distinct way to explore properties, considering different intentions and contexts of use.",
+        "continuation": "The interactive search proposes visual exploration through swipeable cards. Camera search brings the digital experience closer to places observed in person. Route search lets people explore properties along a journey or from a defined route, while text search provides a direct way to search and view results.",
+        "goal": "Along with defining these modes, the work involved organizing flows, navigation and interfaces to bring the different experiences together in one app. The goal was to shape a clear, consistent journey in which each mode could broaden the ways people discover properties."
       },
-      "solution": {
-        "label": "Solution",
-        "text": "The concept brings gesture, camera, route and text search together in one experience."
-      },
-      "difference": {
-        "label": "Approach",
-        "text": "Exploring different ways to discover properties lets the search adapt to different contexts of use."
+      "results": {
+        "label": "Results",
+        "text": "The result was the conception of a real estate app structured around four search modes: card interaction, camera, routes and text. This combination broadens the ways people can explore properties, bringing different discovery methods into one experience.",
+        "continuation": "The concept approaches property search from different perspectives, from visual and interactive exploration to direct search or discovery based on the user’s surroundings and routes. Rather than relying on a single mechanism, iRuas was conceived to offer different search paths within an integrated experience.",
+        "final": "The project moved into development, carrying forward the proposal for a more flexible and varied real estate experience."
       }
     },
     "caaAppSequence": {
       "ariaLabel": "Visual presentation of the CAA app",
       "mainAlt": "Illustrative mockup of the CAA app in front of a contemporary home.",
-      "provisional": "Illustrative mockup · replaceable interface",
       "screensLabel": "Illustrative app screens",
       "screens": {
         "properties": { "label": "Property search", "alt": "Concept screen for searching and browsing properties." },
@@ -500,7 +511,6 @@
     "iruasSequence": {
       "ariaLabel": "Conceptual visual sequence for the iRuas app",
       "heroAlt": "A person explores a residential building facade with a phone on an urban street.",
-      "provisional": "Concept visual · illustrative, unofficial interface",
       "screensLabel": "Conceptual iRuas search modes",
       "screens": {
         "gestures": { "label": "Gesture search", "alt": "Concept illustration of gesture-based property discovery, not an official iRuas screenshot." },
@@ -557,7 +567,26 @@
   },
   "notFound": {
     "code": "404",
-    "title": "This page doesn't exist.",
-    "description": "The address may have changed or be incorrect. Head back home or take a look at the projects."
+    "eyebrow": "404 / LOST IN THE FLOW",
+    "title": "Oops, you lost the flow.",
+    "description": "This page doesn't exist. Since you're here, how about playing a round?",
+    "backToPortfolio": "Back to the portfolio",
+    "gameRegion": "Endless Runner game",
+    "gameLabel": "A little detour",
+    "canvasLabel": "Game. Press Space or Arrow Up to start and jump; tap to jump on mobile devices.",
+    "score": "Score",
+    "record": "Best",
+    "desktopControls": "Space or ↑ to start and jump · Esc to pause",
+    "mobileControls": "Tap the game area to jump",
+    "startGame": "Start game",
+    "pauseGame": "Pause",
+    "resumeGame": "Resume",
+    "playAgain": "Play again",
+    "pausedOverlay": "Game paused",
+    "gameOverOverlay": "Game over",
+    "readyStatus": "Game ready. Press Space or use the button to start.",
+    "runningStatus": "Game in progress. Press Space or Arrow Up to jump. Escape pauses the game.",
+    "pausedStatus": "Game paused. Use the button or Escape to resume.",
+    "gameOverStatus": "Game over. Your score: {{score}}."
   }
 }

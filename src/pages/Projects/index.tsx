@@ -1,10 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import { ArrowUpRight } from '@/components/Icons'
+import { CaseLinkContent } from '@/components/CaseLink'
 import { ProjectVisual } from '@/components/ProjectVisual'
 import { Reveal } from '@/components/Reveal'
 import { Seo } from '@/components/Seo'
-import { caseHref, projects } from '@/data/projects'
+import { caseHref, portfolioProjects } from '@/data/projects'
 import page from '../page.module.scss'
 import styles from './Projects.module.scss'
 
@@ -23,7 +23,7 @@ export default function ProjectsPage() {
 
       <section className={styles.listSection} aria-label={t('projects.title')}>
         <ol className={`container ${styles.list}`}>
-          {projects.map((project, i) => {
+          {portfolioProjects.map((project, i) => {
             const key = project.key
             return (
               <Reveal as="li" key={key} className={styles.item}>
@@ -40,9 +40,7 @@ export default function ProjectsPage() {
                       {t(`projects.items.${key}.title`)}
                     </h2>
                     <p className={styles.description}>{t(`projects.items.${key}.description`)}</p>
-                    <span className={styles.cta}>
-                      {t('common.viewCase')} <ArrowUpRight size={18} />
-                    </span>
+                    <CaseLinkContent>{t('common.viewCase')}</CaseLinkContent>
                   </div>
                 </Link>
               </Reveal>

@@ -1,22 +1,15 @@
-import portrait from '@/assets/images/edilson-portrait.webp'
 import styles from './Portrait.module.scss'
 
-/**
- * Retrato do autor. Para substituir pela fotografia real, defina `PORTRAIT`
- * apontando para o arquivo importado (ex.: import photo from '@/assets/images/edilson.jpg').
- */
-const PORTRAIT: { src: string; width: number; height: number } | null = { src: portrait, width: 628, height: 740 }
+const PORTRAIT = {
+  src: `${import.meta.env.BASE_URL}images/edilson-portrait.jpg`,
+  width: 1155,
+  height: 1362,
+}
 
 export function Portrait({ alt, className }: { alt: string; className?: string }) {
   return (
     <div className={[styles.frame, className].filter(Boolean).join(' ')}>
-      {PORTRAIT ? (
-        <img src={PORTRAIT.src} width={PORTRAIT.width} height={PORTRAIT.height} alt={alt} loading="lazy" decoding="async" />
-      ) : (
-        <div className={styles.placeholder} role="img" aria-label={alt}>
-          <span aria-hidden="true">ED</span>
-        </div>
-      )}
+      <img src={PORTRAIT.src} width={PORTRAIT.width} height={PORTRAIT.height} alt={alt} loading="lazy" decoding="async" />
     </div>
   )
 }

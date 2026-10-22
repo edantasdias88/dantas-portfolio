@@ -21,7 +21,7 @@ Extraídas do Figma (conta matheus.simoes@comprealugueagora.com.br) e recortadas
 |---|---|---|
 | `caa.webp` | `21:1151` (fundo de Projetos) | Slide/case/listagem CAA |
 | `iruas-mockup.webp` | `18:714` "Notebook e aplicativo iRuas" | Accordion de Serviços + projeto iRuas |
-| `edilson-portrait.webp` | `44:1347` "Fotografia original" | Sobre mim (Home e `/sobre-mim`) |
+| `public/images/edilson-portrait.jpg` | Conversão JPEG da fotografia original `44:1347` | Sobre mim (Home e `/sobre-mim`) e imagem padrão de compartilhamento |
 | `logo-wordmark.webp` | logo do header | Header, menu e modal de contato |
 | `silk.webp` | `18:781` / `44:1392` "image 3" | Fundo de Serviços e FAQ |
 
@@ -30,19 +30,19 @@ Extraídas do Figma (conta matheus.simoes@comprealugueagora.com.br) e recortadas
 Verificado com build de produção + testes automatizados no Chrome (Playwright), sem erros de console:
 
 - Stack: React 19, TypeScript strict, Vite, SCSS Modules, React Router, Motion, i18next.
-- Rotas: `/`, `/projetos`, `/sobre-mim`, `/contato`, `/case/caa`, `/case/irus`, `/case/dantas-ds`, 404. Carregamento direto, voltar/avançar, `/case/iruas` → `/case/irus`. Fallback SPA em `public/_redirects` (Netlify) e `vercel.json`.
+- Rotas: `/`, `/projetos`, `/sobre-mim`, `/contato`, `/case/caa`, `/case/iruas`, `/case/dantas-ds`, 404. O case iRuas usa `/case/iruas`. Fallback SPA em `public/.htaccess` (Apache) e `public/_redirects` (Netlify).
 - Tema claro/escuro: preferência do sistema na primeira visita, escolha salva em `localStorage`, sem flash (script inline no `index.html`), `color-scheme` atualizado.
 - Idiomas pt-BR/en: detecção do navegador, escolha salva, `lang` atualizado, rota mantida, sem prefixo na URL.
 - Menu em tela cheia (Liquid Glass): Escape, foco preso e devolvido, fecha ao navegar e com voltar do navegador.
 - Modal de contato em tela cheia: todos os CTAs "Vamos conversar", Escape, foco devolvido, fundo `inert` e scroll bloqueado.
 - Hero: 100svh, ondas SVG em loop contínuo, respeita `prefers-reduced-motion`.
 - Como posso ajudar: arraste com mouse (com inércia), cursor pill "‹ arraste ›" só em ponteiro fino, toque nativo + dots em touch, dots ocultos quando não há overflow, último card termina exatamente na borda direita do container (medido: 1380 = 1380 em 1440 px).
-- Serviços: 6 itens (incluindo Design Systems e Front-end), um aberto por vez, primeiro aberto, mockup iRuas + "Ver projetos relacionados" → `/case/irus`.
+- Serviços: 6 itens (incluindo Design Systems e Front-end), um aberto por vez, primeiro aberto, mockup iRuas + "Ver projetos relacionados" → `/case/iruas`.
 - Processo: primeiro card aberto, um por vez, expande na horizontal (desktop) e na vertical (mobile).
 - Projetos: scroll fixado, um slide por gesto, reverso, libera o scroll nas extremidades; parallax sutil; navegação lateral; mobile usa lista vertical.
 - Como é trabalhar comigo (grade 2×2 aberta), Sobre mim (bloco escuro + imagem com revelação), FAQ (editorial, um aberto por vez, teclado), CTA final + rodapé com voltar ao topo.
 - Sem overflow horizontal em 320, 375, 768, 1024, 1440 e 1936 px.
-- SEO: título, descrição, Open Graph e canonical por rota (canonical requer `VITE_SITE_URL`).
+- SEO: títulos e descrições traduzidos por rota; build gera HTML inicial específico para cada rota e `404.html` com `noindex`. Canonical, imagem Open Graph/Twitter, JSON-LD e sitemap são gerados quando `VITE_SITE_URL` contém a origem HTTPS definitiva.
 
 ## Pendente (depende de material ou configuração externa)
 
@@ -52,7 +52,7 @@ Verificado com build de produção + testes automatizados no Chrome (Playwright)
 4. **Ícones dos cards** (Como posso ajudar, Processo, Como é trabalhar comigo) — existem no Figma como vetores e ainda não foram aplicados.
 5. **Conteúdo completo dos cases** — as páginas mostram visão geral e o aviso "Case completo em preparação". As seções Contexto/Papel/Decisões/Resultados já têm rótulos traduzidos em `case.sections` e devem ser adicionadas em `src/pages/CaseStudy` quando o material validado existir (sem métricas inventadas).
 6. **Trajetória em `/sobre-mim`** — não há histórico profissional nos documentos; a página usa apenas o posicionamento, valor, áreas, processo e forma de trabalho do PDF.
-7. **Imagem de compartilhamento (`og:image`)** — adicionar quando houver arte.
+7. **SEO de produção** — configurar o domínio HTTPS definitivo em `VITE_SITE_URL` antes do build de publicação para gerar canonicals, metadados sociais, JSON-LD e sitemap com URLs absolutas.
 
 ## Como continuar
 

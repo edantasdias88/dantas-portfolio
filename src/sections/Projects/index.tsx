@@ -1,11 +1,10 @@
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform, type MotionValue } from 'motion/react'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Link } from 'react-router'
-import contactAction from '@/assets/figma/footer/contact-action.svg'
+import { CaseLink } from '@/components/CaseLink'
 import { ProjectVisual } from '@/components/ProjectVisual'
 import { Reveal } from '@/components/Reveal'
-import { caseHref, projects, type Project } from '@/data/projects'
+import { caseHref, portfolioProjects, type Project } from '@/data/projects'
 import { useMediaQuery } from '@/lib/hooks'
 import styles from './Projects.module.scss'
 
@@ -24,7 +23,7 @@ function PinnedProjects() {
   const [active, setActive] = useState(0)
   const activeRef = useRef(0)
   const reduce = useReducedMotion()
-  const total = projects.length
+  const total = portfolioProjects.length
   const { scrollYProgress } = useScroll({ target: wrapper, offset: ['start start', 'end end'] })
   const position = useTransform(scrollYProgress, (p) => p * (total - 1))
 
@@ -89,13 +88,13 @@ function PinnedProjects() {
       </h2>
       <div ref={wrapper} className={styles.wrapper} style={{ height: `${total * 100}vh` }}>
         <div className={styles.sticky}>
-          {projects.map((project, i) => (
+          {portfolioProjects.map((project, i) => (
             <Slide key={project.key} project={project} index={i} active={active === i} position={position} />
           ))}
 
           <nav className={`container ${styles.side}`} aria-label={t('projects.title')}>
             <ol>
-              {projects.map((project, i) => (
+              {portfolioProjects.map((project, i) => (
                 <li key={project.key}>
                   <button
                     type="button"
@@ -153,10 +152,9 @@ function Slide({
           <p className={styles.label}>{t(`projects.items.${key}.name`)}</p>
           <h3 className={styles.title}>{t(`projects.items.${key}.title`)}</h3>
           <p className={styles.description}>{t(`projects.items.${key}.description`)}</p>
-          <Link to={caseHref(project)} className={styles.caseLink} tabIndex={active ? 0 : -1}>
-            <span className={styles.caseLabel}>{t('common.viewCase')}</span>
-            <img src={contactAction} alt="" width={28} height={28} className={styles.caseIcon} />
-          </Link>
+          <CaseLink to={caseHref(project)} className={styles.caseLink} tone="project" tabIndex={active ? 0 : -1}>
+            {t('common.viewCase')}
+          </CaseLink>
         </div>
       </div>
     </article>
@@ -175,7 +173,7 @@ function StackedProjects() {
         </h2>
       </div>
       <ol className={styles.stackedList}>
-        {projects.map((project, i) => (
+        {portfolioProjects.map((project, i) => (
           <li key={project.key}>
             <Reveal className={styles.card}>
               <div className={styles.cardMedia}>
@@ -187,10 +185,9 @@ function StackedProjects() {
                 </p>
                 <h3 className={styles.title}>{t(`projects.items.${project.key}.title`)}</h3>
                 <p className={styles.description}>{t(`projects.items.${project.key}.description`)}</p>
-                <Link to={caseHref(project)} className={styles.caseLink}>
-                  <span className={styles.caseLabel}>{t('common.viewCase')}</span>
-                  <img src={contactAction} alt="" width={28} height={28} className={styles.caseIcon} />
-                </Link>
+                <CaseLink to={caseHref(project)} className={styles.caseLink} tone="project">
+                  {t('common.viewCase')}
+                </CaseLink>
               </div>
             </Reveal>
           </li>

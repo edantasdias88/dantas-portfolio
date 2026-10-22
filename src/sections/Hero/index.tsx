@@ -2,9 +2,9 @@ import { useEffect } from 'react'
 import { motion, useReducedMotion } from 'motion/react'
 import { useTranslation } from 'react-i18next'
 import repere from '@/assets/figma/hero/repere.svg'
-import { ArrowRight } from '@/components/Icons'
+import { Button } from '@/components/Button'
 import { useContact } from '@/lib/contact'
-import { markHeroReady } from '@/lib/initialLoad'
+import { markInitialContentReady } from '@/lib/initialLoad'
 import { HeroArt } from './Art'
 import styles from './Hero.module.scss'
 
@@ -46,7 +46,7 @@ export function Hero() {
       : Promise.resolve()
 
     void Promise.all([fontsReady, ...imageReadiness]).then(() => {
-      if (!cancelled) markHeroReady()
+      if (!cancelled) markInitialContentReady()
     })
 
     return () => {
@@ -75,10 +75,9 @@ export function Hero() {
           <p>{t('hero.subtitle')}</p>
         </motion.div>
         <motion.div className={styles.action} {...enter(0.38)}>
-          <button type="button" className={styles.cta} onClick={(e) => openContact(e.currentTarget)}>
-            <span>{t('common.cta')}</span>
-            <ArrowRight size={21} />
-          </button>
+          <Button arrow size="lg" className={styles.actionButton} onClick={(e) => openContact(e.currentTarget)}>
+            {t('common.cta')}
+          </Button>
         </motion.div>
       </div>
 

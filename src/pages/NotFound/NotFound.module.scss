@@ -1,21 +1,69 @@
+@use 'styles/tokens' as *;
+
 .section {
-  min-height: 80svh;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr);
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
+  padding:
+    max(20px, calc(env(safe-area-inset-top, 0px) + 20px))
+    max(20px, calc(env(safe-area-inset-right, 0px) + 20px))
+    max(20px, calc(env(safe-area-inset-bottom, 0px) + 20px))
+    max(20px, calc(env(safe-area-inset-left, 0px) + 20px));
+  overflow-x: clip;
 }
 
-.code {
-  font-size: clamp(5rem, 18vw, 14rem);
-  font-weight: 700;
-  line-height: 0.85;
-  letter-spacing: -0.06em;
-  color: var(--display-ink);
-  -webkit-text-stroke: 1px var(--border-default);
+.eyebrow {
+  color: var(--accent-content);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-3);
-  margin-top: var(--space-3);
+.title {
+  max-width: 15ch;
+  color: var(--content-primary);
+  font-size: clamp(2.75rem, 7.4vw, 6.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.065em;
+  text-wrap: balance;
+}
+
+.description {
+  max-width: 700px;
+  color: var(--content-secondary);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  line-height: var(--lh-body);
+  text-wrap: pretty;
+}
+
+@include down(md) {
+  .section {
+    padding:
+      max(16px, calc(env(safe-area-inset-top, 0px) + 16px))
+      max(16px, calc(env(safe-area-inset-right, 0px) + 16px))
+      max(16px, calc(env(safe-area-inset-bottom, 0px) + 16px))
+      max(16px, calc(env(safe-area-inset-left, 0px) + 16px));
+  }
+
+  .title {
+    font-size: clamp(2.5rem, 8.4vw, 5rem);
+  }
+}
+
+@include down(sm) {
+  .section {
+    padding:
+      max(12px, calc(env(safe-area-inset-top, 0px) + 12px))
+      max(12px, calc(env(safe-area-inset-right, 0px) + 12px))
+      max(12px, calc(env(safe-area-inset-bottom, 0px) + 12px))
+      max(12px, calc(env(safe-area-inset-left, 0px) + 12px));
+  }
+
+  .title {
+    font-size: clamp(2.4rem, 11vw, 3.8rem);
+  }
 }

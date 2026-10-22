@@ -4,6 +4,7 @@
   --btn-bg: var(--background-inverse);
   --btn-fg: var(--content-inverse);
   --btn-border: transparent;
+  --btn-hover-bg: var(--cta-white-fill);
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -32,7 +33,7 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    background: var(--cta-white-fill);
+    background: var(--btn-hover-bg);
     border-radius: inherit;
     transform: translateY(101%);
     transition: transform var(--dur-slow) var(--ease-out);
@@ -71,6 +72,15 @@
   min-height: 56px;
   padding: 0 var(--space-6);
   font-size: 1.0625rem;
+}
+
+.primary {
+  --btn-bg: var(--cta-white-fill);
+  --btn-fg: #fff;
+  --btn-border: color-mix(in srgb, #fff 59%, transparent);
+  --btn-hover-bg: var(--cta-white-hover);
+  min-width: 220px;
+  justify-content: space-between;
 }
 
 .secondary {

@@ -220,44 +220,11 @@
   padding-top: var(--space-6);
 }
 
-// Figma 18:314 — 289×65, pílula brand com borda branca translúcida
-.cta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--space-6);
-  width: 289px;
-  height: 65px;
-  padding: 0 28px;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(255, 255, 255, 0.59);
-  background: var(--cta-white-fill);
-  color: var(--content-on-brand);
+.actionButton {
+  width: min(289px, 100%);
+  min-height: 65px;
+  padding-inline: 28px;
   font-size: 1.1875rem;
-  line-height: 1;
-  transition: background-color var(--dur-base) var(--ease-out), transform var(--dur-fast) var(--ease-out);
-
-  svg {
-    transition: transform var(--dur-base) var(--ease-out);
-  }
-
-  @include hover {
-    background: var(--cta-white-hover);
-
-    img {
-      transform: translateX(4px);
-    }
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
-
-  @include down(sm) {
-    width: 100%;
-    max-width: 289px;
-    height: 58px;
-  }
 }
 
 // Figma 13:266 — x 114 no frame de 1936, base a 56px

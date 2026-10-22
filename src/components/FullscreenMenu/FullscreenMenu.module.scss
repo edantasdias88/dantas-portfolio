@@ -151,35 +151,6 @@
   flex-shrink: 0;
 }
 
-.bottom .cta {
-  transition:
-    background-color var(--dur-base) var(--ease-out),
-    color var(--dur-base) var(--ease-out),
-    border-color var(--dur-base) var(--ease-out),
-    transform var(--dur-fast) var(--ease-out);
-
-  &::before {
-    display: none;
-  }
-
-  @include hover {
-    background-color: var(--cta-white-hover);
-
-    .icon {
-      transform: translateX(4px);
-    }
-  }
-
-  :global([data-theme='dark']) & {
-    --btn-bg: #fff;
-    --btn-fg: var(--neutral-950);
-  }
-}
-
-.bottom .cta .icon {
-  transition: transform var(--dur-base) var(--ease-out);
-}
-
 .setting {
   display: flex;
   align-items: center;
