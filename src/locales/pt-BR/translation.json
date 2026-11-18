@@ -426,8 +426,8 @@
     },
     "success": {
       "message": "Mensagem enviada com sucesso! Retornarei o contato em breve.",
-      "title": "Mensagem enviada.",
-      "description": "Obrigado pelo contato. Vou ler sua mensagem e responder em breve.",
+      "title": "Mensagem enviada!",
+      "description": "Sua mensagem chegou por aqui. Obrigado pelo contato! Em breve retorno para conversarmos.",
       "again": "Enviar outra mensagem"
     },
     "notConfigured": "Você pode preencher e validar o formulário, mas o envio de mensagens ainda não está disponível."

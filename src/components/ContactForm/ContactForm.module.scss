@@ -219,3 +219,40 @@
 @include reduced-motion {
   .spinner { animation: none; }
 }
+
+// Six pixels of inset preserve focus outlines while the height is animated.
+.transitionStage {
+  min-width: 0;
+  overflow: hidden;
+  padding: 6px;
+  margin: -6px;
+}
+
+.confirmation {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-5);
+  padding-block: var(--space-5);
+}
+
+.successIcon {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-pill);
+  background: var(--cta-white-fill);
+  color: var(--content-on-brand);
+}
+
+.successTitle {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  letter-spacing: var(--ls-snug);
+}
+
+.successDescription {
+  max-width: 42ch;
+  color: var(--content-secondary);
+  line-height: var(--lh-body);
+}

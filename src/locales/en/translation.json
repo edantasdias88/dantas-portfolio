@@ -426,8 +426,8 @@
     },
     "success": {
       "message": "Message sent successfully! I’ll get back to you soon.",
-      "title": "Message sent.",
-      "description": "Thanks for reaching out. I'll read your message and get back to you soon.",
+      "title": "Message sent!",
+      "description": "Your message has arrived. Thank you for getting in touch! I’ll get back to you soon so we can talk.",
       "again": "Send another message"
     },
     "notConfigured": "You can fill out and validate the form, but message sending is not available yet."

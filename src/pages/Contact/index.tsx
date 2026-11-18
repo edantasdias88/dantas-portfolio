@@ -18,7 +18,7 @@ export default function ContactPage() {
             <p className="lead">{t('contact.description')}</p>
             <ContactOptions />
           </div>
-          <ContactForm floatingLabels />
+          <ContactForm floatingLabels animatedSuccess />
         </div>
       </section>
     </>

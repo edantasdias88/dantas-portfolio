@@ -5,6 +5,7 @@ import { Button } from '../Button'
 import { FieldOutline } from './FieldOutline'
 import { submitContact, type ContactValues } from './submitContact'
 import styles from './ContactForm.module.scss'
+import { SuccessTransition } from './SuccessTransition'
 
 type Field = 'name' | 'email' | 'phone' | 'message'
 type Values = ContactValues
@@ -14,7 +15,7 @@ type Status = 'idle' | 'sending' | 'success' | 'error'
 const EMPTY: Values = { name: '', email: '', phone: '', message: '' }
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
 
-export function ContactForm({ autoFocus = false, floatingLabels = false }: { autoFocus?: boolean; floatingLabels?: boolean }) {
+export function ContactForm({ autoFocus = false, floatingLabels = false, animatedSuccess = false }: { autoFocus?: boolean; floatingLabels?: boolean; animatedSuccess?: boolean }) {
   const { t } = useTranslation()
   const uid = useId()
   const [values, setValues] = useState<Values>(EMPTY)
@@ -104,7 +105,7 @@ export function ContactForm({ autoFocus = false, floatingLabels = false }: { aut
   const errorId = (f: Field) => `${uid}-${f}-error`
   const describedBy = (f: Field) => (errors[f] ? errorId(f) : undefined)
 
-  return (
+  const form = (
     <form ref={formRef} className={floatingLabels ? `${styles.form} ${styles.floating}` : styles.form} onSubmit={onSubmit} noValidate aria-busy={status === 'sending'}>
       <fieldset className={styles.fieldset} disabled={status === 'sending'}>
         <legend className="visually-hidden">{t('contact.title')}</legend>
@@ -211,10 +212,10 @@ export function ContactForm({ autoFocus = false, floatingLabels = false }: { aut
 
       <div role="status" aria-live="polite" className={styles.live}>
         {status === 'sending' && <span className="visually-hidden">{t('contact.form.sending')}</span>}
-        {status === 'success' && <p>{t('contact.success.message')}</p>}
+        {status === 'success' && !animatedSuccess && <p>{t('contact.success.message')}</p>}
       </div>
 
-      <Button type="submit" size="lg" arrow disabled={status === 'sending'}>
+      <Button type="submit" size="lg" arrow disabled={status === 'sending' || (animatedSuccess && status === 'success')}>
         <span className={styles.submitLabel}>
           {status === 'sending' && <span className={styles.spinner} aria-hidden="true" />}
           {status === 'sending' ? t('contact.form.sending') : t('contact.form.submit')}
@@ -222,4 +223,8 @@ export function ContactForm({ autoFocus = false, floatingLabels = false }: { aut
       </Button>
     </form>
   )
+
+  return animatedSuccess ? (
+    <SuccessTransition success={status === 'success'} onReset={() => setStatus('idle')}>{form}</SuccessTransition>
+  ) : form
 }
