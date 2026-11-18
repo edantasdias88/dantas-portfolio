@@ -1,4 +1,4 @@
-import type { ButtonHTMLAttributes, ReactNode } from 'react'
+import type { ButtonHTMLAttributes, PointerEvent as ReactPointerEvent, ReactNode } from 'react'
 import { Link, type LinkProps } from 'react-router'
 import { ArrowRight, ArrowUpRight } from '../Icons'
 import styles from './Button.module.scss'
@@ -32,6 +32,20 @@ function Content({ children, arrow, arrowDirection = 'right' }: Pick<CommonProps
   )
 }
 
+/** Track the light directly on the element, without rendering on pointer movement. */
+function trackRadialLight(event: ReactPointerEvent<HTMLElement>) {
+  const element = event.currentTarget
+  if (event.pointerType !== 'mouse' || element.matches(':disabled, [aria-disabled="true"]')) return
+  const bounds = element.getBoundingClientRect()
+  element.style.setProperty('--mouse-x', `${event.clientX - bounds.left}px`)
+  element.style.setProperty('--mouse-y', `${event.clientY - bounds.top}px`)
+  element.dataset.radialHover = 'true'
+}
+
+function clearRadialLight(event: ReactPointerEvent<HTMLElement>) {
+  delete event.currentTarget.dataset.radialHover
+}
+
 export function Button({
   variant,
   size,
@@ -40,10 +54,34 @@ export function Button({
   children,
   className,
   type = 'button',
+  onPointerEnter,
+  onPointerMove,
+  onPointerLeave,
+  onPointerCancel,
   ...rest
 }: CommonProps & ButtonHTMLAttributes<HTMLButtonElement>) {
   return (
-    <button type={type} className={classes({ variant, size, className, children })} {...rest}>
+    <button
+      type={type}
+      className={classes({ variant, size, className, children })}
+      {...rest}
+      onPointerEnter={(event) => {
+        if (!variant || variant === 'primary') trackRadialLight(event)
+        onPointerEnter?.(event)
+      }}
+      onPointerMove={(event) => {
+        if (!variant || variant === 'primary') trackRadialLight(event)
+        onPointerMove?.(event)
+      }}
+      onPointerLeave={(event) => {
+        clearRadialLight(event)
+        onPointerLeave?.(event)
+      }}
+      onPointerCancel={(event) => {
+        clearRadialLight(event)
+        onPointerCancel?.(event)
+      }}
+    >
       <Content arrow={arrow} arrowDirection={arrowDirection}>{children}</Content>
     </button>
   )
@@ -56,10 +94,33 @@ export function ButtonLink({
   arrowDirection,
   children,
   className,
+  onPointerEnter,
+  onPointerMove,
+  onPointerLeave,
+  onPointerCancel,
   ...rest
 }: CommonProps & LinkProps) {
   return (
-    <Link className={classes({ variant, size, className, children })} {...rest}>
+    <Link
+      className={classes({ variant, size, className, children })}
+      {...rest}
+      onPointerEnter={(event) => {
+        if (!variant || variant === 'primary') trackRadialLight(event)
+        onPointerEnter?.(event)
+      }}
+      onPointerMove={(event) => {
+        if (!variant || variant === 'primary') trackRadialLight(event)
+        onPointerMove?.(event)
+      }}
+      onPointerLeave={(event) => {
+        clearRadialLight(event)
+        onPointerLeave?.(event)
+      }}
+      onPointerCancel={(event) => {
+        clearRadialLight(event)
+        onPointerCancel?.(event)
+      }}
+    >
       <Content arrow={arrow} arrowDirection={arrowDirection}>{children}</Content>
     </Link>
   )

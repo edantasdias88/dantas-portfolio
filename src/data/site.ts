@@ -9,7 +9,7 @@ export const site = {
   /** Apenas dígitos com DDI, ex.: 5511999999999 */
   whatsapp: import.meta.env.VITE_CONTACT_WHATSAPP ?? '',
   /**
-   * Endpoint PHP que recebe POST JSON { name, email, phone, company, message } e responde { ok: true } após aceitar o envio SMTP.
+   * Endpoint PHP que recebe POST JSON { name, email, phone, message } e responde { ok: true } após aceitar o envio SMTP.
    */
   contactEndpoint: import.meta.env.VITE_CONTACT_ENDPOINT ?? '',
 } as const

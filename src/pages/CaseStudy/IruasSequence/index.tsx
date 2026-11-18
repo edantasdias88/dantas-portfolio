@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { DeviceMockup } from '@/components/DeviceMockup'
+import { iPhoneFrame as IPhoneFrame } from '@/components/iPhoneFrame'
 import { iruasCaseAssets } from '@/data/iruasCaseAssets'
 import styles from './IruasSequence.module.scss'
 
@@ -18,8 +18,8 @@ export function IruasSequence() {
         <div className={`container ${styles.screenGrid}`}>
           {iruasCaseAssets.screens.map((screen) => (
             <figure className={styles.screen} key={screen.id}>
-              <DeviceMockup
-                src={screen.src}
+              <IPhoneFrame
+                src={screen.src} width={screen.width} height={screen.height}
                 alt={t(`case.iruasSequence.screens.${screen.id}.alt`)}
                 className={styles.mockup}
               />
@@ -34,8 +34,9 @@ export function IruasSequence() {
           <img src={iruasCaseAssets.propertyArchitecture} alt={t('case.iruasSequence.propertyAlt')} loading="lazy" decoding="async" />
         </figure>
         <figure className={`${styles.pairImage} ${styles.devicePanel}`}>
-          <DeviceMockup
-            src={iruasCaseAssets.interfaceDetail}
+          <IPhoneFrame
+            {...iruasCaseAssets.interfaceDetail}
+            shadow={false}
             alt={t('case.iruasSequence.detailAlt')}
             className={styles.detailMockup}
           />
@@ -54,7 +55,7 @@ export function IruasSequence() {
         <div className={`container ${styles.closingInner}`}>
           {iruasCaseAssets.screens.map((screen, index) => (
             <figure className={`${styles.closingPhone} ${phoneClasses[index]}`} key={screen.id}>
-              <DeviceMockup src={screen.src} alt="" className={styles.mockup} />
+              <IPhoneFrame src={screen.src} width={screen.width} height={screen.height} alt="" className={styles.mockup} shadow={false} />
             </figure>
           ))}
         </div>

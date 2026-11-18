@@ -7,10 +7,14 @@
 }
 
 .inner {
+  --shadow-delay: 0s;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: var(--header-h);
+  // Evita interpolar a borda de vidro a partir da cor do texto (currentColor).
+  border-color: transparent;
   transition:
     width var(--dur-slow) var(--ease-out),
     height var(--dur-slow) var(--ease-out),
@@ -20,10 +24,13 @@
     border-radius var(--dur-slow) var(--ease-out),
     border-color var(--dur-slow) var(--ease-out),
     background var(--dur-slow) var(--ease-out),
-    box-shadow var(--dur-theme) var(--ease-out);
+    box-shadow 0s var(--shadow-delay);
 }
 
 .compact {
+  // A sombra entra quando a pílula termina de mudar de tamanho.
+  --shadow-delay: var(--dur-slow);
+
   box-sizing: border-box;
   width: min(calc(100% - 2 * var(--gutter)), 310px);
   height: 58px;
@@ -68,6 +75,8 @@
 
 // Figma 18:323 — 102×46, borda 2px branca, gradiente de vidro, sombra Site/Header/Shadow
 .nav {
+  --shadow-delay: var(--dur-slow);
+
   display: flex;
   align-items: center;
   height: 46px;
@@ -87,7 +96,7 @@
     padding var(--dur-slow) var(--ease-out),
     border-color var(--dur-slow) var(--ease-out),
     background var(--dur-slow) var(--ease-out),
-    box-shadow var(--dur-theme) var(--ease-out);
+    box-shadow 0s var(--shadow-delay);
 }
 
 .compact .brand {
@@ -103,6 +112,8 @@
 }
 
 .compact .nav {
+  --shadow-delay: 0s;
+
   height: 40px;
   padding: 0;
   border-color: transparent;

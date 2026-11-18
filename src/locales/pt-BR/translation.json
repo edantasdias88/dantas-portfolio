@@ -381,6 +381,7 @@
     "rights": "© {{year}} Edilson Dantas. Todos os direitos reservados.",
     "backToTop": "Voltar ao topo",
     "sendMessage": "Enviar mensagem",
+    "sendEmail": "Enviar e-mail",
     "serviceLinks": [
       "Design de Produto",
       "UI/UX Design",
@@ -400,8 +401,6 @@
       "emailPlaceholder": "voce@empresa.com",
       "phone": "Telefone",
       "phonePlaceholder": "(11) 99999-9999",
-      "company": "Empresa (opcional)",
-      "companyPlaceholder": "Nome da empresa",
       "message": "Mensagem",
       "messagePlaceholder": "Conte sobre o contexto, objetivos e prazos.",
       "submit": "Enviar mensagem",
@@ -409,6 +408,7 @@
       "required": "obrigatório"
     },
     "errors": {
+      "sendFailed": "Não foi possível enviar sua mensagem. Tente novamente.",
       "nameRequired": "Informe seu nome.",
       "emailRequired": "Informe seu e-mail.",
       "emailInvalid": "Informe um e-mail válido, como nome@empresa.com.",
@@ -416,7 +416,6 @@
       "phoneInvalid": "Informe um telefone brasileiro válido com DDD.",
       "messageRequired": "Escreva uma mensagem.",
       "nameTooLong": "O nome deve ter no máximo 120 caracteres.",
-      "companyTooLong": "A empresa deve ter no máximo 120 caracteres.",
       "messageTooLong": "A mensagem deve ter no máximo 5.000 caracteres.",
       "summary": "Revise os campos destacados antes de enviar.",
       "serverValidation": "Confira os dados informados e tente novamente.",
@@ -426,6 +425,7 @@
       "server": "O serviço de envio retornou um erro. Tente novamente em alguns minutos."
     },
     "success": {
+      "message": "Mensagem enviada com sucesso! Retornarei o contato em breve.",
       "title": "Mensagem enviada.",
       "description": "Obrigado pelo contato. Vou ler sua mensagem e responder em breve.",
       "again": "Enviar outra mensagem"
@@ -443,24 +443,70 @@
     "focus": "Foco",
     "inPreparation": "Case completo em preparação",
     "inPreparationText": "Este case está sendo documentado com o papel desempenhado, as decisões tomadas e os resultados do projeto. Enquanto isso, fale comigo para conhecer o trabalho em detalhes.",
-    "caaStory": {
-      "title": "Por trás da experiência",
-      "intro": "O CAA (Compre & Alugue Agora) é uma plataforma imobiliária que reúne diferentes necessidades relacionadas à busca de imóveis, conectando pessoas, propriedades e serviços em uma única experiência. A proposta vai além da pesquisa imobiliária tradicional, oferecendo um ambiente que integra descoberta de imóveis, relacionamento entre usuários e acesso a serviços relacionados ao mercado imobiliário.",
-      "introContinuation": "A concepção do produto considera diferentes perfis e necessidades, desde pessoas que procuram um imóvel para comprar ou alugar até profissionais que atuam nesse mercado. A plataforma foi pensada para organizar essas experiências em uma estrutura integrada, facilitando o acesso às funcionalidades e tornando a navegação mais clara e intuitiva.",
-      "challenge": {
-        "label": "Desafio",
-        "text": "O principal desafio foi organizar uma plataforma com diferentes funcionalidades, públicos e jornadas em uma experiência consistente. A diversidade de necessidades exigia uma estrutura de navegação capaz de facilitar o acesso às informações e aos recursos sem sobrecarregar a interface.",
-        "continuation": "Era necessário pensar em como conectar a busca de imóveis, os serviços, o feed e os recursos de inteligência artificial em uma experiência coerente, respeitando as particularidades de cada área. O desafio estava em equilibrar a variedade de funcionalidades com uma hierarquia clara, permitindo que cada usuário encontrasse o que precisava e compreendesse como navegar pela plataforma."
+    "caaPresentation": {
+      "problem": {
+        "eyebrow": "O DESAFIO",
+        "title": "Encontrar um imóvel é apenas parte da jornada.",
+        "context": "O mercado imobiliário envolve muito mais do que encontrar um imóvel. Durante a jornada, as pessoas precisam descobrir oportunidades, entrar em contato com proprietários ou corretores, comparar alternativas e, muitas vezes, encontrar profissionais para serviços relacionados ao imóvel.",
+        "friction": "Embora essas necessidades estejam conectadas, frequentemente são atendidas por diferentes canais e plataformas. Isso pode tornar a experiência mais trabalhosa e dificultar a continuidade das interações. Surge, então, a oportunidade de aproximar imóveis, pessoas e serviços em uma experiência integrada.",
+        "photoAlt": "Residência contemporânea com um smartphone exibindo a tela de imóveis do Compre & Alugue Agora."
+      },
+      "solution": {
+        "eyebrow": "A SOLUÇÃO",
+        "title": "Mais do que buscar imóveis. Uma plataforma para criar conexões.",
+        "concept": "O Compre & Alugue Agora foi concebido como uma plataforma digital que reúne descoberta de imóveis, interação entre pessoas e acesso a serviços relacionados ao mercado imobiliário.",
+        "areas": "A proposta combina recursos de rede social e plataforma imobiliária. O Feed reúne conteúdos e oportunidades, Imóveis organiza as ofertas, Serviços aproxima profissionais e o IAgo auxilia nas buscas e interações.",
+        "goal": "O objetivo é construir uma jornada mais integrada, na qual buscadores, proprietários, corretores e prestadores de serviços possam se conectar dentro de um mesmo ecossistema.",
+        "devicesLabel": "Áreas do Compre & Alugue Agora",
+        "navigationLabel": "Navegação entre áreas",
+        "features": {
+          "feed": "Descoberta, publicações e interação entre pessoas.",
+          "properties": "Busca, filtros e exploração de oportunidades imobiliárias.",
+          "services": "Conexão com profissionais e serviços relacionados a imóveis.",
+          "iago": "Assistência inteligente para facilitar buscas e ações."
+        }
       },
       "process": {
-        "label": "Processo",
-        "text": "O trabalho envolveu a concepção e a estruturação da experiência do produto, considerando a organização das funcionalidades, a arquitetura de navegação e os fluxos de interação. A definição da estrutura buscou estabelecer relações claras entre as diferentes áreas da plataforma, facilitando a transição entre a descoberta de imóveis, o acesso a serviços e as demais atividades disponíveis.",
-        "continuation": "A experiência também considerou diferentes contextos de uso e dispositivos, com atenção à organização dos elementos, à hierarquia das informações e à consistência dos padrões de interface. A proposta foi criar uma base que permitisse integrar as diferentes funcionalidades sem comprometer a compreensão do produto."
+        "eyebrow": "Experiência do produto",
+        "title": "Encontrar o imóvel certo começa com uma busca mais inteligente.",
+        "text": "A busca por um imóvel envolve diferentes necessidades e preferências. Para tornar essa experiência mais objetiva, organizamos filtros que permitem refinar os resultados por localização, tipo de imóvel, valores e características, ajudando o usuário a encontrar opções mais relevantes.",
+        "alt": "Smartphone com filtros de imóveis em um apartamento."
       },
-      "results": {
-        "label": "Resultados",
-        "text": "O projeto resultou na concepção de uma plataforma imobiliária que reúne diferentes experiências em um único ambiente digital. A estrutura contempla a busca de imóveis, serviços, feed e o assistente IAgo, pensado como um ponto central de inteligência e apoio à jornada do usuário.",
-        "continuation": "A organização da navegação e das interfaces buscou tornar essas funcionalidades mais acessíveis e estabelecer uma experiência consistente entre as diferentes áreas do produto. A proposta foi estruturar uma plataforma capaz de atender a diferentes necessidades do mercado imobiliário, conectando busca, serviços e relacionamento em uma mesma experiência."
+      "architecture": {
+        "feed": "Feed",
+        "properties": "Imóveis",
+        "services": "Serviços",
+        "iago": "IAgo",
+        "search": "Buscar imóveis",
+        "detail": "Ver detalhes"
+      },
+      "identity": {
+        "eyebrow": "Tipografia",
+        "description": "A Roboto é uma tipografia contemporânea desenvolvida para oferecer clareza, legibilidade e versatilidade em interfaces digitais. Suas formas equilibradas e proporções consistentes favorecem a leitura em diferentes tamanhos de tela, contribuindo para uma experiência visual acessível e funcional.",
+        "palette": "Paleta CAA"
+      },
+      "experience": {
+        "navigation": "Navegação entre imagens",
+        "goToImage": "Ir para imagem {{number}}",
+        "previousScreen": "Tela anterior",
+        "nextScreen": "Próxima tela",
+        "discovery": "Descoberta de imóveis",
+        "discoveryText": "A listagem concentra as opções. O detalhe reúne fotografias, informações do imóvel e ações de contato e agendamento.",
+        "assistant": "Uma forma mais inteligente de explorar o mercado imobiliário. Com o IAgo, é possível encontrar imóveis, descobrir prestadores de serviços e publicar anúncios de forma simples e intuitiva, transformando conversas em soluções.",
+        "services": "A área de serviços apresenta perfis e trabalhos, com opções de contato."
+      },
+      "screens": {
+        "feed": "Feed com stories e uma publicação de imóvel.",
+        "properties": "Busca de imóveis com filtros e resultados.",
+        "filters": "Tela de filtros da busca de imóveis.",
+        "connection": "Tela de confirmação de contato.",
+        "details": "Detalhe de um imóvel com fotos, atributos e ações.",
+        "iago": "Tela de conversa e sugestões do IAgo.",
+        "iagoResponse": "Resposta do IAgo em uma conversa.",
+        "iagoServiceProviders": "Tela do IAgo para descobrir prestadores de serviços.",
+        "servicesFilters": "Filtros para encontrar profissionais e serviços.",
+        "servicesProfile": "Captura original do perfil na área de Serviços.",
+        "services": "Tela de serviços com perfis profissionais."
       }
     },
     "iruasStory": {
@@ -483,29 +529,6 @@
         "text": "O resultado foi a concepção de um aplicativo imobiliário estruturado em quatro modalidades de busca: interação por cards, câmera, rotas e texto. Essa combinação amplia as possibilidades de explorar imóveis, reunindo diferentes formas de descoberta em uma única experiência.",
         "continuation": "A proposta permite abordar a busca imobiliária por diferentes perspectivas, desde uma exploração visual e interativa até a pesquisa direta ou a descoberta a partir do ambiente e dos trajetos do usuário. Em vez de depender de um único mecanismo, o iRuas foi concebido para oferecer diferentes caminhos de busca dentro de uma experiência integrada.",
         "final": "O projeto avançou para a etapa de desenvolvimento, levando adiante a proposta de uma experiência imobiliária mais flexível e diversificada."
-      }
-    },
-    "caaAppSequence": {
-      "ariaLabel": "Apresentação visual do aplicativo CAA",
-      "mainAlt": "Aplicativo CAA em destaque diante de uma casa contemporânea.",
-      "screensLabel": "Telas do aplicativo CAA",
-      "screens": {
-        "properties": { "label": "Busca de imóveis", "alt": "Tela de busca e listagem de imóveis." },
-        "details": { "label": "Detalhes do imóvel", "alt": "Tela com detalhes de um imóvel." },
-        "services": { "label": "Serviços", "alt": "Tela da área de serviços do aplicativo." },
-        "iago": { "label": "Assistente IAgo", "alt": "Tela de conversa com o assistente IAgo." }
-      },
-      "pairLabel": "Imóvel e aplicativo em contexto",
-      "propertyAlt": "Casa contemporânea com jardim.",
-      "appInUseAlt": "Aplicativo imobiliário exibido em um smartphone.",
-      "contextAlt": "Aplicativo CAA em uso durante uma visita a um apartamento.",
-      "closingLabel": "Pilares da experiência CAA",
-      "closingDeviceAlt": "Assistente IAgo exibido em um smartphone.",
-      "pillars": {
-        "properties": "Imóveis",
-        "services": "Serviços",
-        "relationship": "Relacionamento",
-        "intelligence": "Inteligência"
       }
     },
     "iruasSequence": {
@@ -536,6 +559,14 @@
     "allProjects": "Todos os projetos"
   },
   "aboutPage": {
+    "facts": {
+      "counter": "Curiosidade {{current}} de {{total}}",
+      "navigation": "Selecionar curiosidade",
+      "lucas": "Sou pai do Lucas, meu maior orgulho.",
+      "guitar": "Sempre que posso, estou tocando violão.",
+      "roots": "Sou de Guarulhos, mas hoje moro em São Paulo.",
+      "coffee": "Café e refrigerante? Difícil passar um dia sem."
+    },
     "eyebrow": "Sobre mim",
     "title": "Design com estratégia. Tecnologia com propósito.",
     "intro": "Com mais de 18 anos de experiência, conecto estratégia, design e tecnologia para transformar problemas complexos em produtos e experiências digitais simples, úteis e relevantes.",
@@ -547,7 +578,7 @@
       "Também trabalhei com Design Ops e Design Systems, contribuindo para estruturar processos, organizar padrões e criar bases mais consistentes para a evolução de produtos digitais.",
       "Hoje, gosto de conectar essas diferentes perspectivas para transformar desafios complexos em soluções claras, funcionais e preparadas para crescer."
     ],
-    "toolsLabel": "Ferramentas do meu dia a dia",
+    "toolsLabel": "Ferramentas que fazem parte do meu dia a dia.",
     "visionEyebrow": "Minha visão de design",
     "visionTitle": "Clareza na complexidade.",
     "visionBody": [
@@ -562,6 +593,15 @@
     "imageAlt": "Retrato de Edilson Dantas"
   },
   "contactPage": {
+    "direct": {
+      "title": "Contato",
+      "description": "Como prefere entrar em contato?",
+      "call": "Ligar",
+      "callDescription": "Abrir o aplicativo de telefone.",
+      "whatsapp": "Conversar pelo WhatsApp",
+      "whatsappDescription": "Iniciar uma conversa.",
+      "message": "Olá! Conheci seu portfólio e gostaria de conversar sobre um projeto."
+    },
     "eyebrow": "Contato",
     "title": "Vamos tirar sua próxima ideia do papel."
   },

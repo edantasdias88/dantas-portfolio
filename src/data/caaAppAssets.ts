@@ -1,24 +1,31 @@
-import appInUse from '@/assets/projects/caa/app/app-in-use.jpg'
-import propertyPhoto from '@/assets/projects/caa/app/property-photo.jpg'
-import screenDetails from '@/assets/projects/caa/app/screen-details.svg?url'
-import screenIago from '@/assets/projects/caa/app/screen-iago.svg?url'
-import screenProperties from '@/assets/projects/caa/app/screen-properties.svg?url'
-import screenServices from '@/assets/projects/caa/app/screen-services.svg?url'
-import showcaseClosingBg from '@/assets/projects/caa/app/showcase-closing-bg.jpg'
-import showcaseContext from '@/assets/projects/caa/app/showcase-context.jpg'
+import feed from '@/assets/projects/caa/app/capture-feed.png'
+import properties from '@/assets/projects/caa/app/capture-properties.png'
+import filters from '@/assets/projects/caa/app/capture-filters.png'
+import connection from '@/assets/projects/caa/app/capture-connection.png'
+import details from '@/assets/projects/caa/app/capture-details.png'
+import services from '@/assets/projects/caa/app/capture-services.png'
+import servicesFilters from '@/assets/projects/caa/app/capture-services-filters.png'
+import servicesProfile from '@/assets/projects/caa/app/capture-services-profile.png'
+import iago from '@/assets/projects/caa/app/capture-iago.png'
+import iagoResponse from '@/assets/projects/caa/app/capture-iago-response.png'
+import iagoServiceProviders from '@/assets/projects/caa/app/capture-iago-service-providers.png'
+import filtering from '@/assets/projects/caa/app/showcase-context.jpg'
 import showcaseMain from '@/assets/projects/caa/app/showcase-main.jpg'
 
 export const caaAppAssets = {
-  showcaseMain,
-  screens: [
-    { id: 'properties', src: screenProperties },
-    { id: 'details', src: screenDetails },
-    { id: 'services', src: screenServices },
-    { id: 'iago', src: screenIago },
-  ],
-  propertyPhoto,
-  appInUse,
-  showcaseContext,
-  showcaseClosingBg,
-  closingScreen: screenIago,
+  narrativePhoto: { src: showcaseMain, width: 1944, height: 809 },
+  filtering,
+  screens: {
+    feed: { src: feed, width: 375, height: 812 },
+    properties: { src: properties, width: 375, height: 812 },
+    filters: { src: filters, width: 375, height: 812 },
+    details: { src: details, width: 750, height: 1624 },
+    connection: { src: connection, width: 375, height: 812 },
+    services: { src: services, width: 375, height: 812 },
+    servicesFilters: { src: servicesFilters, width: 375, height: 812 },
+    servicesProfile: { src: servicesProfile, width: 375, height: 812 },
+    iago: { src: iago, width: 375, height: 812 },
+    iagoResponse: { src: iagoResponse, width: 375, height: 812 },
+    iagoServiceProviders: { src: iagoServiceProviders, width: 375, height: 812 },
+  },
 } as const

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { ContactDirect } from '@/components/ContactDirect'
+import { ContactOptions } from './ContactOptions'
 import { ContactForm } from '@/components/ContactForm'
 import { Seo } from '@/components/Seo'
 import page from '../page.module.scss'
@@ -16,9 +16,9 @@ export default function ContactPage() {
             <p className="eyebrow">{t('contactPage.eyebrow')}</p>
             <h1 className={page.heroTitle}>{t('contactPage.title')}</h1>
             <p className="lead">{t('contact.description')}</p>
-            <ContactDirect className={styles.direct} itemClassName={styles.directLink} />
+            <ContactOptions />
           </div>
-          <ContactForm />
+          <ContactForm floatingLabels />
         </div>
       </section>
     </>

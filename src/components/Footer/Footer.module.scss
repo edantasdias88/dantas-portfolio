@@ -1,10 +1,18 @@
 @use 'styles/tokens' as *;
 
-// Figma 51:1536 — fundo background/inverse, py 240, gap 80
+// Preserve the invitation spacing; keep the final row close to the footer edge.
 .footer {
-  padding-block: var(--section-y-lg);
-  background: var(--navy-950);
-  color: #f7f7f7;
+  --footer-bg: var(--navy-950);
+  --footer-text: #f7f7f7;
+  --footer-secondary: #bfc2c7;
+  --footer-muted: #999a9d;
+  --footer-copyright: #a4a6ac;
+  --footer-divider: #303b41;
+  --footer-hover: var(--brand-500);
+  --footer-outline: #fff;
+  padding-block: var(--section-y-lg) clamp(var(--space-5), 3vw, var(--space-7));
+  background: var(--footer-bg);
+  color: var(--footer-text, #f7f7f7);
 }
 
 .inner {
@@ -31,7 +39,7 @@
   font-weight: 500;
   line-height: 0.91;
   letter-spacing: -1.5px;
-  color: #f7f7f7;
+  color: var(--footer-text, #f7f7f7);
 
   span {
     display: block;
@@ -43,7 +51,7 @@
 }
 
 .titleMuted {
-  color: #999a9d;
+  color: var(--footer-muted);
   letter-spacing: -3px;
 
   @include down(md) {
@@ -57,7 +65,7 @@
   align-items: center;
   gap: 25px;
   margin-left: 11px;
-  color: #f7f7f7;
+  color: var(--footer-text, #f7f7f7);
 
   @include down(md) {
     margin-left: 0;
@@ -101,7 +109,7 @@
 }
 
 .footerBlock {
-  border-top: 1px solid #303b41;
+  border-top: 1px solid var(--footer-divider);
 }
 
 // Colunas com divisores verticais (Figma: x 16 / 518 / 1006, divisores em 443 e 932)
@@ -109,7 +117,7 @@
   display: grid;
   gap: var(--space-7);
   padding-block: 31px var(--space-7);
-  border-bottom: 1px solid #303b41;
+  border-bottom: 1px solid var(--footer-divider);
 
   @include up(md) {
     grid-template-columns: 1fr 1fr 1fr;
@@ -128,7 +136,7 @@
     padding-inline: var(--space-4) var(--space-6);
 
     & + & {
-      border-left: 1px solid #303b41;
+      border-left: 1px solid var(--footer-divider);
       padding-left: var(--space-7);
     }
   }
@@ -143,7 +151,7 @@
   line-height: 18px;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  color: #bfc2c7;
+  color: var(--footer-secondary);
 }
 
 .links {
@@ -157,38 +165,15 @@
   font-size: 1.25rem;
   line-height: 25px;
   letter-spacing: -0.5px;
-  color: #f7f7f7;
+  color: var(--footer-text, #f7f7f7);
+  text-decoration: none;
   transition: color var(--dur-base) var(--ease-out);
 
   @include hover {
-    color: #aad6ff;
-  }
-}
-
-.channels {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.channel {
-  display: inline-flex;
-  align-items: center;
-  gap: 30px;
-  font-size: 1.25rem;
-  letter-spacing: -0.5px;
-  color: #f7f7f7;
-  overflow-wrap: anywhere;
-  text-align: left;
-  transition: color var(--dur-base) var(--ease-out);
-
-  img {
-    flex-shrink: 0;
+    color: var(--footer-hover);
   }
 
-  @include hover {
-    color: #aad6ff;
-  }
+  @include reduced-motion { transition: none; }
 }
 
 .bottom {
@@ -221,14 +206,14 @@
   font-size: 1.125rem;
   line-height: 25px;
   letter-spacing: -0.3px;
-  color: #bfc2c7;
+  color: var(--footer-secondary);
 }
 
 .copy {
   font-size: 0.875rem;
   line-height: 20px;
   letter-spacing: -0.2px;
-  color: #a4a6ac;
+  color: var(--footer-copyright);
 
   @include up(lg) {
     margin-right: 71px;
@@ -242,4 +227,17 @@
   @include hover {
     transform: translateY(-3px);
   }
+}
+
+:global([data-theme='dark']) .footer {
+  --footer-bg: #f8f9fb;
+  --footer-text: var(--ink-950);
+  --footer-secondary: #4a5565;
+  --footer-muted: #6d6d6b;
+  --footer-copyright: #626e80;
+  --footer-divider: color-mix(in srgb, var(--ink-950) 16%, transparent);
+  --footer-hover: var(--brand-700);
+  --footer-outline: var(--ink-950);
+  --border-focus: var(--brand-500);
+  color-scheme: light;
 }

@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import adobexd from '@/assets/about/tools/adobexd.svg'
@@ -14,11 +13,19 @@ import miro from '@/assets/about/tools/miro.svg'
 import sketch from '@/assets/about/tools/sketch.svg'
 import zeplin from '@/assets/about/tools/zeplin.svg'
 import zeroheight from '@/assets/about/tools/zeroheight.svg'
+import photoshop from '@/assets/about/tools/photoshop.svg'
+import illustrator from '@/assets/about/tools/illustrator.svg'
+import notion from '@/assets/about/tools/notion.svg'
+import figjam from '@/assets/about/tools/figjam.svg'
+import github from '@/assets/about/tools/github.svg'
+import vscode from '@/assets/about/tools/vscode.svg'
+import ai from '@/assets/about/tools/ai.svg'
 import { Portrait } from '@/components/Portrait'
 import { Reveal } from '@/components/Reveal'
 import { Seo } from '@/components/Seo'
 import page from '../page.module.scss'
 import styles from './About.module.scss'
+import { PortraitFacts } from './PortraitFacts'
 
 const tools = [
   { id: 'figma', name: 'Figma', src: figma },
@@ -34,49 +41,19 @@ const tools = [
   { id: 'javascript', name: 'JavaScript', src: javascript },
   { id: 'googleanalytics', name: 'Google Analytics', src: googleanalytics },
   { id: 'hotjar', name: 'Hotjar', src: hotjar },
+  { id: 'photoshop', name: 'Adobe Photoshop', src: photoshop },
+  { id: 'illustrator', name: 'Adobe Illustrator', src: illustrator },
+  { id: 'notion', name: 'Notion', src: notion },
+  { id: 'figjam', name: 'FigJam', src: figjam },
+  { id: 'github', name: 'GitHub', src: github },
+  { id: 'vscode', name: 'Visual Studio Code', src: vscode },
+  { id: 'ai', name: 'IA', src: ai },
 ] as const
 
 export default function AboutPage() {
   const { t } = useTranslation()
   const trajectory = t('aboutPage.trajectoryBody', { returnObjects: true })
   const vision = t('aboutPage.visionBody', { returnObjects: true })
-  const [hoveredTool, setHoveredTool] = useState<string | null>(null)
-  const [focusedTool, setFocusedTool] = useState<string | null>(null)
-  const [pinnedTool, setPinnedTool] = useState<string | null>(null)
-  const isPaused = Boolean(hoveredTool || focusedTool || pinnedTool)
-
-  const renderTool = (tool: (typeof tools)[number]) => {
-    const tooltipId = `about-tool-${tool.id}`
-    const tooltipVisible = hoveredTool === tool.id || focusedTool === tool.id || pinnedTool === tool.id
-
-    return (
-      <li key={tool.id} className={styles.toolItem}>
-        <button
-          type="button"
-          className={styles.tool}
-          aria-label={tool.name}
-          aria-describedby={tooltipId}
-          aria-pressed={pinnedTool === tool.id}
-          onPointerEnter={() => {
-            setHoveredTool(tool.id)
-            setPinnedTool(null)
-          }}
-          onPointerLeave={() => setHoveredTool((current) => (current === tool.id ? null : current))}
-          onFocus={() => setFocusedTool(tool.id)}
-          onBlur={() => setFocusedTool((current) => (current === tool.id ? null : current))}
-          onClick={() => setPinnedTool((current) => (current === tool.id ? null : tool.id))}
-          onKeyDown={(event) => {
-            if (event.key === 'Escape') setPinnedTool(null)
-          }}
-        >
-          <img className={styles.logo} src={tool.src} width="36" height="36" alt="" loading="lazy" />
-          <span id={tooltipId} className={styles.tooltip} role="tooltip" data-visible={tooltipVisible}>
-            {tool.name}
-          </span>
-        </button>
-      </li>
-    )
-  }
 
   return (
     <>
@@ -90,7 +67,10 @@ export default function AboutPage() {
             <p className="lead">{t('aboutPage.intro')}</p>
           </div>
           <Reveal y={32}>
-            <Portrait alt={t('aboutPage.imageAlt')} />
+            <div className={styles.portraitStage}>
+              <Portrait alt={t('aboutPage.imageAlt')} />
+              <PortraitFacts />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -113,23 +93,18 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className={styles.toolsSection} aria-label={t('aboutPage.toolsLabel')}>
+      <section className={styles.toolsSection} aria-labelledby="about-tools-title">
         <div className={`container ${styles.toolsContainer}`}>
-          <div className={styles.toolViewport} data-paused={isPaused}>
-            <div className={styles.track}>
-              <ul className={styles.toolGroup} aria-label={t('aboutPage.toolsLabel')}>
-                {tools.map(renderTool)}
-              </ul>
-              <ul className={styles.toolGroup} aria-hidden="true" inert>
-                {tools.map((tool) => (
-                  <li key={tool.id} className={styles.toolItem}>
-                    <span className={styles.tool}>
-                      <img className={styles.logo} src={tool.src} width="36" height="36" alt="" loading="lazy" />
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className={styles.toolsPanel}>
+            <h2 id="about-tools-title" className={styles.toolsTitle}>{t('aboutPage.toolsLabel')}</h2>
+            <ul className={styles.toolGroup}>
+              {tools.map((tool) => (
+                <li key={tool.id} className={styles.tool}>
+                  <img className={styles.logo} src={tool.src} width="36" height="36" alt="" loading="lazy" />
+                  <span className={styles.toolName}>{tool.name}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

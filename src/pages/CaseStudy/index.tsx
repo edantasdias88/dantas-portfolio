@@ -104,38 +104,7 @@ export default function CaseStudyPage() {
       )}
 
       {key === 'caa' ? (
-        <>
-          <section className={page.block} aria-labelledby="caa-story-title">
-            <div className={`container ${page.blockGrid}`}>
-              <div className={styles.storyLead}>
-                <h2 id="caa-story-title" className={page.blockTitle}>
-                  {t('case.caaStory.title')}
-                </h2>
-                <div className={styles.storyIntro}>
-                  <p>{t('case.caaStory.intro')}</p>
-                  <p>{t('case.caaStory.introContinuation')}</p>
-                </div>
-              </div>
-              <div className={styles.storySections}>
-                <section className={styles.storySection} aria-labelledby="caa-challenge-title">
-                  <h3 id="caa-challenge-title">{t('case.caaStory.challenge.label')}</h3>
-                  <p>{t('case.caaStory.challenge.text')}</p>
-                </section>
-                <section className={styles.storySection} aria-labelledby="caa-process-title">
-                  <h3 id="caa-process-title">{t('case.caaStory.process.label')}</h3>
-                  <p>{t('case.caaStory.process.text')}</p>
-                  <p>{t('case.caaStory.process.continuation')}</p>
-                </section>
-                <section className={styles.storySection} aria-labelledby="caa-results-title">
-                  <h3 id="caa-results-title">{t('case.caaStory.results.label')}</h3>
-                  <p>{t('case.caaStory.results.text')}</p>
-                  <p>{t('case.caaStory.results.continuation')}</p>
-                </section>
-              </div>
-            </div>
-          </section>
-          <CaaAppSequence />
-        </>
+        <CaaAppSequence />
       ) : key === 'iruas' ? (
         <>
           <section className={page.block} aria-labelledby="iruas-story-title">
@@ -216,16 +185,18 @@ export default function CaseStudyPage() {
         </>
       )}
 
-      <nav className={`${page.block} ${styles.next}`} aria-label={t('common.nextProject')}>
-        <div className={`container ${styles.nextInner}`}>
-          <ButtonLink to="/projetos" variant="ghost">
-            ← {t('case.allProjects')}
-          </ButtonLink>
-          <CaseLink to={caseHref(next)} size="md">
-            {t('common.nextProject')}: {t(`projects.items.${next.key}.name`)}
-          </CaseLink>
-        </div>
-      </nav>
+      {key !== 'caa' && (
+        <nav className={`${page.block} ${styles.next}`} aria-label={t('common.nextProject')}>
+          <div className={`container ${styles.nextInner}`}>
+            <ButtonLink to="/projetos" variant="ghost">
+              ← {t('case.allProjects')}
+            </ButtonLink>
+            <CaseLink to={caseHref(next)} size="md">
+              {t('common.nextProject')}: {t(`projects.items.${next.key}.name`)}
+            </CaseLink>
+          </div>
+        </nav>
+      )}
     </article>
   )
 }

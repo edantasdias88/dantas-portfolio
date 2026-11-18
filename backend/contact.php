@@ -158,7 +158,6 @@ $input = get_object_vars($decodedBody);
 $name = cleanSingleLine(requestString($input, 'name'));
 $email = trim(requestString($input, 'email'));
 $phone = trim(requestString($input, 'phone'));
-$company = cleanSingleLine(requestString($input, 'company'));
 $message = trimUnicode(str_replace("\0", '', requestString($input, 'message')));
 $fieldErrors = [];
 
@@ -168,7 +167,6 @@ if ($email === '') $fieldErrors['email'] = 'emailRequired';
 elseif (strlen($email) > 254 || filter_var($email, FILTER_VALIDATE_EMAIL) === false) $fieldErrors['email'] = 'emailInvalid';
 if ($phone === '') $fieldErrors['phone'] = 'phoneRequired';
 elseif (strlen($phone) > 40 || !validBrazilianPhone($phone)) $fieldErrors['phone'] = 'phoneInvalid';
-if (characterLength($company) > 120) $fieldErrors['company'] = 'companyTooLong';
 if ($message === '') $fieldErrors['message'] = 'messageRequired';
 elseif (characterLength($message) > 5000) $fieldErrors['message'] = 'messageTooLong';
 
@@ -222,7 +220,6 @@ try {
         'Nome: ' . $name,
         'E-mail: ' . $email,
         'Telefone: ' . $phone,
-        'Empresa: ' . ($company !== '' ? $company : 'Não informada'),
         'Recebido em: ' . (new DateTimeImmutable('now', new DateTimeZone('America/Sao_Paulo')))->format('d/m/Y H:i:s T'),
         '',
         'Mensagem:',

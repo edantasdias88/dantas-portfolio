@@ -1,0 +1,113 @@
+@use 'styles/tokens' as *;
+
+.direct {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+  list-style: none;
+  padding: 0;
+}
+
+.directLink {
+  gap: var(--space-3);
+  max-width: 100%;
+  font-size: var(--fs-lead);
+  overflow-wrap: anywhere;
+
+  > svg { flex: none; }
+
+  > span {
+    min-width: 0;
+
+    > span { min-width: 0; }
+  }
+}
+
+.sheetOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: flex-end;
+  background: color-mix(in srgb, var(--neutral-950) 40%, transparent);
+}
+
+.sheet {
+  width: 100%;
+  max-height: 90svh;
+  overflow-y: auto;
+  padding: var(--space-5) max(var(--gutter), var(--space-5)) max(var(--space-5), env(safe-area-inset-bottom));
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: var(--background-elevated);
+  color: var(--content-primary);
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h2 { font-size: var(--fs-h3); }
+  > p { margin-block: var(--space-3) var(--space-5); color: var(--content-secondary); }
+}
+
+.sheetClose {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-pill);
+}
+
+.sheetOption {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: 76px;
+  padding-block: var(--space-3);
+
+  > span:not(:global(.visually-hidden)) { flex: 1; }
+  strong, span span { display: block; }
+  strong { font-weight: 500; }
+  span span { color: var(--content-secondary); font-size: var(--fs-sm); }
+
+  &:hover { color: var(--accent-content); }
+}
+
+.sheet :is(button, a):focus-visible {
+  outline: 2px solid var(--border-focus);
+  outline-offset: 2px;
+}
+
+.footer {
+  --case-link-color: var(--footer-text, #f7f7f7);
+  margin-top: 0;
+  gap: var(--space-2);
+
+  .directLink {
+    font-size: 1.25rem;
+    letter-spacing: -0.5px;
+    text-decoration: none;
+    transition: color var(--dur-base) var(--ease-out);
+
+    @include hover {
+      color: var(--footer-hover);
+    }
+
+    @include reduced-motion { transition: none; }
+  }
+}
+
+.contactIcon {
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+}
+
+// Preserve the existing label alignment without rendering its underline or arrow.
+.footerLabel {
+  position: relative;
+  padding-bottom: 5px;
+}

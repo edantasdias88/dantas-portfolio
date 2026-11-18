@@ -381,6 +381,7 @@
     "rights": "© {{year}} Edilson Dantas. All rights reserved.",
     "backToTop": "Back to top",
     "sendMessage": "Send a message",
+    "sendEmail": "Send an email",
     "serviceLinks": [
       "Product Design",
       "UI/UX Design",
@@ -400,8 +401,6 @@
       "emailPlaceholder": "you@company.com",
       "phone": "Phone",
       "phonePlaceholder": "(11) 99999-9999",
-      "company": "Company (optional)",
-      "companyPlaceholder": "Company name",
       "message": "Message",
       "messagePlaceholder": "Tell me about the context, goals and timeline.",
       "submit": "Send message",
@@ -409,6 +408,7 @@
       "required": "required"
     },
     "errors": {
+      "sendFailed": "Your message could not be sent. Please try again.",
       "nameRequired": "Please enter your name.",
       "emailRequired": "Please enter your email.",
       "emailInvalid": "Please enter a valid email, like name@company.com.",
@@ -416,7 +416,6 @@
       "phoneInvalid": "Please enter a valid Brazilian phone number with area code.",
       "messageRequired": "Please write a message.",
       "nameTooLong": "Name must be no longer than 120 characters.",
-      "companyTooLong": "Company must be no longer than 120 characters.",
       "messageTooLong": "Message must be no longer than 5,000 characters.",
       "summary": "Please review the highlighted fields before sending.",
       "serverValidation": "Please check the submitted details and try again.",
@@ -426,6 +425,7 @@
       "server": "The sending service returned an error. Please try again in a few minutes."
     },
     "success": {
+      "message": "Message sent successfully! I’ll get back to you soon.",
       "title": "Message sent.",
       "description": "Thanks for reaching out. I'll read your message and get back to you soon.",
       "again": "Send another message"
@@ -443,24 +443,70 @@
     "focus": "Focus",
     "inPreparation": "Full case study in progress",
     "inPreparationText": "This case study is being documented with the role I played, the decisions made and the project's outcomes. In the meantime, get in touch to see the work in detail.",
-    "caaStory": {
-      "title": "Behind the experience",
-      "intro": "Compre & Alugue Agora (CAA) is a real estate platform that brings together different property-search needs, connecting people, properties and services in one experience. It goes beyond traditional property search, providing an environment that combines property discovery, relationships between users and access to services related to the real estate market.",
-      "introContinuation": "The product was conceived with different profiles and needs in mind, from people looking to buy or rent a home to professionals working in this market. The platform was designed to organize these experiences within an integrated structure, making features easier to access and navigation clearer and more intuitive.",
-      "challenge": {
-        "label": "Challenge",
-        "text": "The main challenge was to organize a platform with different features, audiences and journeys into a consistent experience. The range of needs called for navigation that made information and resources easy to access without overloading the interface.",
-        "continuation": "It was necessary to consider how property search, services, the feed and artificial intelligence features could connect in a coherent experience while respecting the specifics of each area. The challenge was to balance the range of features with a clear hierarchy, so each user could find what they needed and understand how to navigate the platform."
+    "caaPresentation": {
+      "problem": {
+        "eyebrow": "THE CHALLENGE",
+        "title": "Finding a property is only part of the journey.",
+        "context": "Real estate involves much more than finding a property. Along the way, people need to discover opportunities, contact owners or agents, compare options and often find professionals to help with property-related services.",
+        "friction": "These needs are connected, yet different channels and platforms often address them separately. This can make the experience more demanding and make it harder to keep interactions going. That creates an opportunity to bring properties, people and services together in one integrated experience.",
+        "photoAlt": "Contemporary home with a smartphone displaying the Compre & Alugue Agora property screen."
+      },
+      "solution": {
+        "eyebrow": "THE SOLUTION",
+        "title": "More than property search. A platform for making connections.",
+        "concept": "Compre & Alugue Agora was conceived as a digital platform that brings together property discovery, interaction between people and access to real estate services.",
+        "areas": "The concept combines social and real estate features. Feed brings together content and opportunities, Properties organizes listings, Services connects people with professionals, and IAgo assists with searches and interactions.",
+        "goal": "The goal is a more integrated journey where property seekers, owners, agents and service providers can connect in the same ecosystem.",
+        "devicesLabel": "Compre & Alugue Agora features",
+        "navigationLabel": "Feature navigation",
+        "features": {
+          "feed": "Discover posts and connect with people.",
+          "properties": "Search, filter, and explore real estate opportunities.",
+          "services": "Connect with professionals and property-related services.",
+          "iago": "Intelligent assistance to simplify searches and actions."
+        }
       },
       "process": {
-        "label": "Process",
-        "text": "The work involved conceiving and structuring the product experience, including the organization of features, navigation architecture and interaction flows. The structure aimed to establish clear connections between the platform’s different areas, making it easier to move between property discovery, services and other available activities.",
-        "continuation": "The experience also considered different contexts of use and devices, with attention to the organization of elements, information hierarchy and consistency of interface patterns. The aim was to create a foundation that could bring the different features together without compromising the product’s clarity."
+        "eyebrow": "Product experience",
+        "title": "Finding the right property starts with a smarter search.",
+        "text": "Searching for a property involves different needs and preferences. To make the experience more focused, we organized filters that let people refine results by location, property type, price and features, helping them find more relevant options.",
+        "alt": "A phone showing property filters in an apartment."
       },
-      "results": {
-        "label": "Results",
-        "text": "The project resulted in the conception of a real estate platform that brings different experiences together in one digital environment. Its structure includes property search, services, a feed and the IAgo assistant, conceived as a central point of intelligence and support throughout the user journey.",
-        "continuation": "The navigation and interfaces were organized to make these features more accessible and provide a consistent experience across the product’s different areas. The proposal was to structure a platform for different needs in the real estate market, connecting search, services and relationships in one experience."
+      "architecture": {
+        "feed": "Feed",
+        "properties": "Properties",
+        "services": "Services",
+        "iago": "IAgo",
+        "search": "Search properties",
+        "detail": "View details"
+      },
+      "identity": {
+        "eyebrow": "Typography",
+        "description": "Roboto is a contemporary typeface designed to provide clarity, legibility and versatility in digital interfaces. Its balanced forms and consistent proportions support reading across screen sizes, contributing to an accessible, functional visual experience.",
+        "palette": "CAA palette"
+      },
+      "experience": {
+        "navigation": "Image navigation",
+        "goToImage": "Go to image {{number}}",
+        "previousScreen": "Previous screen",
+        "nextScreen": "Next screen",
+        "discovery": "Property discovery",
+        "discoveryText": "The listing brings options together. The detail screen shows photos, property information, contact and visit scheduling.",
+        "assistant": "A smarter way to explore the real estate market. With IAgo, people can find properties, discover service providers, and publish listings simply and intuitively, turning conversations into solutions.",
+        "services": "Services shows professional profiles, examples of work and contact options."
+      },
+      "screens": {
+        "feed": "Feed with stories and a property post.",
+        "properties": "Property search with filters and results.",
+        "filters": "Property search filters screen.",
+        "connection": "Contact confirmation screen.",
+        "details": "Property detail with photos, features and actions.",
+        "iago": "IAgo conversation and suggestions screen.",
+        "iagoResponse": "IAgo reply in a conversation.",
+        "iagoServiceProviders": "IAgo screen for discovering service providers.",
+        "servicesFilters": "Filters for finding professionals and services.",
+        "servicesProfile": "Original profile capture in the Services area.",
+        "services": "Services screen showing professional profiles."
       }
     },
     "iruasStory": {
@@ -483,29 +529,6 @@
         "text": "The result was the conception of a real estate app structured around four search modes: card interaction, camera, routes and text. This combination broadens the ways people can explore properties, bringing different discovery methods into one experience.",
         "continuation": "The concept approaches property search from different perspectives, from visual and interactive exploration to direct search or discovery based on the user’s surroundings and routes. Rather than relying on a single mechanism, iRuas was conceived to offer different search paths within an integrated experience.",
         "final": "The project moved into development, carrying forward the proposal for a more flexible and varied real estate experience."
-      }
-    },
-    "caaAppSequence": {
-      "ariaLabel": "Visual presentation of the CAA app",
-      "mainAlt": "The CAA app featured in front of a contemporary home.",
-      "screensLabel": "CAA app screens",
-      "screens": {
-        "properties": { "label": "Property search", "alt": "Property search and listing screen." },
-        "details": { "label": "Property details", "alt": "Screen showing property details." },
-        "services": { "label": "Services", "alt": "App services screen." },
-        "iago": { "label": "IAgo assistant", "alt": "Conversation screen with the IAgo assistant." }
-      },
-      "pairLabel": "Property and app in context",
-      "propertyAlt": "Contemporary home with a garden.",
-      "appInUseAlt": "Real-estate app displayed on a smartphone.",
-      "contextAlt": "CAA app in use during an apartment visit.",
-      "closingLabel": "CAA experience pillars",
-      "closingDeviceAlt": "IAgo assistant displayed on a smartphone.",
-      "pillars": {
-        "properties": "Properties",
-        "services": "Services",
-        "relationship": "Relationships",
-        "intelligence": "Intelligence"
       }
     },
     "iruasSequence": {
@@ -536,6 +559,14 @@
     "allProjects": "All projects"
   },
   "aboutPage": {
+    "facts": {
+      "counter": "Fun fact {{current}} of {{total}}",
+      "navigation": "Select a fun fact",
+      "lucas": "I’m Lucas’s dad, my greatest pride.",
+      "guitar": "Whenever I can, I’m playing guitar.",
+      "roots": "I’m from Guarulhos, but now I live in São Paulo.",
+      "coffee": "Coffee and soda? It’s hard to go a day without them."
+    },
     "eyebrow": "About me",
     "title": "Design with strategy. Technology with purpose.",
     "intro": "With more than 18 years of experience, I bring strategy, design and technology together to turn complex problems into simple, useful and relevant digital products and experiences.",
@@ -547,7 +578,7 @@
       "I have also worked with Design Ops and Design Systems, helping structure processes, organize patterns and create more consistent foundations for digital product evolution.",
       "Today, I enjoy connecting these perspectives to turn complex challenges into clear, functional solutions built to grow."
     ],
-    "toolsLabel": "Tools I use every day",
+    "toolsLabel": "Tools that are part of my everyday work.",
     "visionEyebrow": "My design perspective",
     "visionTitle": "Clarity in complexity.",
     "visionBody": [
@@ -562,6 +593,15 @@
     "imageAlt": "Portrait of Edilson Dantas"
   },
   "contactPage": {
+    "direct": {
+      "title": "Contact",
+      "description": "How would you like to get in touch?",
+      "call": "Call",
+      "callDescription": "Open the phone app.",
+      "whatsapp": "Chat on WhatsApp",
+      "whatsappDescription": "Start a conversation.",
+      "message": "Hello! I found your portfolio and would like to discuss a project."
+    },
     "eyebrow": "Contact",
     "title": "Let's get your next idea off the ground."
   },

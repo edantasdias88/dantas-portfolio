@@ -3,11 +3,11 @@
 // Figma 13:232 — seção 1936×1096, fundo background/hero-warm
 .hero {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  row-gap: clamp(var(--space-6), 5svh, var(--space-9));
   min-height: 100svh;
-  padding-top: var(--header-h);
+  padding-block: var(--header-h) clamp(var(--space-6), 6svh, 56px);
   overflow: hidden;
   isolation: isolate;
   background: var(--background-hero);
@@ -166,7 +166,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding-block: var(--space-9) var(--space-11);
+  align-self: center;
+  padding-top: clamp(var(--space-5), 4svh, var(--space-9));
 }
 
 .title {
@@ -229,9 +230,8 @@
 
 // Figma 13:266 — x 114 no frame de 1936, base a 56px
 .scroll {
-  position: absolute;
-  left: max(var(--gutter), calc(114 / 1936 * 100%));
-  bottom: 56px;
+  justify-self: start;
+  margin-inline-start: max(var(--gutter), calc(114 / 1936 * 100%));
   display: flex;
   align-items: flex-end;
   gap: var(--space-5);
@@ -245,10 +245,6 @@
 
   &:hover {
     color: var(--content-primary);
-  }
-
-  @include down(md) {
-    bottom: var(--space-6);
   }
 }
 

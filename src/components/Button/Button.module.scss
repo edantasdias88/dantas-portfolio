@@ -78,9 +78,35 @@
   --btn-bg: var(--cta-white-fill);
   --btn-fg: #fff;
   --btn-border: color-mix(in srgb, #fff 59%, transparent);
-  --btn-hover-bg: var(--cta-white-hover);
   min-width: 220px;
   justify-content: space-between;
+
+  &::before {
+    background: radial-gradient(
+      ellipse 180px 110px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+      color-mix(in srgb, var(--btn-bg) 84%, #fff),
+      transparent 100%
+    );
+    pointer-events: none;
+    transform: none;
+    opacity: 0;
+    transition: opacity 250ms var(--ease-out);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover[data-radial-hover='true']:not(:disabled):not([aria-disabled='true'])::before {
+      opacity: 1;
+    }
+  }
+
+  // Keep the existing pressed state; hovering only changes the surface light.
+  @include hover {
+    .icon { transform: none; }
+  }
+
+  @include reduced-motion {
+    &::before { transition: none; }
+  }
 }
 
 .secondary {

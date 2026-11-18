@@ -1,10 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import envelope from '@/assets/figma/footer/envelope.svg'
-import topIcon from '@/assets/figma/footer/top.svg'
-import whatsapp from '@/assets/figma/footer/whatsapp.svg'
 import { Button } from '@/components/Button'
-import { formatWhatsapp, site, whatsappUrl } from '@/data/site'
+import { ContactOptions } from '@/components/ContactOptions'
 import { useContact } from '@/lib/contact'
 import styles from './Footer.module.scss'
 
@@ -76,39 +73,7 @@ export function Footer() {
 
             <div className={`${styles.col} ${styles.contactCol}`}>
               <h3 className={styles.colTitle}>{t('footer.contact')}</h3>
-              <ul className={styles.channels}>
-                {site.email && (
-                  <li>
-                    <a className={styles.channel} href={`mailto:${site.email}`}>
-                      <img src={envelope} alt="" width={31} height={28} />
-                      <span>
-                        <span className="visually-hidden">{t('footer.email')}: </span>
-                        {site.email}
-                      </span>
-                    </a>
-                  </li>
-                )}
-                {site.whatsapp && (
-                  <li>
-                    <a className={styles.channel} href={whatsappUrl(site.whatsapp)} target="_blank" rel="noopener noreferrer">
-                      <img src={whatsapp} alt="" width={31} height={31} />
-                      <span>
-                        <span className="visually-hidden">{t('footer.whatsapp')}: </span>
-                        {formatWhatsapp(site.whatsapp)}
-                        <span className="visually-hidden"> {t('a11y.opensInNewTab')}</span>
-                      </span>
-                    </a>
-                  </li>
-                )}
-                {!site.email && !site.whatsapp && (
-                  <li>
-                    <button type="button" className={styles.channel} onClick={(e) => openContact(e.currentTarget)}>
-                      <img src={envelope} alt="" width={31} height={28} />
-                      <span>{t('footer.sendMessage')}</span>
-                    </button>
-                  </li>
-                )}
-              </ul>
+              <ContactOptions footer />
             </div>
           </div>
 
@@ -119,7 +84,10 @@ export function Footer() {
             </div>
             <p className={styles.copy}>{t('footer.rights', { year: YEAR })}</p>
             <button type="button" className={styles.top} onClick={toTop} aria-label={t('footer.backToTop')}>
-              <img src={topIcon} alt="" width={54} height={54} />
+              <svg width="54" height="54" viewBox="0 0 54 54" fill="none" aria-hidden="true">
+                <circle cx="27" cy="27" r="26.5" stroke="var(--footer-divider)" />
+                <path d="M27 39V15M39 25.5L27 15L15 25.5" stroke="currentColor" strokeWidth="1.8" />
+              </svg>
             </button>
           </div>
         </div>

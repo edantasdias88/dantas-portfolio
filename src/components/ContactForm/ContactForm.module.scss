@@ -34,7 +34,7 @@
 
 .field {
   display: grid;
-  gap: var(--space-2);
+  gap: var(--space-1);
   min-width: 0;
 
   label {
@@ -100,47 +100,122 @@
   }
 }
 
-.req {
-  font-weight: 400;
-  color: var(--content-tertiary);
-}
-
 .error {
   font-size: var(--fs-sm);
   color: var(--content-danger);
-
-  &::before {
-    content: '! ';
-    font-weight: 600;
-  }
 }
 
 .live:empty {
   display: none;
 }
 
-.notice {
-  padding: var(--space-4);
-  border-radius: var(--radius-sm);
-  border: 1px dashed var(--border-strong);
-  font-size: var(--fs-sm);
-  color: var(--content-secondary);
-}
-
-.success {
+.control {
   display: grid;
-  gap: var(--space-4);
-  justify-items: start;
-  padding-block: var(--space-6);
+  gap: var(--space-2);
 }
 
-.successTitle {
-  font-size: var(--fs-h3);
-  font-weight: 500;
-  letter-spacing: var(--ls-snug);
+.floating {
+  .control {
+    position: relative;
+    display: block;
+
+    label {
+      position: absolute;
+      z-index: 1;
+      top: 32px;
+      left: var(--space-4);
+      right: var(--space-4);
+      transform: translateY(-50%);
+      pointer-events: none;
+      font-size: 1.0625rem;
+      line-height: 1.2;
+      transition: top 200ms var(--ease-out), font-size 200ms var(--ease-out), transform 200ms var(--ease-out);
+    }
+
+    input, textarea {
+      display: block;
+      min-height: 64px;
+      padding: 28px var(--space-4) 10px;
+      border: 1px solid var(--border-strong);
+      border-radius: 12px;
+      background: var(--background-elevated);
+      line-height: 1.4;
+
+      &:focus-visible {
+        border-color: var(--border-strong);
+        box-shadow: none;
+      }
+    }
+
+    textarea {
+      min-height: 156px;
+      resize: none;
+      overflow-y: auto;
+    }
+
+    &:focus-within label,
+    &[data-filled='true'] label,
+    &:has(:is(input, textarea):not(:placeholder-shown)) label,
+    &:has(input:autofill) label {
+      top: 10px;
+      font-size: 0.75rem;
+      transform: none;
+    }
+  }
+
+  .field[data-invalid='true'] :is(input, textarea) {
+    border-color: var(--content-danger);
+  }
+
+  @include reduced-motion {
+    .control label { transition: none; }
+  }
 }
 
-.successText {
-  color: var(--content-secondary);
-  max-width: 40ch;
+.outline {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+
+  rect {
+    stroke: var(--border-focus);
+    stroke-width: 1.5px;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    transition: stroke-dashoffset 450ms var(--ease-in-out);
+  }
+}
+
+.floating .control:focus-within .outline rect {
+  stroke-dashoffset: 0;
+}
+
+@include reduced-motion {
+  .outline rect { transition: none; }
+}
+
+.submitLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  flex: none;
+  border: 1.5px solid currentColor;
+  border-right-color: transparent;
+  border-radius: var(--radius-pill);
+  animation: contact-submit-spin 800ms linear infinite;
+}
+
+@keyframes contact-submit-spin { to { transform: rotate(360deg); } }
+
+@include reduced-motion {
+  .spinner { animation: none; }
 }

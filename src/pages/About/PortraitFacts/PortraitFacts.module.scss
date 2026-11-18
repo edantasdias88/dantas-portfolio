@@ -1,0 +1,60 @@
+@use 'styles/tokens' as *;
+
+.facts {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 24px;
+  color: var(--content-on-brand);
+  isolation: isolate;
+  @include focus-ring;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: -64px 0 0;
+    background: linear-gradient(transparent, color-mix(in srgb, var(--ink-950) 78%, transparent));
+    pointer-events: none;
+  }
+}
+
+.slides { display: grid; }
+
+.slide {
+  grid-area: 1 / 1;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: var(--space-4);
+  pointer-events: none;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: clamp(40px, 4vw, 48px);
+  height: clamp(40px, 4vw, 48px);
+  border-radius: var(--radius-xs);
+  background: var(--content-on-brand);
+  color: var(--ink-950);
+}
+
+.counter {
+  display: block;
+  margin: 0 0 4px;
+  font-size: 0.75rem;
+  letter-spacing: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  line-height: 1.4;
+  color: color-mix(in srgb, var(--content-on-brand) 85%, transparent);
+}
+
+.phrase {
+  font-size: 0.875rem;
+
+  @include up(md) { font-size: 1rem; }
+  line-height: 1.4;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}

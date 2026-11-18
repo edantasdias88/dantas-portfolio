@@ -50,59 +50,71 @@
 .toolsSection {
   padding-block: clamp(36px, 5vw, 64px);
   border-block: 1px solid var(--border-subtle);
-  overflow: hidden;
 }
 
-.toolsContainer {
-  min-width: 0;
-}
+.toolsContainer { min-width: 0; }
 
-.toolViewport {
-  overflow: clip;
-  padding-block: 36px;
+.toolsPanel {
+  display: grid;
+  gap: var(--space-6);
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  background: var(--background-subtle);
 
-  &[data-paused='true'] .track {
-    animation-play-state: paused;
+  @include up(md) {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 5fr);
+    align-items: center;
+    gap: var(--space-7);
+  }
+
+  @include up(lg) {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
   }
 }
 
-.track {
-  display: flex;
-  width: max-content;
-  animation: about-tools-loop 36s linear infinite;
-  will-change: transform;
+.toolsTitle {
+  max-width: 15ch;
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-snug);
 }
 
 .toolGroup {
-  display: flex;
-  flex: none;
-  align-items: center;
-  gap: clamp(32px, 5vw, 72px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-3);
+  min-width: 0;
   margin: 0;
-  padding: 0 clamp(16px, 2.5vw, 36px);
+  padding: 0;
   list-style: none;
-}
 
-.toolItem {
-  flex: none;
+  @include up(sm) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  @include up(md) {
+    padding-left: var(--space-7);
+    border-left: 1px solid var(--border-subtle);
+  }
+
+  @include up(lg) { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 }
 
 .tool {
-  position: relative;
   display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  padding: 8px;
-  border: 0;
+  justify-items: center;
+  align-content: start;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-4) var(--space-2);
+  border: 1px solid transparent;
   border-radius: var(--radius-xs);
-  background: transparent;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
+  transition: background-color 225ms var(--ease-out), border-color 225ms var(--ease-out);
 
-  &:focus-visible {
-    outline: 2px solid var(--border-focus);
-    outline-offset: 4px;
+  @include hover {
+    border-color: var(--border-default);
+    background: var(--background-elevated);
+
+    .logo { transform: translateY(-2px) scale(1.04); filter: none; opacity: 1; }
   }
 }
 
@@ -113,46 +125,25 @@
   object-fit: contain;
   filter: grayscale(1) brightness(0.48);
   opacity: 0.82;
-  transition: filter 280ms var(--ease-out), opacity 280ms var(--ease-out);
+  transition: transform 225ms var(--ease-out), filter 225ms var(--ease-out), opacity 225ms var(--ease-out);
 }
 
-:global([data-theme='dark']) .logo {
+:global([data-theme='dark']) .tool:not(:hover) .logo {
   filter: grayscale(1) brightness(0) invert(1);
   opacity: 0.78;
 }
 
-.tool:hover .logo,
-.tool:focus-visible .logo {
-  filter: none;
-  opacity: 1;
-}
-
-.tooltip {
-  position: absolute;
-  z-index: 2;
-  left: 50%;
-  bottom: calc(100% + 8px);
-  padding: 7px 10px;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xs);
-  background: var(--background-elevated);
-  color: var(--content-primary);
-  box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
+.toolName {
+  color: var(--content-secondary);
   font-size: var(--fs-sm);
-  line-height: 1.2;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transform: translate(-50%, 4px);
-  transition: opacity 160ms var(--ease-out), transform 160ms var(--ease-out), visibility 0s linear 160ms;
-  pointer-events: none;
+  line-height: 1.4;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
-.tooltip[data-visible='true'] {
-  opacity: 1;
-  visibility: visible;
-  transform: translate(-50%, 0);
-  transition-delay: 0s;
+@include reduced-motion {
+  .tool, .logo { transition: none; }
+  .tool:hover .logo { transform: none; }
 }
 
 .vision {
@@ -237,32 +228,8 @@
   }
 }
 
-@keyframes about-tools-loop {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@include reduced-motion {
-  .track {
-    display: block;
-    animation: none;
-    will-change: auto;
-  }
-
-  .toolGroup {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .toolGroup[aria-hidden='true'] {
-    display: none;
-  }
-}
-
-@media (hover: none) {
-  .tooltip {
-    bottom: auto;
-    top: calc(100% + 8px);
-  }
+.portraitStage {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
 }
