@@ -31,7 +31,6 @@ export function ContactForm({ autoFocus = false, floatingLabels = false }: { aut
     phoneInvalid: t('contact.errors.phoneInvalid'),
     messageRequired: t('contact.errors.messageRequired'),
     messageTooLong: t('contact.errors.messageTooLong'),
-
   }
 
   const validate = (v: Values): Errors => {
@@ -82,6 +81,7 @@ export function ContactForm({ autoFocus = false, floatingLabels = false }: { aut
     setErrors(found)
     const firstInvalid = (Object.keys(found) as Field[])[0]
     if (firstInvalid) {
+      setStatus('idle')
       formRef.current?.querySelector<HTMLElement>(`[name="${firstInvalid}"]`)?.focus()
       return
     }
